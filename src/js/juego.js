@@ -2,6 +2,7 @@
 cadVariables = location.search.substring(1,location.search.length);
 var obj= new Juego();
 var tablero=[];
+var imagenvolteada=[];
 genera_tabla(cadVariables);
 function genera_tabla(nivel) {
   // Obtener la referencia del elemento body
@@ -47,7 +48,7 @@ var ubicad=[];
       // de la hilera de la tabla
       var celda = document.createElement("td");
       var imagenCelda = document.createElement("img");
-
+imagenvolteada.push(imagenCelda);
       //imagenCelda.src="../img/"+ubicad[mostra].nombre;
       celda.setAttribute("onclick","mostrarImagen("+mostra+")");
 
@@ -70,10 +71,7 @@ var ubicad=[];
   // modifica el atributo "border" de la tabla y lo fija a "2";
   tabla.setAttribute("border", "2");
 }
-function mostrarImagen(mostra,ubicad){
-for (var i = 0; i < tablero.length; i++) {
-  console.log("elemontos"+tablero[i]);
-  alert(tablero[i].nombre);
-}
+function mostrarImagen(mostra){
+imagenvolteada[mostra].src="../img/"+tablero[mostra].nombre;
 
 }
