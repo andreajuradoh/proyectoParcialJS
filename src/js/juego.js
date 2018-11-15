@@ -9,25 +9,34 @@ function genera_tabla(nivel) {
 
   var tabla   = document.createElement("table");
   var tblBody = document.createElement("tbody");
-   var largo, ancho;
+   var largo, ancho, mostra=0;
 
   switch(nivel) {
       case "1":
     imgse=obj.getTablero(2);
+
+    ubicad=obj.ubicarElementos(imgse);
     for (var i = 0; i < imgse.length; i++) {
       console.log(imgse[i]);
+    }
+
+    for (var i = 0; i < ubicad.length; i++) {
+      console.log(ubicad[i]);
     }
       largo=2;
       ancho=2;
 
+
           break;
       case "2":
         imgse=obj.getTablero(4);
+        ubicad=obj.ubicarElementos(imgse);
       largo= 4;
       ancho= 2;
           break;
       default:
         imgse=obj.getTablero(6);
+        ubicad=obj.ubicarElementos(imgse);
        largo= 4;
        ancho= 3;
   }
@@ -42,10 +51,12 @@ function genera_tabla(nivel) {
       // de la hilera de la tabla
       var celda = document.createElement("td");
       var imagenCelda = document.createElement("img");
-      imagenCelda.src="../img/"+imgse[j].nombre;
+      //imagenCelda.src="../img/"+ubicad[mostra].nombre;
+      mostra++;
       celda.appendChild(imagenCelda);
       hilera.appendChild(celda);
     }
+
     tblBody.appendChild(hilera);
   }
   // Crea un elemento <table> y un elemento <tbody>

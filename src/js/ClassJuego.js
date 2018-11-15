@@ -16,6 +16,7 @@ class Juego {
       for (var i = 0; i < imagenese.length; i++) {
         if(random==i){
           imgSeleccionadas.push(imagenese[i]);
+          imgSeleccionadas.push(imagenese[i]);
           imagenese.splice(i, 1);
           break;
         }
@@ -25,7 +26,23 @@ class Juego {
     }
     return imgSeleccionadas;
   }
-  ubicarElementos(nivel, array){
-    
+  ubicarElementos(array){
+let random=0;
+var posicionArray=[];
+var tope=array.length;
+let cont=0;
+while(cont<tope){
+var tamaño=array.length-1;
+random=this.getRand(tamaño,0);
+    for (var i = 0; i < array.length; i++) {
+      if(random==i){
+        posicionArray.push(array[i]);
+        array.splice(i, 1);
+        break;
+      }
+    }
+    cont++;
+    }
+    return posicionArray;
   }
 }
