@@ -1,5 +1,6 @@
 
 cadVariables = location.search.substring(1,location.search.length);
+var obj= new Juego();
 
 genera_tabla(cadVariables);
 function genera_tabla(nivel) {
@@ -8,19 +9,25 @@ function genera_tabla(nivel) {
 
   var tabla   = document.createElement("table");
   var tblBody = document.createElement("tbody");
-var largo, ancho;
+   var largo, ancho;
 
   switch(nivel) {
       case "1":
+    imgse=obj.getTablero(2);
+    for (var i = 0; i < imgse.length; i++) {
+      console.log(imgse[i]);
+    }
       largo=2;
       ancho=2;
 
           break;
       case "2":
+        imgse=obj.getTablero(4);
       largo= 4;
       ancho= 2;
           break;
       default:
+        imgse=obj.getTablero(6);
        largo= 4;
        ancho= 3;
   }
@@ -35,7 +42,7 @@ var largo, ancho;
       // de la hilera de la tabla
       var celda = document.createElement("td");
       var imagenCelda = document.createElement("img");
-      imagenCelda.src="../img/fondo.jpg";
+      imagenCelda.src="../img/"+imgse[j].nombre;
       celda.appendChild(imagenCelda);
       hilera.appendChild(celda);
     }

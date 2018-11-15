@@ -2,3 +2,9 @@ img {
   width: 100px;
   height: 90px;
 }
+
+td {
+  background-image: url("../../img/fondo.jpg");
+  width: 100px;
+  height: 90px;
+}
