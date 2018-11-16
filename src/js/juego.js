@@ -2,6 +2,16 @@
 cadVariables = location.search.substring(1,location.search.length);
 var obj= new Juego();
 var tablero=[];
+var imagenVolteada=[];// array que guarda todos los tags de imagenes que hay en la tabla
+// se la utiliza para guardar y setearles el atributo src que contendra la imagen real
+var imgTmp=[];// array que guarda todos los objetos imagenes que han ido seleccionando
+// se lo utiliza para verificar si la imagen seleccionada anteriormente es igual a la seleccionada actualmente
+var contadorVeces=0; // variable que cuenta la cantidad de clicks que han habido
+var posicionTmp=[];// array para guardar las posiciones de los elementos seleccionados
+var imgTagTmp=[];// array utilizado para guardar el tag de las imagenes que han sido volteados temporalmente
+// Se lo utiliza para consultar si el click es de la misma imagen o de otra imagen
+var imagenesViradasConExito=0; // contador de  imagenes que ya han sido volteadas exitosamente
+// Se lo va a utilizar para considerar si el jugador ya completó el juego
 genera_tabla(cadVariables);
 function genera_tabla(nivel) {
   // Obtener la referencia del elemento body
@@ -47,9 +57,9 @@ var ubicad=[];
       // de la hilera de la tabla
       var celda = document.createElement("td");
       var imagenCelda = document.createElement("img");
-
-      //imagenCelda.src="../img/"+ubicad[mostra].nombre;
-      celda.setAttribute("onclick","mostrarImagen("+mostra+")");
+      imagenVolteada.push(imagenCelda);
+      imagenCelda.src="../img/fondo.jpg";
+      imagenCelda.setAttribute("onclick","mostrarImagen("+mostra+")");
 
       mostra++;
       celda.appendChild(imagenCelda);
@@ -70,10 +80,42 @@ var ubicad=[];
   // modifica el atributo "border" de la tabla y lo fija a "2";
   tabla.setAttribute("border", "2");
 }
-function mostrarImagen(mostra,ubicad){
-for (var i = 0; i < tablero.length; i++) {
-  console.log("elemontos"+tablero[i]);
-  alert(tablero[i].nombre);
-}
+function mostrarImagen(mostra){
+ imgTmp.push(tablero[mostra]);
+ imagenVolteada[mostra].src="../img/"+tablero[mostra].nombre;
+
+imgTagTmp.push(imagenVolteada[mostra]);
+ posicionTmp.push(mostra);
+
+ contadorVeces++;
+
+ if(contadorVeces>=3){
+   if(imgTagTmp[0]!=imagenVolteada[mostra]){
+     imgTagTmp=[];
+
+   contadorVeces=1;
+   if(imgTmp[imgTmp.length-3].id!=imgTmp[imgTmp.length-2].id){
+    let tmp=posicionTmp.pop();
+    let saco=posicionTmp.pop();
+
+    imagenVolteada[saco].src="../img/fondo.jpg";
+    saco=posicionTmp.pop();
+    imagenVolteada[saco].src="../img/fondo.jpg";
+    posicionTmp.push(tmp);
+
+    imgTmp=[];
+    imgTmp.push(tablero[tmp]);
+
+  }else{
+       //imagenVolteada[posicionTmp[0]].onclick="";
+       //imagenVolteada[mostra].onclick="";
+       imagenesViradasConExito+=2;
+  }
+ }
+ }
+ if(imagenesViradasConExito==tablero.length){
+   alert("Juego ganado");
+
+ }
 
 }
