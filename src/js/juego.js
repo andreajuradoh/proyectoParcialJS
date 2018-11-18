@@ -12,7 +12,18 @@ var posicionTmp=[];// array para guardar las posiciones de los elementos selecci
 var imagenesViradasConExito=0; // contador de  imagenes que ya han sido volteadas exitosamente
 // Se lo va a utilizar para considerar si el jugador ya completó el juego
 //
+var audiofondo = document.getElementById("audioultra");
+
+
+
 var avatar=JSON.parse(localStorage.getItem("avatar"));
+var fondo="";
+if(avatar.genero=="m"){
+  fondo="../img/fondo.jpg";
+
+}else {
+  fondo="../img/fondo-f.jpg";
+}
 genera_tabla(cadVariables);
 
 
@@ -20,6 +31,8 @@ genera_tabla(cadVariables);
 
 function genera_tabla(nivel) {
   // Obtener la referencia del elemento body
+
+
   var body = document.getElementsByTagName("body")[0];
   var div=document.getElementById("tabla-main");
 
@@ -66,7 +79,7 @@ var ubicad=[];
       var celda = document.createElement("td");
       var imagenCelda = document.createElement("img");
       imagenVolteada.push(imagenCelda);
-      imagenCelda.src="../img/fondo.jpg";
+      imagenCelda.src=fondo;
       imagenCelda.setAttribute("onclick","mostrarImagen("+mostra+")");
 
       mostra++;
@@ -91,9 +104,9 @@ var ubicad=[];
 }
 function mostrarImagen(mostra){
   let compara=imagenVolteada[mostra].getAttribute("src");
-  let fondo="../img/fondo.jpg";
-
-if(compara==fondo){
+  let fondol=fondo;
+audiofondo.play();
+if(compara==fondol){
 
  imgTmp.push(tablero[mostra]);
  imagenVolteada[mostra].src="../img/"+tablero[mostra].nombre;
@@ -112,9 +125,9 @@ imagenesViradasConExito++;
     let tmp=posicionTmp.pop();
     let saco=posicionTmp.pop();
 imagenesViradasConExito-=2;
-    imagenVolteada[saco].src="../img/fondo.jpg";
+    imagenVolteada[saco].src=fondo;
     saco=posicionTmp.pop();
-    imagenVolteada[saco].src="../img/fondo.jpg";
+    imagenVolteada[saco].src=fondo;
     posicionTmp.push(tmp);
 
     imgTmp=[];
@@ -127,7 +140,8 @@ imagenesViradasConExito-=2;
    var audio = document.getElementById("audio");
 
    audio.play();
-
+audiofondo.pause();
+audiofondo.currentTime = 0;
    avatar.puntos+=1;
   crearModalVictoria(avatar);
 
@@ -147,6 +161,7 @@ function juegonuevo(nivel){
    tabla.innerHTML="";
    dialog=document.getElementById("dialog");
    dialog.innerHTML="";
+
 genera_tabla(nivel);
 
 }
