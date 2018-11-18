@@ -8,16 +8,24 @@ var imgTmp=[];// array que guarda todos los objetos imagenes que han ido selecci
 // se lo utiliza para verificar si la imagen seleccionada anteriormente es igual a la seleccionada actualmente
 var contadorVeces=0; // variable que cuenta la cantidad de clicks que han habido
 var posicionTmp=[];// array para guardar las posiciones de los elementos seleccionados
-var imgTagTmp=[];// array utilizado para guardar el tag de las imagenes que han sido volteados temporalmente
-// Se lo utiliza para consultar si el click es de la misma imagen o de otra imagen
+
 var imagenesViradasConExito=0; // contador de  imagenes que ya han sido volteadas exitosamente
 // Se lo va a utilizar para considerar si el jugador ya completó el juego
+//
+var avatar=JSON.parse(localStorage.getItem("avatar"));
 genera_tabla(cadVariables);
+
+
+//crearModalVictoria(avatar);
+
 function genera_tabla(nivel) {
   // Obtener la referencia del elemento body
   var body = document.getElementsByTagName("body")[0];
+  var div=document.getElementById("tabla-main");
 
   var tabla   = document.createElement("table");
+  tabla.className= "table";
+    tabla.className+= " mi-tablas";
   var tblBody = document.createElement("tbody");
    var largo, ancho, mostra=0;
 var ubicad=[];
@@ -75,29 +83,35 @@ var ubicad=[];
 
   // posiciona el <tbody> debajo del elemento <table>
   tabla.appendChild(tblBody);
+  div.appendChild(tabla);
   // appends <table> into <body>
-  body.appendChild(tabla);
+  body.appendChild(div);
   // modifica el atributo "border" de la tabla y lo fija a "2";
   tabla.setAttribute("border", "2");
 }
 function mostrarImagen(mostra){
+  let compara=imagenVolteada[mostra].getAttribute("src");
+  let fondo="../img/fondo.jpg";
+
+if(compara==fondo){
+
  imgTmp.push(tablero[mostra]);
  imagenVolteada[mostra].src="../img/"+tablero[mostra].nombre;
 
-imgTagTmp.push(imagenVolteada[mostra]);
+imagenesViradasConExito++;
  posicionTmp.push(mostra);
 
  contadorVeces++;
 
  if(contadorVeces>=3){
-   if(imgTagTmp[0]!=imagenVolteada[mostra]){
-     imgTagTmp=[];
+
+
 
    contadorVeces=1;
    if(imgTmp[imgTmp.length-3].id!=imgTmp[imgTmp.length-2].id){
     let tmp=posicionTmp.pop();
     let saco=posicionTmp.pop();
-
+imagenesViradasConExito-=2;
     imagenVolteada[saco].src="../img/fondo.jpg";
     saco=posicionTmp.pop();
     imagenVolteada[saco].src="../img/fondo.jpg";
@@ -106,16 +120,92 @@ imgTagTmp.push(imagenVolteada[mostra]);
     imgTmp=[];
     imgTmp.push(tablero[tmp]);
 
-  }else{
-       //imagenVolteada[posicionTmp[0]].onclick="";
-       //imagenVolteada[mostra].onclick="";
-       imagenesViradasConExito+=2;
   }
  }
  }
  if(imagenesViradasConExito==tablero.length){
-   alert("Juego ganado");
+   var audio = document.getElementById("audio");
+
+   audio.play();
+
+   avatar.puntos+=1;
+  crearModalVictoria(avatar);
 
  }
+}
+function juegonuevo(nivel){
+   tablero=[];
+   imagenVolteada=[];// array que guarda todos los tags de imagenes que hay en la tabla
+  // se la utiliza para guardar y setearles el atributo src que contendra la imagen real
+ imgTmp=[];// array que guarda todos los objetos imagenes que han ido seleccionando
+  // se lo utiliza para verificar si la imagen seleccionada anteriormente es igual a la seleccionada actualmente
+   contadorVeces=0; // variable que cuenta la cantidad de clicks que han habido
+  posicionTmp=[];// array para guardar las posiciones de los elementos seleccionados
+
+   imagenesViradasConExito=0;
+   tabla=document.getElementById("tabla-main");
+   tabla.innerHTML="";
+   dialog=document.getElementById("dialog");
+   dialog.innerHTML="";
+genera_tabla(nivel);
+
+}
+
+function crearModalVictoria(avatar){
+
+
+        //select all the a tag with name equal to modal
+
+                //Cancel the link behavior
+
+                //Get the A tag
+                var id = $('#dialog');
+                img="<img class='eleModel' src='../img/"+avatar.nombre+"'>";
+                puntos="<span >puntos obtenidos "+avatar.puntos+"</span>";
+              var buton= document.createElement("img");
+              buton.src="../img/nuevojuego.jpg";
+                buton.setAttribute("onclick","juegonuevo(cadVariables)");
+               id.prepend(buton);
+               id.prepend(img);
+               id.prepend(puntos);
+
+                //Get the screen height and width
+                var maskHeight = $(document).height();
+                var maskWidth = $(window).width();
+
+                //Set height and width to mask to fill up the whole screen
+                $('#mask').css({'width':maskWidth,'height':maskHeight});
+
+                //transition effect
+                $('#mask').fadeIn(1000);
+                $('#mask').fadeTo("slow",0.8);
+
+                //Get the window height and width
+                var winH = $(window).height();
+                var winW = $(window).width();
+
+                //Set the popup window to center
+                $(id).css('top',  winH/2-$(id).height()/2);
+                $(id).css('left', winW/2-$(id).width()/2);
+
+                //transition effect
+                $(id).fadeIn(2000);
+
+
+
+        //if close button is clicked
+        $('.window .close').click(function (e) {
+                //Cancel the link behavior
+                e.preventDefault();
+                $('#mask, .window').hide();
+        });
+
+        //if mask is clicked
+        $('#mask').click(function () {
+                $(this).hide();
+                $('.window').hide();
+        });
+
+
 
 }
