@@ -117,9 +117,6 @@ imagenesViradasConExito++;
  contadorVeces++;
 
  if(contadorVeces>=3){
-
-
-
    contadorVeces=1;
    if(imgTmp[imgTmp.length-3].id!=imgTmp[imgTmp.length-2].id){
     let tmp=posicionTmp.pop();

@@ -22,12 +22,8 @@ conten.appendChild(celda);
 
 function sesion(indice){
   var avatar
-  for (var i = 0; i < datos.length; i++) {
-    if(i==indice){
-      avatar= datos[i];
-      break;
-    }
-  }
+avatar= datos[indice];
+
   localStorage.clear();
   localStorage.setItem("avatar",JSON.stringify(avatar));
   console.log(avatar.nombre);
