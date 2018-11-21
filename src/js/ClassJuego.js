@@ -11,8 +11,9 @@ class Juego {
     var imagenese=JSON.parse(imagenes);
     var imgSeleccionadas=[];
     let cont=0;
+
     while(cont<nivel){
-      let random=this.getRand(4,0);
+      let random=this.getRand(2,0);
       for (var i = 0; i < imagenese.length; i++) {
         if(random==i){
           imgSeleccionadas.push(imagenese[i]);
