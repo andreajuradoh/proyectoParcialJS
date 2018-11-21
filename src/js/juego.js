@@ -3,6 +3,7 @@ cadVariables = location.search.substring(1,location.search.length);
 var obj= new Juego();
 var tablero=[];
 var imagenvolteada=[];
+var contador =0;
 genera_tabla(cadVariables);
 function genera_tabla(nivel) {
   // Obtener la referencia del elemento body
@@ -73,5 +74,19 @@ imagenvolteada.push(imagenCelda);
 }
 function mostrarImagen(mostra){
 imagenvolteada[mostra].src="../img/"+tablero[mostra].nombre;
+    
+
+}
+
+function paresImagenes(mostra){
+    
+   imagenvolteada[mostra];
+    mostrarImagen(mostra);
+    contador ++;
+    if(imagenvolteada[mostra]==contador){
+        imagenvolteada[mostra].src="../img/"+tablero[mostra].nombre;
+    }else{
+         celda.setAttribute("onclick","mostrarImagen("+mostra+")");
+    }
 
 }
