@@ -11,7 +11,7 @@ for (var img in datos) {
   imagenAvatar.setAttribute("onclick","sesion("+img+")");
   imagenAvatar.className='rounded-circle'
   var link = document.createElement("a");
-  link.href='instrucciones.html?'+datos[img].nombre+'';
+  link.href='instrucciones.html';
   //conten.innerHTML+="<td onclick='sesion("+datos[img]+")' id='tabla'><a  href='instrucciones.html?"+datos[img].nombre+"'  id='"+datos[img].id+"'><img class='rounded-circle' id='imgen' src='../img/"+datos[img].nombre+"''></a></td>";
 celda.appendChild(link);
 link.appendChild(imagenAvatar);
