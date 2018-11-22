@@ -19,10 +19,10 @@ var audiofondo = document.getElementById("audioultra");
 var avatar=JSON.parse(localStorage.getItem("avatar"));
 var fondo="";
 if(avatar.genero=="m"){
-  fondo="../img/fondo.jpg";
+  fondo="../img/nivel1.png";
 
 }else {
-  fondo="../img/fondo-f.jpg";
+  fondo="../img/nivel1.png";
 }
 genera_tabla(cadVariables);
 

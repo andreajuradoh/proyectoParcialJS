@@ -5,7 +5,9 @@ img {
 
 .mi-tablas{
   width: 100px
-  height: 10000px;
+  height: 10px;
+    margin-top: 40px;
+        
 }
 #audio{
 display: none

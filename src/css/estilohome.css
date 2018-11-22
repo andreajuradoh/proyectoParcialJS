@@ -1,6 +1,6 @@
 img {
 
-    padding-top: 60px;
+    padding-top: 40px;
   display:block;
 margin:auto;
 }
@@ -13,4 +13,12 @@ img2 {
 margin:auto;
     width:100px; 
     height:50px;
+}
+
+#nivel{
+      display:block;
+margin:auto;
+    width:400px; 
+    height:300px;
+
 }
