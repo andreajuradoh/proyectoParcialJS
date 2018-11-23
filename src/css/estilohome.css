@@ -3,6 +3,7 @@ img {
     padding-top: 40px;
   display:block;
 margin:auto;
+   
 }
 
 
@@ -21,4 +22,8 @@ margin:auto;
     width:400px; 
     height:300px;
 
+}
+
+#regresar{
+    float: left
 }

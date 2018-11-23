@@ -169,7 +169,7 @@ function crearModalVictoria(avatar){
         //select all the a tag with name equal to modal
 
                 //Cancel the link behavior
-
+ 
                 //Get the A tag
                 var id = $('#dialog');
                 img="<img class='eleModel' src='../img/"+avatar.nombre+"'>";
@@ -180,6 +180,7 @@ function crearModalVictoria(avatar){
                id.prepend(buton);
                id.prepend(img);
                id.prepend(puntos);
+
 
                 //Get the screen height and width
                 var maskHeight = $(document).height();
