@@ -19,10 +19,11 @@ var audiofondo = document.getElementById("audioultra");
 var avatar=JSON.parse(localStorage.getItem("avatar"));
 var fondo="";
 if(avatar.genero=="m"){
-  fondo="../img/nivel1.png";
+  fondo="../img/fondo.jpg";
+
 
 }else {
-  fondo="../img/nivel1.png";
+  fondo="../img/fondo-f.jpg";
 }
 genera_tabla(cadVariables);
 
@@ -37,8 +38,7 @@ function genera_tabla(nivel) {
   var div=document.getElementById("tabla-main");
 
   var tabla   = document.createElement("table");
-  tabla.className= "table";
-    tabla.className+= " mi-tablas";
+    tabla.className= "mi-tablas";
   var tblBody = document.createElement("tbody");
    var largo, ancho, mostra=0;
 var ubicad=[];
@@ -60,11 +60,17 @@ var ubicad=[];
       largo= 4;
       ancho= 2;
           break;
+          case "3":
+          imgse=obj.getTablero(6);
+          tablero=obj.ubicarElementos(imgse);
+         largo= 4;
+         ancho= 3;
+              break;
       default:
-        imgse=obj.getTablero(6);
+        imgse=obj.getTablero(8);
         tablero=obj.ubicarElementos(imgse);
-       largo= 4;
-       ancho= 3;
+       largo= 6;
+       ancho= 4;
   }
 
   for (var i = 0; i < largo; i++) {
@@ -77,10 +83,12 @@ var ubicad=[];
       // texto sea el contenido de <td>, ubica el elemento <td> al final
       // de la hilera de la tabla
       var celda = document.createElement("td");
+      celda.className="micelda";
+
       var imagenCelda = document.createElement("img");
       imagenVolteada.push(imagenCelda);
       imagenCelda.src=fondo;
-      imagenCelda.setAttribute("onclick","mostrarImagen("+mostra+")");
+      celda.setAttribute("onclick","mostrarImagen("+mostra+")");
 
       mostra++;
       celda.appendChild(imagenCelda);
@@ -158,7 +166,7 @@ function juegonuevo(nivel){
    tabla.innerHTML="";
    dialog=document.getElementById("dialog");
    dialog.innerHTML="";
-   
+
 genera_tabla(nivel);
 
 }
