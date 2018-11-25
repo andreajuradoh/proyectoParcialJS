@@ -16,7 +16,9 @@ margin-left: 35%;
 .personal {
   height: 200px;
   width: 200px}
-  
+  .letrero{
+    margin-left: 400px;
+  }
 #audio{
 display: none
 }
