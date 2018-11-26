@@ -8,7 +8,7 @@ class Juego {
   }
   getTablero(nivel){
 
-    var imagenese=JSON.parse(imagenes);
+    var imagenese=JSON.parse(localStorage.getItem("imagenes"));
     var imgSeleccionadas=[];
     let cont=0;
 

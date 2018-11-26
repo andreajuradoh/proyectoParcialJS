@@ -1,25 +1,18 @@
 img {
 
-    padding-top: 40px;
+
   display:block;
 margin:auto;
-   
+
 }
 
 
-img2 {
 
-    padding-top: 90px;
-  display:block;
-margin:auto;
-    width:100px; 
-    height:50px;
-}
 
 #nivel{
       display:block;
 margin:auto;
-    width:400px; 
+    width:400px;
     height:300px;
 
 }

@@ -1,19 +1,25 @@
-img {
-  width: 100px;
-  height: 90px;
-}
-
 .mi-tablas{
-  width: 300px
-  height: 100px;
-    margin-top: 40px;
- text-align:center;
-
-        
+text-align:center;
+margin-left: 35%;
 }
 
+.mi-tablas td{
+ width: 30%;
 
 
+
+
+}
+.micelda img{
+  height:130px;
+  width: 120px;
+}
+.personal {
+  height: 200px;
+  width: 200px}
+  .letrero{
+    margin-left: 400px;
+  }
 #audio{
 display: none
 }
@@ -48,6 +54,7 @@ background-image: url("../../img/globos.jpg");
     margin-right: auto;
 
 }
+
 #dialog span {
   margin: 60px;
   color: #C11A33;
@@ -60,13 +67,11 @@ background-image: url("../../img/globos.jpg");
 
 }
 
-td{
-     width:100px;
-  height:200px;
+.nuevo{
+  display: none;
 }
 
-#centrartabla{
-    
-    text-align:center;
-}
 
+.editar{
+  display: none;
+}
