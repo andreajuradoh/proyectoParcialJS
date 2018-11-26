@@ -1,24 +1,33 @@
 .mi-tablas{
 text-align:center;
 margin-left: 35%;
+   
+margin: 0 auto 
+        
+    
 }
 
 .mi-tablas td{
  width: 30%;
+padding-top: 90px;
 
-
-
-
+    
 }
 .micelda img{
-  height:130px;
-  width: 120px;
+  height:250px;
+  width: 250px;
+    padding-top: 30px;
+    
+    align-content: center;
 }
 .personal {
   height: 200px;
-  width: 200px}
+  width: 200px;
+         margin-top: 80px;
+}
   .letrero{
     margin-left: 400px;
+   
   }
 #audio{
 display: none

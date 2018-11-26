@@ -19,7 +19,7 @@ var audiofondo = document.getElementById("audioultra");
 var avatar=JSON.parse(localStorage.getItem("sesion"));
 var fondo="";
 if(avatar.genero=="m"){
-  fondo="../img/fondo.jpg";
+  fondo="../img/nivel1.png";
 
 
 }else {
