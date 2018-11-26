@@ -112,9 +112,9 @@ var ubicad=[];
 }
 function mostrarImagen(mostra){
   let compara=imagenVolteada[mostra].getAttribute("src");
-  let fondol=fondo;
+
 audiofondo.play();
-if(compara==fondol){
+if(compara==fondo){
 
  imgTmp.push(tablero[mostra]);
  imagenVolteada[mostra].src="../img/"+tablero[mostra].nombre;
@@ -184,6 +184,7 @@ function crearModalVictoria(avatar){
                 let ptos=avatar.puntos;
                 puntos="<span >puntos obtenidos "+ptos+"</span>";
                 localStorage.setItem("sesion",JSON.stringify(avatar));
+                modificarPuntaje();
               var buton= document.createElement("img");
               buton.src="../img/nuevojuego.jpg";
                 buton.setAttribute("onclick","juegonuevo(cadVariables)");
@@ -230,5 +231,25 @@ function crearModalVictoria(avatar){
         });
 
 
+
+}
+function modificarPuntaje(){
+  let arrayAvaters=JSON.parse(localStorage.getItem("avatares"));
+  let obj= new Avatar();
+  let indice=0;
+  for (var variable in arrayAvaters) {
+    if (arrayAvaters[variable].id==avatar.id) {
+
+      obj.puntos=avatar.puntos;
+      obj.nombre=arrayAvaters[variable].nombre;
+      obj.id=arrayAvaters[variable].id;
+      obj.genero=arrayAvaters[variable].genero;
+        arrayAvaters.splice(indice,1);
+      break
+    }
+    indice++;
+  }
+  arrayAvaters.push(obj);
+ localStorage.setItem("avatares",JSON.stringify(arrayAvaters));
 
 }
