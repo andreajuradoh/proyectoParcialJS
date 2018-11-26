@@ -65,3 +65,12 @@ background-image: url("../../img/globos.jpg");
   background: #23C480;
 
 }
+
+.nuevo{
+  display: none;
+}
+
+
+.editar{
+  display: none;
+}

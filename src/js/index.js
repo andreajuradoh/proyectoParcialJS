@@ -2,7 +2,7 @@
 //accion.addEventListener("click", colocarAvatar);
 
 var conten=document.getElementById("contenAvatares");
-var datos=JSON.parse(imagenes);
+var datos=JSON.parse(localStorage.getItem("avatares"));
 var mostra="";
 for (var img in datos) {
   var celda = document.createElement("td");
@@ -25,9 +25,7 @@ function sesion(indice){
   var avatar
 avatar= datos[indice];
 
-  localStorage.clear();
-  localStorage.setItem("avatar",JSON.stringify(avatar));
-  console.log(avatar.nombre);
-  avatar=JSON.parse(localStorage.getItem("avatar"));
-  console.log(avatar.nombre);
+//  localStorage.clear();
+  localStorage.setItem("sesion",JSON.stringify(avatar));
+
 }

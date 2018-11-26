@@ -16,7 +16,7 @@ var audiofondo = document.getElementById("audioultra");
 
 
 
-var avatar=JSON.parse(localStorage.getItem("avatar"));
+var avatar=JSON.parse(localStorage.getItem("sesion"));
 var fondo="";
 if(avatar.genero=="m"){
   fondo="../img/fondo.jpg";
@@ -177,11 +177,13 @@ function crearModalVictoria(avatar){
         //select all the a tag with name equal to modal
 
                 //Cancel the link behavior
- 
+
                 //Get the A tag
                 var id = $('#dialog');
                 img="<img class='eleModel' src='../img/"+avatar.nombre+"'>";
-                puntos="<span >puntos obtenidos "+avatar.puntos+"</span>";
+                let ptos=avatar.puntos;
+                puntos="<span >puntos obtenidos "+ptos+"</span>";
+                localStorage.setItem("sesion",JSON.stringify(avatar));
               var buton= document.createElement("img");
               buton.src="../img/nuevojuego.jpg";
                 buton.setAttribute("onclick","juegonuevo(cadVariables)");

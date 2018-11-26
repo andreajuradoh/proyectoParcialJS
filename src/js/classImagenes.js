@@ -1,8 +1,6 @@
-class Avatar {
+class Imagenes {
   constructor() {
    this.nombre;
-   this.puntos;
-   this.genero;
    this.id;
 
   }

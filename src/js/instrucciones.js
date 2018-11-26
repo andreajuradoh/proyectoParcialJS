@@ -1,6 +1,6 @@
 
 
-cadVariables=JSON.parse(localStorage.getItem("avatar"));
+cadVariables=JSON.parse(localStorage.getItem("sesion"));
 colocarAvatar(cadVariables);
 
 function colocarAvatar(nombre){
