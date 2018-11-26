@@ -2,23 +2,46 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <script type="text/javascript" src="imagenes.json"></script>
-    <title>Administracion</title>
+
+      <link rel="stylesheet" href="css/estilo.css">
+    <script type="text/javascript" src="avatares.json"></script>
+    <title>Administracion Imagenes</title>
   </head>
   <body>
     <h1>Administrar Imagenes</h1>
+    <a href="administracion.html"> <button type="button" name="button">Menu Administracion</button> </a>
+    <a href="index.html"> <button type="button" name="button">Menu Principal</button> </a>
+<div class="listar" id="listar">
 
+</div>
+<a href="#" id="btnNuevo"><button type="button" name="button">Nuevo</button> </a>
+<div class="nuevo" id="nuevo">
 
-
-    <label for="">Foto Imagen</label>
-    <select class="selectAdmin" id="imagen" name="imagen">
-      <option value="pajaro.jpg">pajaro.jpg</option>
-      <option value="oso.jpg">oso.jpg</option>
+  <label for="">Foto Imagen</label>
+  <select class="selectAdmin" id="imagen" name="imagen">
+    <option value="pajaro.jpg">pajaro.jpg</option>
+    <option value="oso.jpg">oso.jpg</option>
 </select>
 
+
     <a href="#"><button type="button" id="btnGuardar" name="button">Guardar</button></a>
-    <script type="text/javascript" src="js/classImagenes.js"></script>
-    <script type="text/javascript" src="js/administracionImagenes.js"></script>
+
+</div>
+
+<div class="editar" id="editar">
+<h1>Editar</h1>
+<label for="" id="idedit"></label>
+<label for="">Foto Imagen</label>
+<select class="selectAdmin" id="imagenedit" name="imagen">
+  <option value="pajaro.jpg">pajaro.jpg</option>
+  <option value="oso.jpg">oso.jpg</option>
+</select>
+
+    <a href="#"><button type="button" id="btnEditar" name="button">Guardar</button></a>
+
+</div>
+<script type="text/javascript" src="js/classImagenes.js"></script>
+ <script type="text/javascript" src="js/administracionImagenes.js"></script>
 
   </body>
 </html>
