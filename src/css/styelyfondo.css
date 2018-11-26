@@ -1,10 +1,7 @@
-
 body { 
-
-background-image: url("../../img/fondojuego.jpg");
+background-image: url(../../img/fondoIntro.jpg);
 background-position: center center;
 background-repeat: no-repeat;
 background-attachment: fixed;
 background-size: cover;
 }
-

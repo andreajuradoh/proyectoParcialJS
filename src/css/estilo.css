@@ -12,13 +12,7 @@ img {
         
 }
 
-body { 
-background-image: url(../../img/fondototal.png);
-background-position: center center;
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-size: cover;
-}
+
 
 #audio{
 display: none
