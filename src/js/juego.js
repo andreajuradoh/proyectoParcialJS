@@ -1,5 +1,6 @@
 
 cadVariables = location.search.substring(1,location.search.length);
+
 var obj= new Juego();
 var tablero=[];
 var imagenVolteada=[];// array que guarda todos los tags de imagenes que hay en la tabla
@@ -14,7 +15,7 @@ var imagenesViradasConExito=0; // contador de  imagenes que ya han sido volteada
 //
 var audiofondo = document.getElementById("audioultra");
 
-
+var nivelMain=parseInt(cadVariables,10);
 
 var avatar=JSON.parse(localStorage.getItem("sesion"));
 var fondo="";
@@ -25,7 +26,7 @@ if(avatar.genero=="m"){
 }else {
   fondo="../img/fondo-f.jpg";
 }
-genera_tabla(cadVariables);
+genera_tabla(nivelMain);
 
 
 //crearModalVictoria(avatar);
@@ -43,7 +44,7 @@ function genera_tabla(nivel) {
    var largo, ancho, mostra=0;
 var ubicad=[];
   switch(nivel) {
-      case "1":
+      case 1:
     imgse=obj.getTablero(2);
 
     tablero=obj.ubicarElementos(imgse);
@@ -54,13 +55,13 @@ var ubicad=[];
 
 
           break;
-      case "2":
+      case 2:
         imgse=obj.getTablero(3);
         tablero=obj.ubicarElementos(imgse);
       largo= 3;
       ancho= 2;
           break;
-          case "3":
+          case 3:
           imgse=obj.getTablero(4);
           tablero=obj.ubicarElementos(imgse);
          largo= 4;
@@ -89,6 +90,7 @@ var ubicad=[];
       imagenCelda.className="img";
       imagenVolteada.push(imagenCelda);
       imagenCelda.src=fondo;
+
       celda.setAttribute("onclick","mostrarImagen("+mostra+")");
 
       mostra++;
@@ -145,16 +147,21 @@ imagenesViradasConExito-=2;
  }
  if(imagenesViradasConExito==tablero.length){
    var audio = document.getElementById("audio");
+   nivelMain++;
 
+if(nivelMain<=3){
+setTimeout(juegonuevo, 1000);
+;}
+else {
    audio.play();
 audiofondo.pause();
 audiofondo.currentTime = 0;
    avatar.puntos+=1;
   crearModalVictoria(avatar);
-
+}
  }
 }
-function juegonuevo(nivel){
+function juegonuevo(){
    tablero=[];
    imagenVolteada=[];// array que guarda todos los tags de imagenes que hay en la tabla
   // se la utiliza para guardar y setearles el atributo src que contendra la imagen real
@@ -169,7 +176,9 @@ function juegonuevo(nivel){
    dialog=document.getElementById("dialog");
    dialog.innerHTML="";
 
-genera_tabla(nivel);
+   genera_tabla(nivelMain);
+//sleep(100000);
+
 
 }
 
@@ -189,7 +198,8 @@ function crearModalVictoria(avatar){
                 modificarPuntaje();
               var buton= document.createElement("img");
               buton.src="../img/nuevojuego.jpg";
-                buton.setAttribute("onclick","juegonuevo(cadVariables)");
+              nivelMain=1;
+                buton.setAttribute("onclick","juegonuevo(nivelMain)");
                id.prepend(buton);
                id.prepend(img);
                id.prepend(puntos);
@@ -255,3 +265,17 @@ function modificarPuntaje(){
  localStorage.setItem("avatares",JSON.stringify(arrayAvaters));
 
 }
+function sleep(milliseconds) {
+ var start = new Date().getTime();
+ for (var i = 0; i < 1e7; i++) {
+  if ((new Date().getTime() - start) > milliseconds) {
+   break;
+  }
+ }
+}
+/*var myVar = setInterval(myTimer, 1000);
+
+function myTimer() {
+    var d = new Date();
+    document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+}*/
