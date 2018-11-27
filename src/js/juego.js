@@ -19,11 +19,11 @@ var audiofondo = document.getElementById("audioultra");
 var avatar=JSON.parse(localStorage.getItem("sesion"));
 var fondo="";
 if(avatar.genero=="m"){
-  fondo="../img/nivel1.png";
+  fondo="../img/nivel2.png";
 
 
 }else {
-  fondo="../img/fondo-f.jpg";
+  fondo="../img/nivel1.png";
 }
 genera_tabla(cadVariables);
 
@@ -255,3 +255,5 @@ function modificarPuntaje(){
  localStorage.setItem("avatares",JSON.stringify(arrayAvaters));
 
 }
+
+
