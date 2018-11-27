@@ -55,16 +55,16 @@ var ubicad=[];
 
           break;
       case "2":
-        imgse=obj.getTablero(4);
+        imgse=obj.getTablero(3);
         tablero=obj.ubicarElementos(imgse);
-      largo= 4;
+      largo= 3;
       ancho= 2;
           break;
           case "3":
-          imgse=obj.getTablero(6);
+          imgse=obj.getTablero(4);
           tablero=obj.ubicarElementos(imgse);
          largo= 4;
-         ancho= 3;
+         ancho= 2;
               break;
       default:
         imgse=obj.getTablero(8);
