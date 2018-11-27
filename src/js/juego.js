@@ -13,9 +13,15 @@ var posicionTmp=[];// array para guardar las posiciones de los elementos selecci
 var imagenesViradasConExito=0; // contador de  imagenes que ya han sido volteadas exitosamente
 // Se lo va a utilizar para considerar si el jugador ya completó el juego
 //
+
 var audiofondo = document.getElementById("audioultra");
 
 var nivelMain=parseInt(cadVariables,10);
+
+var h1nivel=document.getElementById("hnivel");
+
+var contenh1=h1nivel.textContent;
+h1nivel.textContent=contenh1+" " + nivelMain;
 
 var avatar=JSON.parse(localStorage.getItem("sesion"));
 var fondo="";
@@ -178,7 +184,8 @@ function juegonuevo(){
 
    genera_tabla(nivelMain);
 //sleep(100000);
-
+var h1nivel=document.getElementById("hnivel");
+h1nivel.textContent=contenh1+" " + nivelMain;
 
 }
 
@@ -203,7 +210,7 @@ function crearModalVictoria(avatar){
                id.prepend(buton);
                id.prepend(img);
                id.prepend(puntos);
-
+               myMove();
 
                 //Get the screen height and width
                 var maskHeight = $(document).height();
@@ -266,11 +273,25 @@ function modificarPuntaje(){
 
 }
 
-}
-/*var myVar = setInterval(myTimer, 1000);
-
+var myVar = setInterval(myTimer, 1000);
+var time=0;
 function myTimer() {
     var d = new Date();
-    document.getElementById("demo").innerHTML = d.toLocaleTimeString();
-}*/
+    document.getElementById("tiempo").innerHTML = time;
+    time++;
+}
 
+function myMove() {
+  var elem = document.getElementById("animate");   
+  var pos = 350;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 0) {
+      clearInterval(id);
+    } else {
+      pos--; 
+      elem.style.top = pos +'px'; 
+      elem.style.top = pos + 'px'; 
+    }
+  }
+}
