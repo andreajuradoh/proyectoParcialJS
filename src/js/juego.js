@@ -83,9 +83,10 @@ var ubicad=[];
       // texto sea el contenido de <td>, ubica el elemento <td> al final
       // de la hilera de la tabla
       var celda = document.createElement("td");
-      celda.className="micelda";
+      celda.className="micelda hidden";
 
       var imagenCelda = document.createElement("img");
+      imagenCelda.className="img";
       imagenVolteada.push(imagenCelda);
       imagenCelda.src=fondo;
       celda.setAttribute("onclick","mostrarImagen("+mostra+")");
@@ -112,7 +113,8 @@ var ubicad=[];
 }
 function mostrarImagen(mostra){
   let compara=imagenVolteada[mostra].getAttribute("src");
-
+let audioclick = document.getElementById("audioclick");
+audioclick.play();
 audiofondo.play();
 if(compara==fondo){
 
