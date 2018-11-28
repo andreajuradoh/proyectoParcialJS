@@ -14,10 +14,12 @@ var botonson=document.getElementById("sonido");
 
 
     function sonidoCerdo() {
-      var sonido_cerdo = document.getElementById("videogato");
+      let audioclick = document.getElementById("audioclick");
+      audioclick.play();
+      var niveles=document.getElementById("padreniveles");
+      niveles.style.display="flex";
         var video=document.getElementById("video");
-        video.style.display="block";
-        sonido_cerdo.play();
+    
      }
 
 botonson.addEventListener('click', sonidoCerdo);

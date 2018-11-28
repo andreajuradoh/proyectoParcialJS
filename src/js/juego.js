@@ -152,7 +152,7 @@ imagenesViradasConExito-=2;
    nivelMain++;
 
 if(nivelMain<=3){
-setTimeout(juegonuevo, 1000);
+setTimeout(juegonuevo, 500);
 ;}
 else {
    audio.play();

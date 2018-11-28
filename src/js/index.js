@@ -11,7 +11,7 @@ for (var img in datos) {
   var puntos= document.createElement("h4");
   puntos.textContent=datos[img].puntos+" puntos";
   var imagenAvatar = document.createElement("img");
-
+ celda.id="tabla";
   celda.className='personal';
   imagenAvatar.src='../img/'+datos[img].nombre+'';
   imagenAvatar.setAttribute("onclick","sesion("+img+")");
