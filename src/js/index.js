@@ -34,3 +34,25 @@ avatar= datos[indice];
   localStorage.setItem("sesion",JSON.stringify(avatar));
 
 }
+
+var descargar=document.getElementById("export-button");
+descargar.addEventListener('click', exportJSON);
+
+function exportJSON() {
+    //var IEwindow = window.open();
+    //IEwindow.document.write('sep=,\r\n' + JSON.stringify(objJSON));
+    //IEwindow.document.close();
+    //IEwindow.document.execCommand('SaveAs', true, "datos.json");
+    //IEwindow.close();
+
+    let dataStr = JSON.stringify(datos);
+    let dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
+
+    let exportFileDefaultName = '../avatares.json';
+
+    let linkElement = document.createElement('a');
+    linkElement.setAttribute('href', dataUri);
+    linkElement.setAttribute('download', exportFileDefaultName);
+    linkElement.click();
+}
+

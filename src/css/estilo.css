@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Mystery+Quest");
+
 img {
   width: 100px;
   height: 90px;
@@ -49,7 +51,7 @@ display: none;
   position:absolute;
   z-index:7000;
   height:220px;
-background-image: url("../../img/globos.jpg");
+/*background-image: url("../../img/globos.jpg");*/
   display:none;
 }
 
@@ -91,4 +93,26 @@ background-image: url("../../img/globos.jpg");
 
 .editar{
   display: none;
+}
+
+
+
+#nivel h1{
+    font-family:"Mystery Quest", cursive;
+
+  font-size: 300%;
+    color: #53bdb5;
+    display: inline-block;
+
+}
+
+#nivel {
+
+background-color: #b2dedabd;
+    width: 200px;
+    height: 240px;
+}
+
+#tiempo{
+    margin-left: 420px;
 }
