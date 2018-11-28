@@ -31,7 +31,7 @@ if(avatar.genero=="m"){
 }else {
   fondo="../img/nivel2.png";
 }
-genera_tabla(cadVariables);
+genera_tabla(nivelMain);
 
 
 //crearModalVictoria(avatar);
@@ -73,10 +73,7 @@ var ubicad=[];
          ancho= 2;
               break;
       default:
-        imgse=obj.getTablero(8);
-        tablero=obj.ubicarElementos(imgse);
-       largo= 6;
-       ancho= 4;
+      return;
   }
 
   for (var i = 0; i < largo; i++) {

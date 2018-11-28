@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Mystery+Quest");
 
-body { 
+body {
 background-image: url(../../img/background-avatar.png);
 background-position: center center;
 background-repeat: no-repeat;
@@ -42,11 +42,15 @@ border-radius: 20px;
   margin-top: 40%;
     padding: 3%;
 }
-  .letrero{
-    margin-left: 400px;
-
-  
-  }
+.padre {
+  display: flex;
+  justify-content: center;
+}
+.hijo {
+  padding: 10px;
+  margin: 10px;
+text-align:center;
+}
 #audio{
 display: none;
 }
@@ -106,12 +110,19 @@ display: none;
   display: none;
 }
 
+.personal h4 {
+  font-family:"Mystery Quest", cursive;
 
+font-size: 300%;
+  color: #317b76;
+  display: inline-block;
+
+}
 
 #nivel h1{
     font-family:"Mystery Quest", cursive;
 
-  font-size: 300%;
+  font-size: 200%;
     color: #53bdb5;
     display: inline-block;
 
@@ -125,5 +136,5 @@ background-color: #b2dedabd;
 }
 
 #tiempo{
-    margin-left: 420px;
+  float: right;
 }
