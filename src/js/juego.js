@@ -265,14 +265,7 @@ function modificarPuntaje(){
  localStorage.setItem("avatares",JSON.stringify(arrayAvaters));
 
 }
-function sleep(milliseconds) {
- var start = new Date().getTime();
- for (var i = 0; i < 1e7; i++) {
-  if ((new Date().getTime() - start) > milliseconds) {
-   break;
-  }
- }
-}
+
 /*var myVar = setInterval(myTimer, 1000);
 
 function myTimer() {
