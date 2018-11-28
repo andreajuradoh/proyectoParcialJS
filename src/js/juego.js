@@ -26,13 +26,12 @@ h1nivel.textContent=contenh1+" " + nivelMain;
 var avatar=JSON.parse(localStorage.getItem("sesion"));
 var fondo="";
 if(avatar.genero=="m"){
-  fondo="../img/nivel2.png";
-
+  fondo="../img/nivel1.png";
 
 }else {
-  fondo="../img/nivel1.png";
+  fondo="../img/nivel2.png";
 }
-genera_tabla(nivelMain);
+genera_tabla(cadVariables);
 
 
 //crearModalVictoria(avatar);
