@@ -5,7 +5,10 @@
     <link rel="stylesheet" href="css/estilo.css">
 
          <link rel="stylesheet" href="css/estilohome.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+      
+
 
   <script type="text/javascript" src="imagenes.json"></script>
 
@@ -16,20 +19,18 @@
     <title>Jugando</title>
   </head>
   <body>
-<div id="nivel"  style="; left:40; top: 0; width: 50%; height:50%"; >
-    <h1 id="hnivel">nivel</h1>
+<div id="nivel"  style="; left:40; top: 0; width: 60%; height:50%"; >
+    <h1 id="hnivel">Nivel</h1>
     <h1 id="tiempo"></h1>
       </div>
 
-    <div class="">
- 
-
-    </div>
+    
 <div class="table-responsive" id="tabla-main" >
 
 
 </div>
-
+      
+    
 
 <div id="boxes">
 
@@ -46,9 +47,19 @@
 	<!-- Do not remove div#mask, because you'll need it to fill the whole screen -->
  	<div id="mask"></div>
 </div>
+      
+        <div class="row">
+          <div class="col-md-12" id="regresar">
+      <a href="index.html"> <img  src="../img/regresar.png" /></a>
+
+    </div>
+          </div>
 
 
-     <a href="index.html"> <img id="regresar" src="../img/regresar.png" style="; left:40; top: 0; width: 10%; height:10%";  /></a>
+
+<audio id="correcto">
+<source type="audio/wav" src="../audio/correcto.mp3">
+</audio>
 <audio id="audio" controls>
 <source type="audio/wav" src="../audio/ganaste.mp3">
 </audio>
