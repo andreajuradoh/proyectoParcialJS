@@ -1,5 +1,5 @@
  var background =document.getElementById("musicBackground");
-        background.volume=0.5;
+        background.volume=0.09;
         background.play();
 
 

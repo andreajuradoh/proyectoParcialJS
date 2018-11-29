@@ -118,6 +118,7 @@ var ubicad=[];
 function mostrarImagen(mostra){
   let compara=imagenVolteada[mostra].getAttribute("src");
 let audioclick = document.getElementById("audioclick");
+    audiofondo.volumen = 0.09;
 audioclick.play();
 audiofondo.play();
 if(compara==fondo){

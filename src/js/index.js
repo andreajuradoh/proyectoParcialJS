@@ -1,6 +1,7 @@
 
 var sonido_bg =document.getElementById('background-music');
-sonido_bg.volumen = 0.5;
+sonido_bg.volumen = 0.09;
+
 sonido_bg.play();
 
 var escogePersonaje =document.getElementById('elige-personaje');
