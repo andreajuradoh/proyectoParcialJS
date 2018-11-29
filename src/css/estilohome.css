@@ -1,29 +1,18 @@
 img {
-
-
-  display:block;
-margin:auto;
-
+    display:block;
+    margin:auto;
 }
-
-
-
 
 #nivel{
-      display:block;
-margin:auto;
-    width:400px;
-    height:300px;
-
+    display:block;
+    margin:auto;
+    width:500px;
+    height:400px;
 }
 
-#regresar{
-    float: left;
-    margin-top: 40px;
-}
 
 body {
-background-image: url(../../img/fondojuego.jpg);
+background-image: url(../../img/background-avatar.png);
 background-position: center center;
 background-repeat: no-repeat;
 background-attachment: fixed;
@@ -38,12 +27,8 @@ background-size: cover;
 }
 
 #sonido{
-      padding-top: 40px;
 
 }
-
-
-
 
 .padre {
   display: none;
@@ -59,5 +44,11 @@ background-size: cover;
   width: 50px;
   height: 50px;
   position: absolute;
- 
+  background-color: red;
 }
+
+#regresar {
+  padding-top: 1%;
+    padding-bottom: 1%;
+}
+

@@ -10,9 +10,20 @@ background-size: cover;
 
 
 img {
-  width: 100px;
- 
+  width: 80px;
 }
+
+.avatar-container {
+    text-align: center;
+    display: block; 
+    margin: 0 auto;
+    max-width: 60%;
+    width: 50%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+
 
 .mi-tablas{
 text-align:center;
@@ -98,7 +109,7 @@ display: none;
   width:375px;
   height:220px;
   background: #bcfdec;
-    opacity: 0.75;
+  opacity: 0.75;
 
 }
 
@@ -133,11 +144,14 @@ font-size: 300%;
 
 #nivel {
 
-background-color: #b2dedabd;
+background-color: white;
     width: 200px;
     height: 240px;
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: 2px 2px 2px 2px  ;
 }
 
 #tiempo{
   float: right;
 }
+

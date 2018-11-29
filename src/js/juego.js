@@ -149,10 +149,12 @@ imagenesViradasConExito-=2;
  }
  if(imagenesViradasConExito==tablero.length){
    var audio = document.getElementById("audio");
+    var audioCorrecto =  document.getElementById("correcto"); 
    nivelMain++;
 
 if(nivelMain<=3){
 setTimeout(juegonuevo, 500);
+    audioCorrecto.play();
 ;}
 else {
    audio.play();
