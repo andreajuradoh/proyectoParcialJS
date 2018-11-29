@@ -1,12 +1,22 @@
+jQuery("body").trigger("click");
+$(document).ready(function(){
+  $("body").click(function (){
+    sonido_bg.volume = 0.3;
+
+    sonido_bg.play();
+    escogePersonaje.volume =1;
+    escogePersonaje.play();
+  });
+});
+
+
+
 
 var sonido_bg =document.getElementById('background-music');
-sonido_bg.volumen = 0.09;
 
-sonido_bg.play();
 
 var escogePersonaje =document.getElementById('elige-personaje');
-escogePersonaje.volume =1;
-escogePersonaje.play();
+
 
 //accion.addEventListener("click", colocarAvatar);
 

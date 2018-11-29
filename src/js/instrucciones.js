@@ -1,8 +1,13 @@
  var background =document.getElementById("musicBackground");
-        background.volume=0.09;
-        background.play();
 
 
+        jQuery("body").trigger("click");
+        $(document).ready(function(){
+          $("body").click(function (){
+            background.volume=0.3;
+            background.play();
+          });
+        });
 
 cadVariables=JSON.parse(localStorage.getItem("sesion"));
 colocarAvatar(cadVariables);
@@ -26,7 +31,7 @@ var botonson= document.getElementById("sonido");
       var niveles=document.getElementById("padreniveles");
       niveles.style.display="flex";
         var video=document.getElementById("video");
-    
+
      }
 
 botonson.addEventListener('click', sonidoCerdo);
