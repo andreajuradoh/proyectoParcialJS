@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="css/estilo.css">
 
    <link rel="stylesheet" href="css/estilohome.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+ <link rel="stylesheet" href="css/bootstrap.css">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+
 
   <script type="text/javascript" src="imagenes.json"></script>
   <script src="js/jquery-3.3.1.js" type="text/javascript"></script>
@@ -17,43 +19,50 @@
   </head>
   <body class="container">
 
-
-    <div class="col-md-4" id="conten-avat" >
+      
+      
+ <div class="row"  style="margin-top: 15%;">
+    <div class="col-md-12" id="conten-avat" >
 
     </div>
+     </div>
 
+<div class="row" style="padding: 5%;">
+<div class="col-md-12">
+    <img id="sonido" src="../img/question.gif" alt=""  >
 
-<div class="col-md-4">
-
-    <img id="sonido" src="../img/incognita.jpg" alt=""  >
-
+</div>
 </div>
 
 
 
-
-<div class="padre container" id="padreniveles">
-
-
-<div id="nivel1" class="hijo ">
-      <a href="juego.html?1"><img src="../img/nivel1.png"></a>
+<div class="row">
+ <div class="col-md-4" id="nivel1">
+      <a href="juego.html?1"><img src="../img/n1.png"></a>
       </div>
 
-      <div id="nivel2" class="hijo">
-        <a href="juego.html?2"><img src="../img/nivel2.png"></a>
+      <div class="col-md-4" id="nivel2" >
+        <a href="juego.html?2"><img src="../img/n2.png"></a>
       </div>
-      <div id="nivel3" class="hijo">
-        <a href="juego.html?3"><img src="../img/nivel3.png"></a>
+      <div class="col-md-4" id="nivel3">
+        <a href="juego.html?3"><img src="../img/n3.png"></a>
       </div>
 
 
 </div>
 
+<audio id="musicBackground" >
+<source type="audio/wav" src="../audio/music-background.mp3" >
+</audio>      
 
 
 <audio id="audioclick" controls>
 <source type="audio/wav" src="../audio/click.mp3" >
 </audio>
+      
+<audio id="escogeNivel">
+<source type="audio/wav" src="../audio/escoge-nivel.mp3" >
+</audio>      
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
