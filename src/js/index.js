@@ -12,7 +12,7 @@ escogePersonaje.play();
 var conten=document.getElementById("contenAvatares");
 var datos=JSON.parse(localStorage.getItem("avatares"));
 var mostra="";
-  
+
 for (var img in datos) {
   var celda = document.createElement("div");
   var puntos= document.createElement("h4");
@@ -23,7 +23,7 @@ for (var img in datos) {
   imagenAvatar.setAttribute("onclick","sesion("+img+")");
   var link = document.createElement("a");
   link.href='instrucciones.html';
-  
+
 celda.appendChild(puntos);
 celda.appendChild(link);
 
@@ -32,8 +32,7 @@ conten.appendChild(celda); //agrega los avatares
 
 //console.log(datos[img]);
 }
-tblBody.appendChild(hilera);
-conten.appendChild(tblBody);
+
 
 function sesion(indice){
   var avatar
