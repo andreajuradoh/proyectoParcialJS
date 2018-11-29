@@ -93,7 +93,7 @@ var ubicad=[];
       imagenVolteada.push(imagenCelda);
       imagenCelda.src=fondo;
 
-      celda.setAttribute("onclick","mostrarImagen("+mostra+")");
+      imagenCelda.setAttribute("onclick","mostrarImagen("+mostra+")");
 
       mostra++;
       celda.appendChild(imagenCelda);
@@ -118,7 +118,7 @@ var ubicad=[];
 function mostrarImagen(mostra){
   let compara=imagenVolteada[mostra].getAttribute("src");
 let audioclick = document.getElementById("audioclick");
-    audiofondo.volumen = 0.09;
+    audiofondo.volume = 0.1;
 audioclick.play();
 audiofondo.play();
 if(compara==fondo){
@@ -150,7 +150,7 @@ imagenesViradasConExito-=2;
  }
  if(imagenesViradasConExito==tablero.length){
    var audio = document.getElementById("audio");
-    var audioCorrecto =  document.getElementById("correcto"); 
+    var audioCorrecto =  document.getElementById("correcto");
    nivelMain++;
 
 if(nivelMain<=3){
@@ -174,13 +174,14 @@ function juegonuevo(){
   // se lo utiliza para verificar si la imagen seleccionada anteriormente es igual a la seleccionada actualmente
    contadorVeces=0; // variable que cuenta la cantidad de clicks que han habido
   posicionTmp=[];// array para guardar las posiciones de los elementos seleccionados
-
+time=0;
    imagenesViradasConExito=0;
    tabla=document.getElementById("tabla-main");
    tabla.innerHTML="";
    dialog=document.getElementById("dialog");
    dialog.innerHTML="";
-
+       $('#mask').hide();
+  $('.window').hide();
    genera_tabla(nivelMain);
 //sleep(100000);
 var h1nivel=document.getElementById("hnivel");
@@ -210,17 +211,17 @@ function crearModalVictoria(avatar){
                 let  globorojo=document.createElement("img");
                  globorojo.id="animate";
               globorojo.src="../img/globorojo.png"
-    
+
        let  globoamarillo=document.createElement("img");
                  globoamarillo.id="animate";
               globoamarillo.src="../img/globoamarillo.png"
-    
-    
+
+
                id.prepend(buton);
                id.prepend(img);
                id.prepend(puntos);
                id.prepend( globorojo);
-   
+
                myMove();
      id.prepend(globoamarillo);
     myMove2();
@@ -256,11 +257,6 @@ function crearModalVictoria(avatar){
                 $('#mask, .window').hide();
         });
 
-        //if mask is clicked
-        $('#mask').click(function () {
-                $(this).hide();
-                $('.window').hide();
-        });
 
 
 
@@ -285,9 +281,9 @@ function modificarPuntaje(){
  localStorage.setItem("avatares",JSON.stringify(arrayAvaters));
 
 }
-
-var myVar = setInterval(myTimer, 1000);
 var time=0;
+var myVar = setInterval(myTimer, 1000);
+
 function myTimer() {
     var d = new Date();
     document.getElementById("tiempo").innerHTML = time;
