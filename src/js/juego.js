@@ -204,13 +204,23 @@ function crearModalVictoria(avatar){
               buton.src="../img/nuevojuego.jpg";
               nivelMain=1;
                 buton.setAttribute("onclick","juegonuevo(nivelMain)");
-                let divAni=document.createElement("div");
-                divAni.id="animate";
+                let  globorojo=document.createElement("img");
+                 globorojo.id="animate";
+              globorojo.src="../img/globorojo.png"
+    
+       let  globoamarillo=document.createElement("img");
+                 globoamarillo.id="animate";
+              globoamarillo.src="../img/globoamarillo.png"
+    
+    
                id.prepend(buton);
                id.prepend(img);
                id.prepend(puntos);
-               id.prepend(divAni);
+               id.prepend( globorojo);
+   
                myMove();
+     id.prepend(globoamarillo);
+    myMove2();
 
                 //Get the screen height and width
                 var maskHeight = $(document).height();
@@ -280,6 +290,25 @@ function myTimer() {
     document.getElementById("tiempo").innerHTML = time;
     time++;
 }
+
+
+function myMove2() {
+  var elem = document.getElementById("animate");
+  var pos = 350;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 0) {
+      clearInterval(id);
+    } else {
+      pos--;
+      elem.style.right = pos +'px';
+      elem.style.top = pos + 'px';
+    }
+  }
+}
+
+
+
 
 function myMove() {
   var elem = document.getElementById("animate");
