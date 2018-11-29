@@ -201,7 +201,7 @@ function crearModalVictoria(avatar){
                 localStorage.setItem("sesion",JSON.stringify(avatar));
                 modificarPuntaje();
               var buton= document.createElement("img");
-              buton.src="../img/nuevojuego.jpg";
+              buton.src="../img/botoonnuevojuego.png";
               nivelMain=1;
                 buton.setAttribute("onclick","juegonuevo(nivelMain)");
                 let  globorojo=document.createElement("img");

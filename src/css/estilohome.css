@@ -18,7 +18,8 @@ margin:auto;
 }
 
 #regresar{
-    float: left
+    float: left;
+    margin-top: 40px;
 }
 
 body {

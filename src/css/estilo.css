@@ -97,7 +97,8 @@ display: none;
 #boxes #dialog {
   width:375px;
   height:220px;
-  background: #23C480;
+  background: #bcfdec;
+    opacity: 0.75;
 
 }
 
