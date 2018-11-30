@@ -184,7 +184,7 @@ time=0;
        $('#mask').hide();
   $('.window').hide();
    genera_tabla(nivelMain);
-//sleep(100000);
+
 var h1nivel=document.getElementById("hnivel");
 h1nivel.textContent=contenh1+" " + nivelMain;
 

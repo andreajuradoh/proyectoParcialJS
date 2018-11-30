@@ -154,3 +154,49 @@ background-color: white;
 #tiempo{
   float: right;
 }
+img {
+    display:block;
+    margin:auto;
+}
+
+#nivel{
+    display:block;
+    margin:auto;
+    width:500px;
+    height:400px;
+}
+
+#video{
+    padding-top: 100px;
+    margin-left: 650px;
+    display: none;
+}
+
+#sonido{
+
+}
+
+.padre {
+  display: none;
+  justify-content: center;
+}
+.hijo {
+  padding: 10px;
+  margin: 10px;
+
+}
+
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+
+}
+
+#regresar {
+  padding-top: 1%;
+    padding-bottom: 1%;
+}
+#padreniveles{
+  display: none;
+}
