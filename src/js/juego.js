@@ -26,10 +26,10 @@ h1nivel.textContent=contenh1+" " + nivelMain;
 var avatar=JSON.parse(localStorage.getItem("sesion"));
 var fondo="";
 if(avatar.genero=="m"){
-  fondo="../img/question.gif";
+  fondo="../img/questionniño.gif";
 
 }else {
-  fondo="../img/nivel2.png";
+  fondo="../img/questionrosa.gif";
 }
 genera_tabla(nivelMain);
 
