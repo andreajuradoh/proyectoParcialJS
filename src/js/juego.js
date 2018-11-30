@@ -26,7 +26,7 @@ h1nivel.textContent=contenh1+" " + nivelMain;
 var avatar=JSON.parse(localStorage.getItem("sesion"));
 var fondo="";
 if(avatar.genero=="m"){
-  fondo="../img/nivel1.png";
+  fondo="../img/question.gif";
 
 }else {
   fondo="../img/nivel2.png";
@@ -119,8 +119,9 @@ function mostrarImagen(mostra){
   let compara=imagenVolteada[mostra].getAttribute("src");
 let audioclick = document.getElementById("audioclick");
     audiofondo.volume = 0.1;
+    audiofondo.play();
 audioclick.play();
-audiofondo.play();
+
 if(compara==fondo){
 
  imgTmp.push(tablero[mostra]);
