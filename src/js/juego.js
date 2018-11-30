@@ -211,11 +211,11 @@ function crearModalVictoria(avatar){
                 buton.setAttribute("onclick","juegonuevo(nivelMain)");
                 let  globorojo=document.createElement("img");
                  globorojo.id="animate";
-              globorojo.src="../img/globorojo.png"
+              globorojo.src="../img/pirotecnia2.gif"
 
        let  globoamarillo=document.createElement("img");
                  globoamarillo.id="animate";
-              globoamarillo.src="../img/globoamarillo.png"
+              globoamarillo.src="../img/piro3.gif"
 
 
                id.prepend(buton);
