@@ -163,6 +163,7 @@ else {
 audiofondo.pause();
 audiofondo.currentTime = 0;
    avatar.puntos+=1;
+     clearInterval(myVar);
   crearModalVictoria(avatar);
 }
  }
@@ -176,6 +177,7 @@ function juegonuevo(){
    contadorVeces=0; // variable que cuenta la cantidad de clicks que han habido
   posicionTmp=[];// array para guardar las posiciones de los elementos seleccionados
 time=0;
+myVar= setInterval(myTimer, 1000);
    imagenesViradasConExito=0;
    tabla=document.getElementById("tabla-main");
    tabla.innerHTML="";
@@ -286,7 +288,7 @@ var time=0;
 var myVar = setInterval(myTimer, 1000);
 
 function myTimer() {
-    var d = new Date();
+
     document.getElementById("tiempo").innerHTML = time;
     time++;
 }
