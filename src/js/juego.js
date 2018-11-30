@@ -163,6 +163,7 @@ else {
 audiofondo.pause();
 audiofondo.currentTime = 0;
    avatar.puntos+=1;
+   time=0;
      clearInterval(myVar);
   crearModalVictoria(avatar);
 }
@@ -176,8 +177,8 @@ function juegonuevo(){
   // se lo utiliza para verificar si la imagen seleccionada anteriormente es igual a la seleccionada actualmente
    contadorVeces=0; // variable que cuenta la cantidad de clicks que han habido
   posicionTmp=[];// array para guardar las posiciones de los elementos seleccionados
-time=0;
-myVar= setInterval(myTimer, 1000);
+
+
    imagenesViradasConExito=0;
    tabla=document.getElementById("tabla-main");
    tabla.innerHTML="";
@@ -191,7 +192,10 @@ var h1nivel=document.getElementById("hnivel");
 h1nivel.textContent=contenh1+" " + nivelMain;
 
 }
-
+function overJuego(nivel) {
+ myVar= setInterval(myTimer, 1000);
+  juegonuevo(nivel)
+}
 function crearModalVictoria(avatar){
 
 
@@ -210,7 +214,7 @@ function crearModalVictoria(avatar){
               var buton= document.createElement("img");
               buton.src="../img/botoonnuevojuego.png";
               nivelMain=1;
-                buton.setAttribute("onclick","juegonuevo(nivelMain)");
+                buton.setAttribute("onclick","overJuego(nivelMain)");
                 let  globorojo=document.createElement("img");
                  globorojo.id="animate";
               globorojo.src="../img/pirotecnia2.gif"
