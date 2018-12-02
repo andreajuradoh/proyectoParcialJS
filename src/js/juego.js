@@ -134,19 +134,22 @@ imagenesViradasConExito++;
 
  contadorVeces++;
 
- if(contadorVeces>=3){
-   contadorVeces=1;
-   if(imgTmp[imgTmp.length-3].id!=imgTmp[imgTmp.length-2].id){
-    let tmp=posicionTmp.pop();//eliminoultimap pos
+ if(contadorVeces>=2){
+   contadorVeces=0;
+   if(imgTmp[imgTmp.length-2].id!=imgTmp[imgTmp.length-1].id){
     let saco=posicionTmp.pop();//elimino 2da pos
-imagenesViradasConExito-=2;
+       
+     imagenesViradasConExito-=2;
+       setTimeout(volver, 500);
+      function volver(){
+      
     imagenVolteada[saco].src=fondo;
     saco=posicionTmp.pop();
     imagenVolteada[saco].src=fondo;
-    posicionTmp.push(tmp);
+   
 
     imgTmp=[];
-    imgTmp.push(tablero[tmp]);
+      }
 
   }
  }
@@ -165,16 +168,18 @@ else {
 audiofondo.pause();
 audiofondo.currentTime = 0;
    avatar.puntos+=1;
-<<<<<<< HEAD
+
     //clearInterval(myVar);//esto hace que el tiempo se detenga cunando se termine el juego 
-=======
+
    time=0;
      clearInterval(myVar);
->>>>>>> 789803c10237fb501a6e01cc2c85c28be653afd2
+
   crearModalVictoria(avatar);
 }
  }
 }
+
+
 function juegonuevo(){
     //setInterval(myTimer);
    tablero=[];
