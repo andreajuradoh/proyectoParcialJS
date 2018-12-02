@@ -91,9 +91,11 @@ var ubicad=[];
       var imagenCelda = document.createElement("img");
       imagenCelda.className="img";
       imagenVolteada.push(imagenCelda);
+        
       imagenCelda.src=fondo;
 
       imagenCelda.setAttribute("onclick","mostrarImagen("+mostra+")");
+//setInterval(myTimer, 1000);
 
       mostra++;
       celda.appendChild(imagenCelda);
@@ -135,8 +137,8 @@ imagenesViradasConExito++;
  if(contadorVeces>=3){
    contadorVeces=1;
    if(imgTmp[imgTmp.length-3].id!=imgTmp[imgTmp.length-2].id){
-    let tmp=posicionTmp.pop();
-    let saco=posicionTmp.pop();
+    let tmp=posicionTmp.pop();//eliminoultimap pos
+    let saco=posicionTmp.pop();//elimino 2da pos
 imagenesViradasConExito-=2;
     imagenVolteada[saco].src=fondo;
     saco=posicionTmp.pop();
@@ -163,11 +165,13 @@ else {
 audiofondo.pause();
 audiofondo.currentTime = 0;
    avatar.puntos+=1;
+    //clearInterval(myVar);//esto hace que el tiempo se detenga cunando se termine el juego 
   crearModalVictoria(avatar);
 }
  }
 }
 function juegonuevo(){
+    //setInterval(myTimer);
    tablero=[];
    imagenVolteada=[];// array que guarda todos los tags de imagenes que hay en la tabla
   // se la utiliza para guardar y setearles el atributo src que contendra la imagen real
@@ -316,7 +320,7 @@ function myMove() {
   var id = setInterval(frame, 5);
   function frame() {
     if (pos == 0) {
-      clearInterval(id);
+      clearInterval(id);//detener la funcion q se esta ejecutando
     } else {
       pos--;
       elem.style.top = pos +'px';
