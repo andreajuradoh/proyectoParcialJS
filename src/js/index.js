@@ -21,6 +21,7 @@ var escogePersonaje =document.getElementById('elige-personaje');
 //accion.addEventListener("click", colocarAvatar);
 
 var conten=document.getElementById("contenAvatares");
+
 var datos=JSON.parse(localStorage.getItem("avatares"));
 var mostra="";
 
@@ -47,7 +48,7 @@ conten.appendChild(celda); //agrega los avatares
 
 //crea una variable avatar 
 function sesion(indice){
-  var avatar
+  var avatar;
 avatar= datos[indice];
 
 //  localStorage.clear();

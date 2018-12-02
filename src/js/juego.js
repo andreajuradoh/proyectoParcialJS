@@ -165,7 +165,12 @@ else {
 audiofondo.pause();
 audiofondo.currentTime = 0;
    avatar.puntos+=1;
+<<<<<<< HEAD
     //clearInterval(myVar);//esto hace que el tiempo se detenga cunando se termine el juego 
+=======
+   time=0;
+     clearInterval(myVar);
+>>>>>>> 789803c10237fb501a6e01cc2c85c28be653afd2
   crearModalVictoria(avatar);
 }
  }
@@ -179,7 +184,8 @@ function juegonuevo(){
   // se lo utiliza para verificar si la imagen seleccionada anteriormente es igual a la seleccionada actualmente
    contadorVeces=0; // variable que cuenta la cantidad de clicks que han habido
   posicionTmp=[];// array para guardar las posiciones de los elementos seleccionados
-time=0;
+
+
    imagenesViradasConExito=0;
    tabla=document.getElementById("tabla-main");
    tabla.innerHTML="";
@@ -188,12 +194,15 @@ time=0;
        $('#mask').hide();
   $('.window').hide();
    genera_tabla(nivelMain);
-//sleep(100000);
+
 var h1nivel=document.getElementById("hnivel");
 h1nivel.textContent=contenh1+" " + nivelMain;
 
 }
-
+function overJuego(nivel) {
+ myVar= setInterval(myTimer, 1000);
+  juegonuevo(nivel)
+}
 function crearModalVictoria(avatar){
 
 
@@ -212,7 +221,7 @@ function crearModalVictoria(avatar){
               var buton= document.createElement("img");
               buton.src="../img/botoonnuevojuego.png";
               nivelMain=1;
-                buton.setAttribute("onclick","juegonuevo(nivelMain)");
+                buton.setAttribute("onclick","overJuego(nivelMain)");
                 let  globorojo=document.createElement("img");
                  globorojo.id="animate";
               globorojo.src="../img/pirotecnia2.gif"
@@ -290,7 +299,7 @@ var time=0;
 var myVar = setInterval(myTimer, 1000);
 
 function myTimer() {
-    var d = new Date();
+
     document.getElementById("tiempo").innerHTML = time;
     time++;
 }
