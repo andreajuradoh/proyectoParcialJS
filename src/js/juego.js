@@ -165,12 +165,12 @@ else {
 audiofondo.pause();
 audiofondo.currentTime = 0;
    avatar.puntos+=1;
-<<<<<<< HEAD
+
     //clearInterval(myVar);//esto hace que el tiempo se detenga cunando se termine el juego 
-=======
+
    time=0;
      clearInterval(myVar);
->>>>>>> 789803c10237fb501a6e01cc2c85c28be653afd2
+
   crearModalVictoria(avatar);
 }
  }
