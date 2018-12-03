@@ -28,6 +28,7 @@ var mostra="";
 for (var img in datos) {
   var celda = document.createElement("div");
   var puntos= document.createElement("h4");
+    //esto como es un arreglo datos[]
   puntos.textContent=datos[img].puntos+" puntos";
   var imagenAvatar = document.createElement("img");
 
@@ -35,7 +36,7 @@ for (var img in datos) {
   imagenAvatar.setAttribute("onclick","sesion("+img+")");
   var link = document.createElement("a");
   link.href='instrucciones.html';
-
+//le metemos los valores al div celda es um div
 celda.appendChild(puntos);
 celda.appendChild(link);
 
@@ -45,7 +46,7 @@ conten.appendChild(celda); //agrega los avatares
 //console.log(datos[img]);
 }
 
-
+//crea una variable avatar 
 function sesion(indice){
   var avatar;
 avatar= datos[indice];
