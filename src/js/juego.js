@@ -69,8 +69,8 @@ var ubicad=[];
           case 3:
           imgse=obj.getTablero(4);
           tablero=obj.ubicarElementos(imgse);
-         largo= 2;
-         ancho= 4;
+         largo= 4;
+         ancho= 2;
               break;
       default:
       return;
