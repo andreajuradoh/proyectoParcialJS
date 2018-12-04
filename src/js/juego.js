@@ -140,6 +140,8 @@ imagenesViradasConExito++;
     let tmp=posicionTmp.pop();//eliminoultimap pos
     let saco=posicionTmp.pop();//elimino 2da pos
 imagenesViradasConExito-=2;
+     var respuestaIncorrecta = document.getElementById("respuesta-incorrecta");
+    respuestaIncorrecta.play();
     imagenVolteada[saco].src=fondo;
     saco=posicionTmp.pop();
     imagenVolteada[saco].src=fondo;
