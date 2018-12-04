@@ -233,9 +233,12 @@ function crearModalVictoria(avatar){
   
                 var salir= document.createElement("img");
               salir.src="../img/salir.png";
+
     var linsalir= document.createElement("a");
     linsalir.href="index.html";
     linsalir.appendChild(salir);
+
+
             salir.className= "salir-icon";
                 let  globorojo=document.createElement("img");
                  globorojo.id="animate";
@@ -247,7 +250,11 @@ function crearModalVictoria(avatar){
 
 
                id.prepend(buton);
+
               id.prepend(linsalir);
+
+              id.prepend(salir);
+
                id.prepend(img);
                id.prepend(puntos);
                id.prepend( globorojo);
