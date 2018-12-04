@@ -39,13 +39,14 @@ genera_tabla(nivelMain);
 function genera_tabla(nivel) {
   // Obtener la referencia del elemento body
 
+    
 
   var body = document.getElementsByTagName("body")[0];
   var div=document.getElementById("tabla-main");
 
-  var tabla   = document.createElement("table");
+  var tabla   = document.createElement("div");
     tabla.className= "mi-tablas";
-  var tblBody = document.createElement("tbody");
+  var tblBody = document.createElement("div");
    var largo, ancho, mostra=0;
 var ubicad=[];
   switch(nivel) {
@@ -69,8 +70,8 @@ var ubicad=[];
           case 3:
           imgse=obj.getTablero(4);
           tablero=obj.ubicarElementos(imgse);
-         largo= 4;
-         ancho= 2;
+         largo= 2;
+         ancho= 4;
               break;
       default:
       return;
@@ -79,13 +80,16 @@ var ubicad=[];
   for (var i = 0; i < largo; i++) {
 
     // Crea las hileras de la tabla
-    var hilera = document.createElement("tr");
+    var hilera = document.createElement("div");
+      hilera.className="fila";
+     
+      
 
     for (var j = 0; j < ancho; j++) {
       // Crea un elemento <td> y un nodo de texto, haz que el nodo de
       // texto sea el contenido de <td>, ubica el elemento <td> al final
       // de la hilera de la tabla
-      var celda = document.createElement("td");
+      var celda = document.createElement("div");
       celda.className="micelda hidden";
 
       var imagenCelda = document.createElement("img");
