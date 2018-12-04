@@ -16,7 +16,7 @@ div.innerHTML="";
   var tdId= document.createElement("td");
   tdId.innerHTML="Id";
   var tdNombre= document.createElement("td");
-  tdNombre.innerHTML="Nombre";
+  tdNombre.innerHTML="Foto";
   var tdPunto= document.createElement("td");
   tdPunto.innerHTML="Puntos";
   var tdGenero= document.createElement("td");
@@ -33,7 +33,13 @@ div.innerHTML="";
     var celdaId= document.createElement("td");
     celdaId.innerHTML=arrayAvaters[variable].id;
     var celdaNombre= document.createElement("td");
-    celdaNombre.innerHTML=arrayAvaters[variable].nombre;
+    let imgFoto= document.createElement("img");
+    if(arrayAvaters[variable].nombre.substring(0,4)=="data"){
+      imgFoto.src=arrayAvaters[variable].nombre;
+      imgFoto.className="rounded-circle personalImg";
+    }else
+    imgFoto.src="../img/"+arrayAvaters[variable].nombre;
+    celdaNombre.appendChild(imgFoto);
 
     var celdaPunto= document.createElement("td");
     celdaPunto.innerHTML=arrayAvaters[variable].puntos;
@@ -77,13 +83,14 @@ function nuevoUsuario(){
 function guardarUsuario(){
   var punto=document.getElementById("punto");
   var genero=document.getElementById("genero");
-  var foto=document.getElementById("foto");
+  //var foto=document.getElementById("foto");
+  let foto = $("#fotoadd").attr("src");
   var id=arrayAvaters.length+1;
  var obj= new Avatar();
  var pts=parseInt(punto.value,10);
  obj.puntos=pts;
  obj.genero=genero.value;
- obj.nombre=foto.value;
+ obj.nombre=foto;
  obj.id=id;
  arrayAvaters.push(obj);
 localStorage.setItem("avatares",JSON.stringify(arrayAvaters));
@@ -107,7 +114,27 @@ let indice=0;
   localStorage.setItem("avatares",JSON.stringify(arrayAvaters));
   listarUsuario();
 }
+function readURL(input, id) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
 
+        reader.onload = function (e) {
+            console.log(e.target.result);
+
+            $('#'+id).attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+$("#foto").change(function(){
+    readURL(this, "fotoadd");
+});
+
+$("#fotoedit").change(function(){
+    readURL(this, "fotoaddedit");
+});
+// EDITAR
 function editar(id){
   let div=document.getElementById("editar");
   div.style.display="block";
@@ -123,11 +150,7 @@ let guardar=document.getElementById("btnEditar");
       if (arrayAvaters[variable].id==id) {
       punto.value=arrayAvaters[variable].puntos;
       idCampo.textContent=arrayAvaters[variable].id;
-      let option= document.createElement("option");
-      option.selected="true";
-      option.value=arrayAvaters[variable].nombre;
-      option.textContent=arrayAvaters[variable].nombre;
-      foto.appendChild(option);
+
      let optiongenereo=document.createElement("option");
      optiongenereo.selected="true";
      optiongenereo.value=arrayAvaters[variable].genero;
@@ -144,15 +167,18 @@ let guardar=document.getElementById("btnEditar");
 
 
 }
+
+
 function update(id){
-  var objEditar= new Avatar();
-  var punto=document.getElementById("puntoedit");
-  var genero=document.getElementById("generoedit");
-  var foto=document.getElementById("fotoedit");
-var pts=parseInt(punto.value,10);
+  let objEditar= new Avatar();
+  let punto=document.getElementById("puntoedit");
+  let genero=document.getElementById("generoedit");
+
+    let foto = $("#fotoaddedit").attr("src");
+    let pts=parseInt(punto.value,10);
   objEditar.puntos=pts;
   objEditar.genero=genero.value;
-  objEditar.nombre=foto.value;
+  objEditar.nombre=foto;
    objEditar.id=id;
   let indice=0;
     for (var variable in arrayAvaters) {

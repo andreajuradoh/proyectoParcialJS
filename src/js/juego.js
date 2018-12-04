@@ -127,6 +127,10 @@ audioclick.play();
 if(compara==fondo){
 
  imgTmp.push(tablero[mostra]);
+ if(tablero[mostra].nombre.substring(0,4)=="data"){
+   imagenVolteada[mostra].src=tablero[mostra].nombre;
+
+ }else
  imagenVolteada[mostra].src="../img/"+tablero[mostra].nombre;
 
 imagenesViradasConExito++;

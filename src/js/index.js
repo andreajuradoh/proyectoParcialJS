@@ -31,7 +31,10 @@ for (var img in datos) {
     //esto como es un arreglo datos[]
   puntos.textContent=datos[img].puntos+" puntos";
   var imagenAvatar = document.createElement("img");
-
+  if(datos[img].nombre.substring(0,4)=="data"){
+    imagenAvatar.src=datos[img].nombre;
+    imagenAvatar.className="rounded-circle personalImg";
+  }else
   imagenAvatar.src='../img/'+datos[img].nombre+'';
   imagenAvatar.setAttribute("onclick","sesion("+img+")");
   var link = document.createElement("a");
@@ -46,7 +49,7 @@ conten.appendChild(celda); //agrega los avatares
 //console.log(datos[img]);
 }
 
-//crea una variable avatar 
+//crea una variable avatar
 function sesion(indice){
   var avatar;
 avatar= datos[indice];
