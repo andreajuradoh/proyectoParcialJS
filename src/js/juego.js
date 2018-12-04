@@ -91,7 +91,7 @@ var ubicad=[];
       var imagenCelda = document.createElement("img");
       imagenCelda.className="img";
       imagenVolteada.push(imagenCelda);
-        
+
       imagenCelda.src=fondo;
 
       imagenCelda.setAttribute("onclick","mostrarImagen("+mostra+")");
@@ -166,7 +166,7 @@ audiofondo.pause();
 audiofondo.currentTime = 0;
    avatar.puntos+=1;
 
-    //clearInterval(myVar);//esto hace que el tiempo se detenga cunando se termine el juego 
+    //clearInterval(myVar);//esto hace que el tiempo se detenga cunando se termine el juego
 
    time=0;
      clearInterval(myVar);
