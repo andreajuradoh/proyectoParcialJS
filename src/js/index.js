@@ -76,3 +76,4 @@ function exportJSON() {
     linkElement.setAttribute('download', exportFileDefaultName);
     linkElement.click();
 }
+
