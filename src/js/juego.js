@@ -31,6 +31,22 @@ if(avatar.genero=="m"){
 }else {
   fondo="../img/questionrosa.gif";
 }
+actualizarPts();
+
+function actualizarPts(){
+    var pt = $('#ptos');
+    var ptos=avatar.puntos;
+    
+    let img=document.getElementById("imgAvatar");
+    img.className="imagenavatar";
+    img.src="../img/"+avatar.nombre;
+    puntos=document.getElementById("puntosdurante");
+    puntos.textContent=" ";
+    puntos.textContent=ptos;
+    
+       pt.prepend(puntos);
+
+}
 genera_tabla(nivelMain);
 
 
@@ -39,8 +55,8 @@ genera_tabla(nivelMain);
 function genera_tabla(nivel) {
   // Obtener la referencia del elemento body
 
+     
     
-
   var body = document.getElementsByTagName("body")[0];
   var div=document.getElementById("tabla-main");
 
@@ -222,12 +238,16 @@ function crearModalVictoria(avatar){
 
                 //Get the A tag
                 var id = $('#dialog');
+    
+               actualizarPts();
                 if(avatar.nombre.substring(0,4)=="data"){
                 img="<img class=' eleModel' src='"+avatar.nombre+"'>";
                 }else
                 img="<img class='eleModel' src='../img/"+avatar.nombre+"'>";
-                let ptos=avatar.puntos;
+                var ptos=avatar.puntos;
                 puntos="<span >puntos obtenidos "+ptos+"</span>";
+    
+                id.prepend(puntos);
                 localStorage.setItem("sesion",JSON.stringify(avatar));
                 modificarPuntaje();
               var buton= document.createElement("img");
@@ -238,9 +258,9 @@ function crearModalVictoria(avatar){
                 var salir= document.createElement("img");
               salir.src="../img/salir.png";
 
-    var linsalir= document.createElement("a");
-    linsalir.href="index.html";
-    linsalir.appendChild(salir);
+             var linsalir= document.createElement("a");
+             linsalir.href="index.html";
+             linsalir.appendChild(salir);
 
 
             salir.className= "salir-icon";
@@ -257,10 +277,10 @@ function crearModalVictoria(avatar){
 
               id.prepend(linsalir);
 
-              id.prepend(salir);
+       
 
                id.prepend(img);
-               id.prepend(puntos);
+            
                id.prepend( globorojo);
 
                myMove();

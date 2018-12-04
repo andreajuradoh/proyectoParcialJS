@@ -185,7 +185,15 @@ img {
 #sonido{
 
 }
+.tablamain{
+    display: flex;
+    justify-content: center;
+}
+.fila{
+  display: flex;
+    justify-content: center;
 
+}
 .padre {
   display: none;
   justify-content: center;
@@ -209,4 +217,9 @@ img {
 }
 #padreniveles{
   display: none;
+}
+
+.imagenavatar{
+    float: left;
+    margin-top:30px;
 }
