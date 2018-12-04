@@ -155,7 +155,12 @@ font-size: 300%;
   display: inline-block;
 
 }
-
+.avataresIndex{
+    display: flex;
+}
+.misavatares{
+    margin: auto;
+}
 #nivel h1{
     font-family:"Mystery Quest", cursive;
 
@@ -164,7 +169,10 @@ font-size: 300%;
     display: inline-block;
 
 }
-
+.avatarInstr{
+    float: right;
+    display: inline-block;
+}
 #nivel {
 
 background-color: white;

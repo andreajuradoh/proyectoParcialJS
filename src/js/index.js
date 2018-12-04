@@ -28,6 +28,7 @@ var mostra="";
 for (var img in datos) {
   var celda = document.createElement("div");
   var puntos= document.createElement("h4");
+    celda.className="misavatares";
     //esto como es un arreglo datos[]
   puntos.textContent=datos[img].puntos+" puntos";
   var imagenAvatar = document.createElement("img");

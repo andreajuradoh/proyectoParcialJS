@@ -37,52 +37,8 @@ var botonson= document.getElementById("sonido");
       var niveles=document.getElementById("padreniveles");
       niveles.style.display="flex";
         var video=document.getElementById("video");
-setTimeout(myMoveNivel1, 500);
-setTimeout(myMoveNivel2, 5000);
-setTimeout(myMoveNivel3, 10000);
+
      }
 
-     function myMoveNivel1() {
-       var elem = document.getElementById("nivel1");
-       var pos = 350;
-       var id = setInterval(frame, 5);
-       function frame() {
-         if (pos == 0) {
-           clearInterval(id);
-         } else {
-           pos--;
-           elem.style.top = pos +'px';
-           elem.style.top = pos + 'px';
-         }
-       }
-     }
-     function myMoveNivel2() {
-       var elem = document.getElementById("nivel2");
-       var pos = 350;
-       var id = setInterval(frame, 5);
-       function frame() {
-         if (pos == 0) {
-           clearInterval(id);
-         } else {
-           pos--;
-           elem.style.top = pos +'px';
-           elem.style.top = pos + 'px';
-         }
-       }
-     }
-
-     function myMoveNivel3() {
-       var elem = document.getElementById("nivel3");
-       var pos = 350;
-       var id = setInterval(frame, 5);
-       function frame() {
-         if (pos == 0) {
-           clearInterval(id);
-         } else {
-           pos--;
-           elem.style.top = pos +'px';
-           elem.style.top = pos + 'px';
-         }
-       }
-     }
+    
 botonson.addEventListener('click', sonidoCerdo);

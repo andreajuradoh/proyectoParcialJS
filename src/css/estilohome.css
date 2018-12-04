@@ -31,7 +31,9 @@ background-size: cover;*/
 #sonido{
 
 }
-
+#conten-avat{
+    float: right;
+}
 .padre {
   display: none;
   justify-content: center;
@@ -48,7 +50,12 @@ background-size: cover;*/
   position: absolute;
 
 }
-
+#ptos{
+    float: right;
+}
+#ptos p{
+    display: block;
+}
 #regresar {
   padding-top: 1%;
     padding-bottom: 1%;

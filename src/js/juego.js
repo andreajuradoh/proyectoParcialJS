@@ -42,7 +42,7 @@ function actualizarPts(){
     img.src="../img/"+avatar.nombre;
     puntos=document.getElementById("puntosdurante");
     puntos.textContent=" ";
-    puntos.textContent=ptos;
+    puntos.textContent=ptos+" Puntos";
     
        pt.prepend(puntos);
 
@@ -247,7 +247,7 @@ function crearModalVictoria(avatar){
                 var ptos=avatar.puntos;
                 puntos="<span >puntos obtenidos "+ptos+"</span>";
     
-                id.prepend(puntos);
+              
                 localStorage.setItem("sesion",JSON.stringify(avatar));
                 modificarPuntaje();
               var buton= document.createElement("img");
@@ -277,7 +277,7 @@ function crearModalVictoria(avatar){
 
               id.prepend(linsalir);
 
-       
+              id.prepend(puntos);
 
                id.prepend(img);
             
