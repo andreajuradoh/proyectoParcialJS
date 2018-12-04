@@ -6,8 +6,8 @@ background-position: center center;
 background-repeat: no-repeat;
 background-attachment: fixed;
 background-size: cover;
-    
-   
+
+
 @media (max-width: 600px) {
   .facet_sidebar {
     display: none;
@@ -15,13 +15,15 @@ background-size: cover;
 }
 }
 
- .titulo-avatar  {
-     text-align: center;
-     margin-top: 3%;
-     display: block;
+.img-responsive {
+  text-align: center;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  padding: 2%;
      margin-left: auto;
      margin-right: auto;
-     
+
     }
 
 
@@ -72,6 +74,12 @@ border-radius: 20px;
   margin-top: 40%;
     padding: 3%;
 }
+.personalImg {
+  height: 200px;
+  width: 200px;
+
+
+}
 .padre {
   display: flex;
   justify-content: center;
@@ -119,10 +127,6 @@ display: none;
 
 }
 
-#dialog span {
-  margin: 60px;
-  color: #C11A33;
-}
 /* Customize your modal window here, you can add background image too */
 #boxes #dialog {
   width:375px;

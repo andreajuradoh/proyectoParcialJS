@@ -29,7 +29,15 @@ div.innerHTML="";
     var celdaId= document.createElement("td");
     celdaId.innerHTML=arrayAvaters[variable].id;
     var celdaNombre= document.createElement("td");
-    celdaNombre.innerHTML=arrayAvaters[variable].nombre;
+    var imgNombre= document.createElement("img");
+    if(arrayAvaters[variable].nombre.substring(0,4)=="data"){
+      imgNombre.src=arrayAvaters[variable].nombre;
+
+    }else
+    imgNombre.src="../img/"+arrayAvaters[variable].nombre;
+    imgNombre.className="personalImg";
+    celdaNombre.appendChild(imgNombre);
+
 
 
    var celdaEditar= document.createElement("td");
@@ -65,12 +73,12 @@ function nuevoUsuario(){
 
 function guardarUsuario(){
 
-  var foto=document.getElementById("imagen");
+  let foto = $("#imagenadd").attr("src");
   var id=arrayAvaters.length+1;
  var obj= new Imagenes();
 
 
- obj.nombre=foto.value;
+ obj.nombre=foto;
  obj.id=id;
  arrayAvaters.push(obj);
 localStorage.setItem("imagenes",JSON.stringify(arrayAvaters));
@@ -94,7 +102,27 @@ let indice=0;
   localStorage.setItem("imagenes",JSON.stringify(arrayAvaters));
   listarUsuario();
 }
+function readURL(input, id) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
 
+        reader.onload = function (e) {
+            console.log(e.target.result);
+
+            $('#'+id).attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+$("#imagen").change(function(){
+    readURL(this, "imagenadd");
+});
+
+$("#imagenedit").change(function(){
+    readURL(this, "imagenaddedit");
+});
+// EDITAR
 function editar(id){
   let div=document.getElementById("editar");
   div.style.display="block";
@@ -107,13 +135,9 @@ let guardar=document.getElementById("btnEditar");
     for (var variable in arrayAvaters) {
 
       if (arrayAvaters[variable].id==id) {
-      foto.value=arrayAvaters[variable].nombre;
+      
       idCampo.textContent=arrayAvaters[variable].id;
-      let option=document.createElement("option");
-      option.selected="true";
-      option.value=arrayAvaters[variable].nombre;
-      option.textContent=arrayAvaters[variable].nombre;
-      foto.appendChild(option);
+
         break;
       }
      indice++;
@@ -127,9 +151,9 @@ let guardar=document.getElementById("btnEditar");
 function update(id){
   var objEditar= new Imagenes();
 
-  var foto=document.getElementById("imagenedit");
+  let foto = $("#imagenaddedit").attr("src");
 
-  objEditar.nombre=foto.value;
+  objEditar.nombre=foto;
    objEditar.id=id;
   let indice=0;
     for (var variable in arrayAvaters) {

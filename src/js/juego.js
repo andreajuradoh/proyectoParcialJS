@@ -91,7 +91,7 @@ var ubicad=[];
       var imagenCelda = document.createElement("img");
       imagenCelda.className="img";
       imagenVolteada.push(imagenCelda);
-        
+
       imagenCelda.src=fondo;
 
       imagenCelda.setAttribute("onclick","mostrarImagen("+mostra+")");
@@ -127,6 +127,10 @@ audioclick.play();
 if(compara==fondo){
 
  imgTmp.push(tablero[mostra]);
+ if(tablero[mostra].nombre.substring(0,4)=="data"){
+   imagenVolteada[mostra].src=tablero[mostra].nombre;
+
+ }else
  imagenVolteada[mostra].src="../img/"+tablero[mostra].nombre;
 
 imagenesViradasConExito++;
@@ -140,6 +144,8 @@ imagenesViradasConExito++;
     let tmp=posicionTmp.pop();//eliminoultimap pos
     let saco=posicionTmp.pop();//elimino 2da pos
 imagenesViradasConExito-=2;
+     var respuestaIncorrecta = document.getElementById("respuesta-incorrecta");
+    respuestaIncorrecta.play();
     imagenVolteada[saco].src=fondo;
     saco=posicionTmp.pop();
     imagenVolteada[saco].src=fondo;
@@ -166,7 +172,7 @@ audiofondo.pause();
 audiofondo.currentTime = 0;
    avatar.puntos+=1;
 
-    //clearInterval(myVar);//esto hace que el tiempo se detenga cunando se termine el juego 
+    //clearInterval(myVar);//esto hace que el tiempo se detenga cunando se termine el juego
 
    time=0;
      clearInterval(myVar);
@@ -194,7 +200,7 @@ function juegonuevo(){
        $('#mask').hide();
   $('.window').hide();
    genera_tabla(nivelMain);
-
+ 
 var h1nivel=document.getElementById("hnivel");
 h1nivel.textContent=contenh1+" " + nivelMain;
 
@@ -212,7 +218,9 @@ function crearModalVictoria(avatar){
 
                 //Get the A tag
                 var id = $('#dialog');
-
+                if(avatar.nombre.substring(0,4)=="data"){
+                img="<img class=' eleModel' src='"+avatar.nombre+"'>";
+                }else
                 img="<img class='eleModel' src='../img/"+avatar.nombre+"'>";
                 let ptos=avatar.puntos;
                 puntos="<span >puntos obtenidos "+ptos+"</span>";
@@ -222,6 +230,13 @@ function crearModalVictoria(avatar){
               buton.src="../img/botoonnuevojuego.png";
               nivelMain=1;
                 buton.setAttribute("onclick","overJuego(nivelMain)");
+  
+                var salir= document.createElement("img");
+              salir.src="../img/salir.png";
+    var linsalir= document.createElement("a");
+    linsalir.href="index.html";
+    linsalir.appendChild(salir);
+            salir.className= "salir-icon";
                 let  globorojo=document.createElement("img");
                  globorojo.id="animate";
               globorojo.src="../img/pirotecnia2.gif"
@@ -232,6 +247,7 @@ function crearModalVictoria(avatar){
 
 
                id.prepend(buton);
+              id.prepend(linsalir);
                id.prepend(img);
                id.prepend(puntos);
                id.prepend( globorojo);
