@@ -50,11 +50,19 @@ background-size: cover;*/
   position: absolute;
 
 }
-#ptos{
+.contenedorPts{
+    float: right;
+    display: flex;
+}
+#avatarJuego{
     float: right;
 }
-#ptos p{
-    display: block;
+#avatarJuego img{
+    margin-top: 0;
+}
+
+#ptos{
+    float: left;
 }
 #regresar {
   padding-top: 1%;
