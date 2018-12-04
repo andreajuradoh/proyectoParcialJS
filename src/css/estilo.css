@@ -127,10 +127,6 @@ display: none;
 
 }
 
-#dialog span {
-  margin: 60px;
-  color: #C11A33;
-}
 /* Customize your modal window here, you can add background image too */
 #boxes #dialog {
   width:375px;

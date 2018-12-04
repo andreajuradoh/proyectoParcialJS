@@ -101,16 +101,26 @@ display: none;
 }
 
 #dialog span {
-  margin: 60px;
-  color: #C11A33;
+    margin-left: 120px;
+    color: black;
+    font-family: monospace;
+    font-size: large;
+    
 }
 /* Customize your modal window here, you can add background image too */
 #boxes #dialog {
   width:375px;
   height:220px;
-  background: #bcfdec;
+  background-image: url(../../img/win.jpg)
 
 
+}
+
+.salir-icon {
+  float: right;
+    width: 15%;
+    margin-bottom: auto;
+    
 }
 
 .nuevo{
