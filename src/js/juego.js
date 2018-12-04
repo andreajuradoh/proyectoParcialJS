@@ -228,6 +228,10 @@ function crearModalVictoria(avatar){
               buton.src="../img/botoonnuevojuego.png";
               nivelMain=1;
                 buton.setAttribute("onclick","overJuego(nivelMain)");
+  
+                var salir= document.createElement("img");
+              salir.src="../img/salir.png";
+            salir.className= "salir-icon";
                 let  globorojo=document.createElement("img");
                  globorojo.id="animate";
               globorojo.src="../img/pirotecnia2.gif"
@@ -238,6 +242,7 @@ function crearModalVictoria(avatar){
 
 
                id.prepend(buton);
+              id.prepend(salir);
                id.prepend(img);
                id.prepend(puntos);
                id.prepend( globorojo);
