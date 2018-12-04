@@ -218,7 +218,9 @@ function crearModalVictoria(avatar){
 
                 //Get the A tag
                 var id = $('#dialog');
-
+                if(avatar.nombre.substring(0,4)=="data"){
+                img="<img class=' eleModel' src='"+avatar.nombre+"'>";
+                }else
                 img="<img class='eleModel' src='../img/"+avatar.nombre+"'>";
                 let ptos=avatar.puntos;
                 puntos="<span >puntos obtenidos "+ptos+"</span>";

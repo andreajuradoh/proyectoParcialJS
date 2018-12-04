@@ -12,10 +12,15 @@
 cadVariables=JSON.parse(localStorage.getItem("sesion"));
 colocarAvatar(cadVariables);
 
-function colocarAvatar(nombre){
+function colocarAvatar(avatar){
   let img = document.getElementById("conten-avat");
   //var nombre="avatar1.png";
-  img.innerHTML="<img class=' img-responsive' src='../img/"+nombre.nombre+"'>";
+  if(avatar.nombre.substring(0,4)=="data"){
+
+  img.innerHTML="<img class=' img-responsive' src='"+avatar.nombre+"'>";
+  img.className="personalImg";
+  }else
+  img.innerHTML="<img class=' img-responsive' src='../img/"+avatar.nombre+"'>";
 }
 
 
