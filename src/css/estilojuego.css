@@ -108,9 +108,16 @@ display: none;
 #boxes #dialog {
   width:375px;
   height:220px;
-  background: #bcfdec;
+  background-image: url(../../img/win.jpg)
 
 
+}
+
+.salir-icon {
+  float: right;
+    width: 15%;
+    margin-bottom: auto;
+    
 }
 
 .nuevo{
