@@ -109,6 +109,11 @@ let guardar=document.getElementById("btnEditar");
       if (arrayAvaters[variable].id==id) {
       foto.value=arrayAvaters[variable].nombre;
       idCampo.textContent=arrayAvaters[variable].id;
+      let option=document.createElement("option");
+      option.selected="true";
+      option.value=arrayAvaters[variable].nombre;
+      option.textContent=arrayAvaters[variable].nombre;
+      foto.appendChild(option);
         break;
       }
      indice++;

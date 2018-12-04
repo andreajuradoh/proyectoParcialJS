@@ -123,6 +123,17 @@ let guardar=document.getElementById("btnEditar");
       if (arrayAvaters[variable].id==id) {
       punto.value=arrayAvaters[variable].puntos;
       idCampo.textContent=arrayAvaters[variable].id;
+      let option= document.createElement("option");
+      option.selected="true";
+      option.value=arrayAvaters[variable].nombre;
+      option.textContent=arrayAvaters[variable].nombre;
+      foto.appendChild(option);
+     let optiongenereo=document.createElement("option");
+     optiongenereo.selected="true";
+     optiongenereo.value=arrayAvaters[variable].genero;
+     optiongenereo.textContent=arrayAvaters[variable].genero;
+     genero.appendChild(optiongenereo);
+
         break;
       }
      indice++;
