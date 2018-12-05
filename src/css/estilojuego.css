@@ -47,6 +47,17 @@ border-radius: 20px;
 
 
 }
+.tiempo{
+  display: flex;
+
+}
+.tiempo span{
+  margin-top: 2px;
+}
+.tiempo h5{
+  margin-left: 10px;
+
+}
 .personal {
   height: 200px;
   width: 200px;
@@ -105,7 +116,7 @@ display: none;
     color: black;
     font-family: monospace;
     font-size: large;
-    
+
 }
 /* Customize your modal window here, you can add background image too */
 #boxes #dialog {
@@ -120,7 +131,7 @@ display: none;
   float: right;
     width: 15%;
     margin-bottom: auto;
-    
+
 }
 
 .nuevo{
@@ -140,7 +151,7 @@ display: none;
 font-size: 300%;
   color: #317b76;
   display: inline-block;
-   
+
 
 }
 
@@ -153,14 +164,7 @@ font-size: 300%;
 
 }
 
-#nivel {
 
-     
-    width: 200px;
-    height: 240px;
-    border-radius: 0px 0px 20px 20px;
-    box-shadow: 2px 2px 2px 2px  ;
-}
 
 #tiempo{
   float: right;
@@ -173,8 +177,7 @@ img {
 #nivel{
     display: inline-block;
     margin:auto;
-    width:500px;
-    height:400px;
+
 }
 
 #video{
@@ -224,4 +227,3 @@ img {
     float: left;
     margin-top:30px;
 }
-
