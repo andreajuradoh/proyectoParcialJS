@@ -225,8 +225,8 @@ img {
 }
 
 .imagenavatar{
-    float: left;
-    margin-top:30px;
+    float: right;
+  margin-left: 90%;
 }
 
 .oi{
