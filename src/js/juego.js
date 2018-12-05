@@ -42,6 +42,7 @@ function actualizarPts(){
     }
     let img=document.getElementById("imgAvatar");
     img.className="imagenavatar";
+    
     if(avatar.nombre.substring(0,4)=="data"){
       img.src=avatar.nombre;
     }else
@@ -116,6 +117,7 @@ var ubicad=[];
 
       var imagenCelda = document.createElement("img");
       imagenCelda.className="img";
+        imagenCelda.className="img-responsive";
       imagenVolteada.push(imagenCelda);
 
       imagenCelda.src=fondo;

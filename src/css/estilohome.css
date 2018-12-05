@@ -57,7 +57,7 @@ background-size: cover;*/
 }
 
 #ptos{
-    float: left;
+    float: right;
 }
 #regresar {
   padding-top: 1%;
@@ -83,4 +83,8 @@ background-size: cover;*/
     max-height:200px ;
     max-width:300px;
     text-align: center;
+}
+
+.hnivel{
+    float: left;
 }
