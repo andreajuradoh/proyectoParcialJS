@@ -23,6 +23,7 @@ var escogePersonaje =document.getElementById('elige-personaje');
 var conten=document.getElementById("contenAvatares");
 
 var datos=JSON.parse(localStorage.getItem("avatares"));
+var imagenesJson=JSON.parse(localStorage.getItem("imagenes"));
 var mostra="";
 
 for (var img in datos) {
@@ -70,14 +71,14 @@ function exportJSON() {
     //IEwindow.document.execCommand('SaveAs', true, "datos.json");
     //IEwindow.close();
 
-    let dataStr = JSON.stringify(datos);
+    let dataStr ="avatares=["+ JSON.stringify(datos)+"]\n";
+    dataStr = dataStr+"imagenes=["+JSON.stringify(imagenesJson)+"]";
     let dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
 
-    let exportFileDefaultName = '../avatares.json';
+    let exportFileDefaultName = '../objetos.json';
 
     let linkElement = document.createElement('a');
     linkElement.setAttribute('href', dataUri);
     linkElement.setAttribute('download', exportFileDefaultName);
     linkElement.click();
 }
-

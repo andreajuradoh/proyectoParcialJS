@@ -35,15 +35,21 @@ actualizarPts();
 
 function actualizarPts(){
     var pt = $('#ptos');
+
     var ptos=avatar.puntos;
-    
+    if(ptos<0){
+      ptos=0;
+    }
     let img=document.getElementById("imgAvatar");
     img.className="imagenavatar";
+    if(avatar.nombre.substring(0,4)=="data"){
+      img.src=avatar.nombre;
+    }else
     img.src="../img/"+avatar.nombre;
     puntos=document.getElementById("puntosdurante");
     puntos.textContent=" ";
     puntos.textContent=ptos+" Puntos";
-    
+
        pt.prepend(puntos);
 
 }
@@ -55,8 +61,8 @@ genera_tabla(nivelMain);
 function genera_tabla(nivel) {
   // Obtener la referencia del elemento body
 
-     
-    
+
+
   var body = document.getElementsByTagName("body")[0];
   var div=document.getElementById("tabla-main");
 
@@ -98,8 +104,8 @@ var ubicad=[];
     // Crea las hileras de la tabla
     var hilera = document.createElement("div");
       hilera.className="fila";
-     
-      
+
+
 
     for (var j = 0; j < ancho; j++) {
       // Crea un elemento <td> y un nodo de texto, haz que el nodo de
@@ -173,13 +179,16 @@ imagenesViradasConExito-=2;
 
     imgTmp=[];
     imgTmp.push(tablero[tmp]);
-
+    avatar.puntos-=1*nivelMain;
+     actualizarPts();
   }
  }
  }
  if(imagenesViradasConExito==tablero.length){
    var audio = document.getElementById("audio");
-    var audioCorrecto =  document.getElementById("correcto");
+   var audioCorrecto =  document.getElementById("correcto");
+    avatar.puntos+=10*nivelMain;
+     actualizarPts();
    nivelMain++;
 
 if(nivelMain<=3){
@@ -190,7 +199,7 @@ else {
    audio.play();
 audiofondo.pause();
 audiofondo.currentTime = 0;
-   avatar.puntos+=1;
+
 
     //clearInterval(myVar);//esto hace que el tiempo se detenga cunando se termine el juego
 
@@ -220,7 +229,7 @@ function juegonuevo(){
        $('#mask').hide();
   $('.window').hide();
    genera_tabla(nivelMain);
- 
+
 var h1nivel=document.getElementById("hnivel");
 h1nivel.textContent=contenh1+" " + nivelMain;
 
@@ -238,23 +247,23 @@ function crearModalVictoria(avatar){
 
                 //Get the A tag
                 var id = $('#dialog');
-    
-               actualizarPts();
+
+
                 if(avatar.nombre.substring(0,4)=="data"){
                 img="<img class=' eleModel' src='"+avatar.nombre+"'>";
                 }else
                 img="<img class='eleModel' src='../img/"+avatar.nombre+"'>";
                 var ptos=avatar.puntos;
                 puntos="<span >puntos obtenidos "+ptos+"</span>";
-    
-              
+
+
                 localStorage.setItem("sesion",JSON.stringify(avatar));
                 modificarPuntaje();
               var buton= document.createElement("img");
               buton.src="../img/botoonnuevojuego.png";
               nivelMain=1;
                 buton.setAttribute("onclick","overJuego(nivelMain)");
-  
+
                 var salir= document.createElement("img");
               salir.src="../img/salir.png";
 
@@ -280,7 +289,7 @@ function crearModalVictoria(avatar){
               id.prepend(puntos);
 
                id.prepend(img);
-            
+
                id.prepend( globorojo);
 
                myMove();
