@@ -38,7 +38,7 @@ for (var img in datos) {
   imagenAvatar.src='../img/'+datos[img].nombre+'';
   imagenAvatar.setAttribute("onclick","sesion("+img+")");
   var link = document.createElement("a");
-  link.href='instrucciones.html';
+ link.href='video.html';
 //le metemos los valores al div celda es um div
 celda.appendChild(puntos);
 celda.appendChild(link);
