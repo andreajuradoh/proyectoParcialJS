@@ -17,24 +17,23 @@
 
     <title>Instrucciones</title>
   </head>
-  <body class="container">
+  <body>
       
      
-      <img class="img-responsive" src="/img/escoge-nivel.png" >
-    
+       <div class="titulo-avatar">
+      <img src="/img/escoge-personaje.png" class="img-responsive">
+      </div>
+      
+      <div class="container-sonido" >
+      <img id="sonido"  src="../img/question.gif" alt=""  >
+          </div> 
 
 
-
-<div id="pregunta" class="row" style="padding: 5%;">
-<div class="col-md-8">
-    <img id="sonido" src="../img/question.gif" alt=""  >
-
-</div>
     <div class="col-md-4" id="conten-avat" >
 </div>
-</div>
 
 
+<div class="niveles-container">
 <div id="padreniveles" class="row">
  <div class="col-md-4" id="nivel1">
       <a href="juego.html?1"><img src="../img/nivel1.gif"></a>
@@ -49,7 +48,12 @@
 
 
 </div>
-
+    </div>
+      
+      
+       <div class="arrow-container">
+      <a href="index.html"> <img src="/img/arrow.png" class="img-responsive" ></a>
+      </div>
 <audio id="musicBackground" >
 <source type="audio/wav" src="../audio/music-background.mp3" >
 </audio>
