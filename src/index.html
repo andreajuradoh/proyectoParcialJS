@@ -16,12 +16,13 @@
 
   <body cz-shortcut-listes="true">
 
-      <div class="titulo-avatar">
+       <div class="titulo-avatar">
       <img src="/img/escoge-personaje.png" class="img-responsive">
       </div>
 
-       <img id="sonido" src="../img/question.gif" alt=""  >
-
+      <div class="container-sonido" >
+      <img id="sonido"  src="../img/question.gif" alt=""  >
+          </div> 
       <audio id="background-music" loop>
           <source  type="audio/wav" src="../audio/music-background.mp3">
       </audio>
@@ -36,19 +37,18 @@
 
 
         </div>
-          <div class="container-fluid col-md-10 avataresIndex" id="contenAvatares">
+          <div class="container-fluid col-md-12 avataresIndex" id="contenAvatares">
 
           </div>
         </div>
       </div>
 
-
-      <div class="avatar-container">
+      <div class="button-container">
       <div class="row">
        <div class="col-md-6">
-           <button type="button" class="btn btn-primary"> <a href="administracion.html" style="color:white; font-weight: 600;">Panel de Administración</a> </button>  </div>
+           <button type="button" class="btn btn-primary" style="background-color:darkolivegreen"> <a href="administracion.html" style="color:white; font-weight: 600;">Panel de Administración</a> </button>  </div>
            <div class="col-md-6">
-           <button id="export-button" type="button" class="btn btn-warning">
+           <button id="export-button" type="button" class="btn btn-warning" style="background-color:darkolivegreen">
                    <a id="descargarjson" href="#" style="color:white; font-weight: 600;">Exportar JSON</a></button>
         </div>
       </div>
