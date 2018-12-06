@@ -10,8 +10,6 @@ $(document).ready(function(){
 });
 
 
-localStorage.setItem("bandera", true);
-
 var sonido_bg =document.getElementById('background-music');
 
 

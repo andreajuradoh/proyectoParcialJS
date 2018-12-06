@@ -1,5 +1,5 @@
-var avatares=localStorage.getItem("avatares");
-if(avatares!=null || avatares!=undefined){
+var avataresVerificando=localStorage.getItem("avatares");
+if(avataresVerificando==null || avataresVerificando=="undefined"){
 var arrayAvaters=JSON.parse(avatares);
 var imagenese=JSON.parse(imagenes);
 localStorage.setItem("avatares",JSON.stringify(arrayAvaters));

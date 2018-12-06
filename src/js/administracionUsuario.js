@@ -150,8 +150,12 @@ let guardar=document.getElementById("btnEditar");
       if (arrayAvaters[variable].id==id) {
       punto.value=arrayAvaters[variable].puntos;
       idCampo.textContent=arrayAvaters[variable].id;
-    if(arrayAvaters[variable].nombre=="")     
-     foto.attr('src', arrayAvaters[variable].nombre);
+    if(arrayAvaters[variable].nombre!="") { 
+    if(arrayAvaters[variable].nombre.substring(0,4)=="data"){
+    foto.src= arrayAvaters[variable].nombre;
+    }else
+        foto.src= "../img/"+arrayAvaters[variable].nombre;
+    }
      let optiongenereo=document.createElement("option");
      optiongenereo.selected="true";
      optiongenereo.value=arrayAvaters[variable].genero;

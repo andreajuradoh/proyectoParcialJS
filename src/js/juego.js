@@ -50,7 +50,6 @@ function actualizarPts(){
     puntos=document.getElementById("puntosdurante");
     puntos.textContent=" ";
     puntos.textContent=ptos+" Puntos";
-    
 
        pt.prepend(puntos);
 
@@ -206,8 +205,8 @@ audiofondo.currentTime = 0;
 
     //clearInterval(myVar);//esto hace que el tiempo se detenga cunando se termine el juego
 
-   //time=0;
-     //clearInterval(myVar);//esto es para parar el tiempo.
+   time=0;
+     //clearInterval(myVar);
 
   crearModalVictoria(avatar);
 }
