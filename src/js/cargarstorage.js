@@ -1,7 +1,4 @@
 
-var avataresVerificando=localStorage.getItem("avatares");
-if(avataresVerificando==null || avataresVerificando=="undefined"){
-
 var avataresVerificacion=localStorage.getItem("avatares");
 if(avataresVerificacion==null || avataresVerificacion==undefined){
 

@@ -11,10 +11,10 @@ $(document).ready(function(){
 
 
 var sonido_bg =document.getElementById('background-music');
-
+sonido_bg.preload = "auto";
 
 var escogePersonaje =document.getElementById('elige-personaje');
-
+escogePersonaje.preload = "auto";
 
 //accion.addEventListener("click", colocarAvatar);
 
