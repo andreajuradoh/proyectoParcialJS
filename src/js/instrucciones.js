@@ -25,6 +25,7 @@ function colocarAvatar(avatar){
 
 
 var botonson= document.getElementById("sonido");
+var recargarButton = document.getElementById("recargar");
 
 
     function sonidoCerdo() {
@@ -40,5 +41,10 @@ var botonson= document.getElementById("sonido");
 
      }
 
-    
-botonson.addEventListener('click', sonidoCerdo);
+function recargarInstruccion() {
+      let escogeNivel = document.getElementById("escogeNivel");
+        escogeNivel.volume=1;
+      escogeNivel.play();
+}
+
+recargarButton.addEventListener('click',recargarInstruccion);
