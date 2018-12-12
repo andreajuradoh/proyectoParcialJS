@@ -15,7 +15,7 @@ var imagenesViradasConExito=0; // contador de  imagenes que ya han sido volteada
 //
 
 var audiofondo = document.getElementById("audioultra");
-
+audiofondo.preload = "auto";
 var nivelMain=parseInt(cadVariables,10);
 
 var h1nivel=document.getElementById("hnivel");
@@ -148,6 +148,7 @@ var ubicad=[];
 function mostrarImagen(mostra){
   let compara=imagenVolteada[mostra].getAttribute("src");
 let audioclick = document.getElementById("audioclick");
+audioclick.preload = "auto";
     audiofondo.volume = 0.1;
     audiofondo.play();
 audioclick.play();
@@ -188,7 +189,9 @@ imagenesViradasConExito-=2;
  }
  if(imagenesViradasConExito==tablero.length){
    var audio = document.getElementById("audio");
+   audio.preload = "auto";
    var audioCorrecto =  document.getElementById("correcto");
+    audioCorrecto.preload = "auto";
     avatar.puntos+=10*nivelMain;
      actualizarPts();
    nivelMain++;

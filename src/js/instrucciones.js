@@ -1,5 +1,5 @@
  var background =document.getElementById("musicBackground");
-
+background.preload = "auto";
 
         jQuery("body").trigger("click");
         $(document).ready(function(){
@@ -29,6 +29,7 @@ var botonson= document.getElementById("sonido");
 
     function sonidoCerdo() {
       let audioclick = document.getElementById("audioclick");
+      audioclick.preload = "auto";
       audioclick.play();
       botonson.style.display="none";
        let escogeNivel = document.getElementById("escogeNivel");
@@ -40,5 +41,5 @@ var botonson= document.getElementById("sonido");
 
      }
 
-    
+
 botonson.addEventListener('click', sonidoCerdo);
