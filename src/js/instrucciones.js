@@ -25,6 +25,7 @@ function colocarAvatar(avatar){
 
 
 var botonson= document.getElementById("sonido");
+var recargarButton = document.getElementById("recargar");
 
 
     function sonidoCerdo() {
