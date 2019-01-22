@@ -1,0 +1,25 @@
+{
+  "name": "proyectoparcialjs",
+  "version": "1.0.0",
+  "description": "Proyecto Parcial JS - 2018 2s",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreajuradoh/proyectoParcialJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andreajuradoh/proyectoParcialJS/issues"
+  },
+  "homepage": "https://github.com/andreajuradoh/proyectoParcialJS#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "knex": "^0.16.3",
+    "pg": "^7.8.0"
+  }
+}
