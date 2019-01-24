@@ -33,7 +33,7 @@ for (var img in datos) {
   var imagenAvatar = document.createElement("img");
   if(datos[img].nombre.substring(0,4)=="data"){
     imagenAvatar.src=datos[img].nombre;
-    imagenAvatar.className="rounded-circle personalImg";
+    imagenAvatar.className="rounded-circle";
   }else
   imagenAvatar.src='../img/'+datos[img].nombre+'';
   imagenAvatar.setAttribute("onclick","sesion("+img+")");

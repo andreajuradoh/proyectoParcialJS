@@ -206,7 +206,7 @@ audiofondo.pause();
 audiofondo.currentTime = 0;
 
 
-    //clearInterval(myVar);//esto hace que el tiempo se detenga cunando se termine el juego
+    clearInterval(myVar);//esto hace que el tiempo se detenga cunando se termine el juego
 
    time=0;
      //clearInterval(myVar);
@@ -240,7 +240,7 @@ h1nivel.textContent=contenh1+" " + nivelMain;
 
 }
 function overJuego(nivel) {
- //myVar= setInterval(myTimer, 1000);
+  myVar= setInterval(myTimer, 1000);
   juegonuevo(nivel)
 }
 function crearModalVictoria(avatar){
