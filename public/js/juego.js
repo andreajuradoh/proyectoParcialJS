@@ -1,5 +1,5 @@
 
-cadVariables = location.search.substring(1,location.search.length);
+//cadVariables = location.search.substring(1,location.search.length);
 
 var obj= new Juego();
 var tablero=[];
@@ -16,12 +16,12 @@ var imagenesViradasConExito=0; // contador de  imagenes que ya han sido volteada
 
 var audiofondo = document.getElementById("audioultra");
 audiofondo.preload = "auto";
-var nivelMain=parseInt(cadVariables,10);
+//var nivelMain=parseInt(cadVariables,10);
 
 var h1nivel=document.getElementById("hnivel");
-
-var contenh1=h1nivel.textContent;
-h1nivel.textContent=contenh1+" " + nivelMain;
+var nivelMain=h1nivel.textContent.substring(7,8);
+console.log(nivelMain);
+var nivelMain=parseInt(nivelMain,10);
 
 var avatar=JSON.parse(localStorage.getItem("sesion"));
 var fondo="";
@@ -43,10 +43,10 @@ function actualizarPts(){
     let img=document.getElementById("imgAvatar");
     img.className="imagenavatar";
 
-    if(avatar.nombre.substring(0,4)=="data"){
-      img.src=avatar.nombre;
+    if(avatar.foto.substring(0,4)=="data"){
+      img.src=avatar.foto;
     }else
-    img.src="../img/"+avatar.nombre;
+    img.src="../img/"+avatar.foto;
     puntos=document.getElementById("puntosdurante");
     puntos.textContent=" ";
     puntos.textContent=ptos+" Puntos";
@@ -156,11 +156,11 @@ audioclick.play();
 if(compara==fondo){
 
  imgTmp.push(tablero[mostra]);
- if(tablero[mostra].nombre.substring(0,4)=="data"){
-   imagenVolteada[mostra].src=tablero[mostra].nombre;
+ if(tablero[mostra].foto.substring(0,4)=="data"){
+   imagenVolteada[mostra].src=tablero[mostra].foto;
 
  }else
- imagenVolteada[mostra].src="../img/"+tablero[mostra].nombre;
+ imagenVolteada[mostra].src="../img/"+tablero[mostra].foto;
 
 imagenesViradasConExito++;
  posicionTmp.push(mostra);
@@ -254,10 +254,10 @@ function crearModalVictoria(avatar){
                 var id = $('#dialog');
 
 
-                if(avatar.nombre.substring(0,4)=="data"){
-                img="<img class=' eleModel' src='"+avatar.nombre+"'>";
+                if(avatar.foto.substring(0,4)=="data"){
+                img="<img class=' eleModel' src='"+avatar.foto+"'>";
                 }else
-                img="<img class='eleModel' src='../img/"+avatar.nombre+"'>";
+                img="<img class='eleModel' src='../img/"+avatar.foto+"'>";
                 var ptos=avatar.puntos;
                 puntos="<span >puntos obtenidos "+ptos+"</span>";
 
@@ -344,7 +344,7 @@ function modificarPuntaje(){
     if (arrayAvaters[variable].id==avatar.id) {
 
       obj.puntos=avatar.puntos;
-      obj.nombre=arrayAvaters[variable].nombre;
+      obj.foto=arrayAvaters[variable].foto;
       obj.id=arrayAvaters[variable].id;
       obj.genero=arrayAvaters[variable].genero;
         arrayAvaters.splice(indice,1);

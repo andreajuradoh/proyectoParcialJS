@@ -3,9 +3,9 @@ var router = express.Router();
 const knex = require('../db/knex');
 
 router.get('/', (req, res) => {
-      console.log("hola");   
+      console.log("hola");
       res.render('front/index');
-   
+
 });
 
 router.get('/escoger', (req, res) => {
@@ -14,30 +14,57 @@ router.get('/escoger', (req, res) => {
     .then(usuario =>{
         res.render('front/escogeavatar', {objUsers: usuario});
     });
-    
-   
+
+
 });
 
 
 router.get('/instrucciones', (req, res) => {
-   
+
         res.render('front/instrucciones');
     });
-    
+
 router.get('/video', (req, res) => {
-   
+
         res.render('front/video');
     });
-    
 
+router.get('/consultUserId:id', (req, res) => {
+const id= req.params.id;
+console.log("consultando..."+id);
+  knex('usuarios')
+  .where('id', id)
+  .first()
+  .then((user) => {
+    if(user!=undefined) {
+      console.log(user)
+      //res.redirect(/usuarios);
+      res.json({user:user})
+      //res.render(login/sesion, {user:user})
+    }
+  });
 
-router.get('/jugar/:nivel', (req, res) => {
-   
-        res.render('front/juego');
+  });
+
+router.get('/jugar:nivel', (req, res) => {
+console.log(req.params.nivel);
+        res.render('front/juego', {nivel: req.params.nivel});
     });
-    
 
+router.get('/consultImagenes', (req, res) => {
 
+    console.log("consultando..."+id);
+      knex('imagenes')
+      .then((imagenes) => {
+        if(imagenes!=undefined) {
+          console.log(user)
+          //res.redirect(/usuarios);
+          res.json({imagenes:imagenes})
+          //res.render(login/sesion, {user:user})
+        }
+      });
+
+      });
 
 
 module.exports = router;

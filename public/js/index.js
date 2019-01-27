@@ -20,11 +20,11 @@ escogePersonaje.preload = "auto";
 
 var conten=document.getElementById("contenAvatares");
 
-var datos=JSON.parse(localStorage.getItem("avatares"));
-var imagenesJson=JSON.parse(localStorage.getItem("imagenes"));
+//var datos=JSON.parse(localStorage.getItem("avatares"));
+//var imagenesJson=JSON.parse(localStorage.getItem("imagenes"));
 var mostra="";
 
-for (var img in datos) {
+/*for (var img in datos) {
   var celda = document.createElement("div");
   var puntos= document.createElement("h4");
     celda.className="misavatares";
@@ -47,15 +47,20 @@ link.appendChild(imagenAvatar);
 conten.appendChild(celda); //agrega los avatares
 
 //console.log(datos[img]);
-}
+}*/
 
 //crea una variable avatar
 function sesion(indice){
   var avatar;
-avatar= datos[indice];
+  var req = new XMLHttpRequest();
+// Petición HTTP GET síncrona hacia el archivo fotos.json del servidor
+req.open("GET", "http://localhost:3000/consultUserId"+indice, false);
+req.send(null);
+avatar= JSON.parse(req.responseText);
+console.log("sesion");
 
 //  localStorage.clear();
-  localStorage.setItem("sesion",JSON.stringify(avatar));
+  localStorage.setItem("sesion",JSON.stringify(avatar.user));
 
 }
 

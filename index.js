@@ -1,7 +1,11 @@
 var express = require ('express');
 var exphbs = require ('express-handlebars');
 var app = express();
-
+var path = require('path');
+//add bodyParser for use of GET & POST
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended : true}));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //var routes= require('./routes/usuario');
 var users= require('./routes/usuario.js');
@@ -30,7 +34,7 @@ app.use('/admin/usuario',user);
 
 
         app.listen(app.get('port'), function(){
-            console.log('Express on localhost:' + 
+            console.log('Express on localhost:' +
                         app.get('port'));
         });
 
@@ -40,4 +44,3 @@ app.use('/admin/usuario',user);
 
 //ARCHIVOS ESTÁTICOS
 app.use(express.static(__dirname + '/public'));
-
