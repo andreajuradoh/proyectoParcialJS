@@ -1,7 +1,7 @@
 
 //cadVariables = location.search.substring(1,location.search.length);
 
-var obj= new Juego();
+
 var tablero=[];
 var imagenVolteada=[];// array que guarda todos los tags de imagenes que hay en la tabla
 // se la utiliza para guardar y setearles el atributo src que contendra la imagen real
@@ -24,6 +24,7 @@ console.log(nivelMain);
 var nivelMain=parseInt(nivelMain,10);
 
 var avatar=JSON.parse(localStorage.getItem("sesion"));
+var obj= new Juego(avatar.id);
 var fondo="";
 if(avatar.genero=="m"){
   fondo="../img/questionniño.gif";
@@ -183,9 +184,11 @@ imagenesViradasConExito++;
     imgTmp=[];
     imgTmp.push(tablero[tmp]);
     avatar.puntos-=1*nivelMain;
+    obj.puntaje+=1*nivelMain;
      actualizarPts();
   }else{
       avatar.puntos+=tablero[mostra].puntaje;
+      obj.puntaje+=tablero[mostra].puntaje;
       actualizarPts();
   }
  }
@@ -196,7 +199,7 @@ imagenesViradasConExito++;
    var audioCorrecto =  document.getElementById("correcto");
     audioCorrecto.preload = "auto";
     avatar.puntos+=10*nivelMain;
-
+    obj.puntaje+=10*nivelMain;
      actualizarPts();
    nivelMain++;
 
@@ -245,11 +248,12 @@ h1nivel.textContent="Nivel: " + nivelMain;
 }
 function overJuego(nivel) {
   myVar= setInterval(myTimer, 1000);
-  juegonuevo(nivel)
+  juegonuevo(nivel);
+
 }
 function crearModalVictoria(avatar){
 
-
+  obj.guardarPartida(obj);
         //select all the a tag with name equal to modal
 
                 //Cancel the link behavior

@@ -1,7 +1,14 @@
 class Juego {
-  constructor() {
+  constructor(id_usuario) {
+   this.id_usuario=id_usuario;
+   this.puntaje=0;
 
-
+  }
+  guardarPartida(juego){
+    var req = new XMLHttpRequest();
+  // Petición HTTP GET síncrona hacia el archivo fotos.json del servidor
+  req.open("GET", "http://localhost:3000/guardarPartida"+juego.id_usuario+juego.puntaje, false);
+  req.send(null);
   }
    getRand(max,min){
     return Math.floor(Math.random() * (max - min));

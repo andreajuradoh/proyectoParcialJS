@@ -51,18 +51,39 @@ console.log(req.params.nivel);
         res.render('front/juego', {nivel: req.params.nivel});
     });
 
-  /*  router.put('/:id_administrador',(req,res) => {
-      console.log('updating...');
-      validateUserInsertUpdateRedirect(req,res,(user) => {
-        knex('Administrador')
-          .where('id_administrador',req.params.id_administrador)
-          .update({usuario : req.body.usuario,
-          password : req.body.password   })
-          .then( () =>  {
-            res.redirect(`/user/${req.params.id_administrador}`);
+
+
+
+    router.get('/verRanking', (req, res) => {
+      knex('partida')
+          .select()
+          .innerJoin('usuarios', function () {
+          this
+         .on('partida.id_usuarios', 'usuarios.id')
+
+
+ })
+          .orderBy('puntaje', 'desc')
+          .limit(10)
+          .then(partidas =>{
+              res.render('front/ranking', {objPartida: partidas});
           });
-      });
-    });*/
+
+        });
+    router.get('/guardarPartida:id_usuario:puntos',function(req, res){
+       /* res.type('text/plain');
+        res.send('Mi página principal');*/
+        console.log("guardando..."+req.params.id_usuario);
+        knex('partida')
+        .insert({puntaje : req.params.puntos, id_usuarios : req.params.id_usuario })
+        .then(ids =>  {
+
+             res.json("ok");
+        });
+
+
+       // res.render('usuario');
+    });
 router.post('/actualizaPuntaje:id:puntos', (req, res) => {
          const id= req.params.id;
          const puntos= req.params.puntos;
