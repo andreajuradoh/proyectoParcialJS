@@ -50,9 +50,12 @@ function actualizarPts(){
     img.src="../img/"+avatar.foto;
     puntos=document.getElementById("puntosdurante");
     puntos.textContent=" ";
-    puntos.textContent=ptos+" Puntos";
-
+    puntos.textContent="Puntos del jugador "+ptos;
+    let puntsPar=document.getElementById("puntosdurantePartida");
+    puntsPar.textContent=" ";
+    puntsPar.textContent="Puntos de la partida "+obj.puntaje;
        pt.prepend(puntos);
+       pt.prepend(puntsPar);
 
 }
 genera_tabla(nivelMain);
@@ -267,8 +270,8 @@ function crearModalVictoria(avatar){
                 }else
                 img="<img class='eleModel' src='../img/"+avatar.foto+"'>";
                 var ptos=avatar.puntos;
-                puntos="<span >puntos obtenidos "+ptos+"</span>";
-
+              let  puntos="<span >puntos obtenidos "+obj.puntaje+"</span>";
+                let puntosAvatar="<span >puntos acumulados del jugador "+ptos+"</span>";
 
                 localStorage.setItem("sesion",JSON.stringify(avatar));
                 modificarPuntaje();
@@ -300,7 +303,7 @@ function crearModalVictoria(avatar){
               id.prepend(linsalir);
 
               id.prepend(puntos);
-
+              id.prepend(puntosAvatar);
                id.prepend(img);
 
                id.prepend( globorojo);
