@@ -37,9 +37,9 @@ console.log("consultando..."+id);
   .first()
   .then((user) => {
     if(user!=undefined) {
-      console.log(user)
+
       //res.redirect(/usuarios);
-      res.json({user:user})
+      res.json({user:user});
       //res.render(login/sesion, {user:user})
     }
   });
@@ -51,15 +51,41 @@ console.log(req.params.nivel);
         res.render('front/juego', {nivel: req.params.nivel});
     });
 
+  /*  router.put('/:id_administrador',(req,res) => {
+      console.log('updating...');
+      validateUserInsertUpdateRedirect(req,res,(user) => {
+        knex('Administrador')
+          .where('id_administrador',req.params.id_administrador)
+          .update({usuario : req.body.usuario,
+          password : req.body.password   })
+          .then( () =>  {
+            res.redirect(`/user/${req.params.id_administrador}`);
+          });
+      });
+    });*/
+router.post('/actualizaPuntaje:id:puntos', (req, res) => {
+         const id= req.params.id;
+         const puntos= req.params.puntos;
+
+        console.log("editando..."+puntos, id);
+          knex('usuarios')
+          .where('id',id)
+          .update({puntos : puntos })
+          .then( () =>  {
+          res.json("ok");
+          });
+
+          });
+
 router.get('/consultImagenes', (req, res) => {
 
-    console.log("consultando..."+id);
+    console.log("consultando...");
       knex('imagenes')
       .then((imagenes) => {
         if(imagenes!=undefined) {
-          console.log(user)
           //res.redirect(/usuarios);
-          res.json({imagenes:imagenes})
+
+          res.json({imagenes:imagenes});
           //res.render(login/sesion, {user:user})
         }
       });

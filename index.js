@@ -6,7 +6,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(bodyParser.json());
 //var routes= require('./routes/usuario');
 var users= require('./routes/usuario.js');
 
