@@ -8,17 +8,23 @@ class Juego {
   }
   getTablero(nivel){
 
-    var imagenese=JSON.parse(localStorage.getItem("imagenes"));
+    //var imagenese=JSON.parse(localStorage.getItem("imagenes"));
+    var req = new XMLHttpRequest();
+  // Petición HTTP GET síncrona hacia el archivo fotos.json del servidor
+  req.open("GET", "http://localhost:3000/consultImagenes", false);
+  req.send(null);
+  var imagenese= JSON.parse(req.responseText);
+
     var imgSeleccionadas=[];
     let cont=0;
-    let max=imagenese.length-1;
+    let max=imagenese.imagenes.length-1;
     while(cont<nivel){
       let random=this.getRand(max,0);
 
 
-          imgSeleccionadas.push(imagenese[random]);
-          imgSeleccionadas.push(imagenese[random]);
-          imagenese.splice(random, 1);
+          imgSeleccionadas.push(imagenese.imagenes[random]);
+          imgSeleccionadas.push(imagenese.imagenes[random]);
+          imagenese.imagenes.splice(random, 1);
            max--;
       cont++;
     }

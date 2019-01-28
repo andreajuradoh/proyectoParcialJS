@@ -172,7 +172,7 @@ imagenesViradasConExito++;
    if(imgTmp[imgTmp.length-3].id!=imgTmp[imgTmp.length-2].id){
     let tmp=posicionTmp.pop();//eliminoultimap pos
     let saco=posicionTmp.pop();//elimino 2da pos
-imagenesViradasConExito-=2;
+     imagenesViradasConExito-=2;
      var respuestaIncorrecta = document.getElementById("respuesta-incorrecta");
     respuestaIncorrecta.play();
     imagenVolteada[saco].src=fondo;
@@ -184,6 +184,9 @@ imagenesViradasConExito-=2;
     imgTmp.push(tablero[tmp]);
     avatar.puntos-=1*nivelMain;
      actualizarPts();
+  }else{
+      avatar.puntos+=tablero[mostra].puntaje;
+      actualizarPts();
   }
  }
  }
@@ -193,6 +196,7 @@ imagenesViradasConExito-=2;
    var audioCorrecto =  document.getElementById("correcto");
     audioCorrecto.preload = "auto";
     avatar.puntos+=10*nivelMain;
+
      actualizarPts();
    nivelMain++;
 
@@ -236,7 +240,7 @@ function juegonuevo(){
    genera_tabla(nivelMain);
 
 var h1nivel=document.getElementById("hnivel");
-h1nivel.textContent=contenh1+" " + nivelMain;
+h1nivel.textContent="Nivel: " + nivelMain;
 
 }
 function overJuego(nivel) {
@@ -273,7 +277,7 @@ function crearModalVictoria(avatar){
               salir.src="../img/salir.png";
 
              var linsalir= document.createElement("a");
-             linsalir.href="index.html";
+             linsalir.href="/escoger";
              linsalir.appendChild(salir);
 
 
@@ -337,7 +341,14 @@ function crearModalVictoria(avatar){
 
 }
 function modificarPuntaje(){
-  let arrayAvaters=JSON.parse(localStorage.getItem("avatares"));
+  //let arrayAvaters=JSON.parse(localStorage.getItem("avatares"));
+  var req = new XMLHttpRequest();
+// Petición HTTP GET síncrona hacia el archivo fotos.json del servidor
+let obj=JSON.stringify(avatar);
+req.open("POST", "http://localhost:3000/actualizaPuntaje"+avatar.id+avatar.puntos, false);
+req.send(null);
+
+/*
   let obj= new Avatar();
   let indice=0;
   for (var variable in arrayAvaters) {
@@ -354,7 +365,7 @@ function modificarPuntaje(){
   }
   arrayAvaters.push(obj);
  localStorage.setItem("avatares",JSON.stringify(arrayAvaters));
-
+*/
 }
 var time=0;
 var myVar = setInterval(myTimer, 1000);
