@@ -7,7 +7,8 @@ class Juego {
   guardarPartida(juego){
     var req = new XMLHttpRequest();
   // Petición HTTP GET síncrona hacia el archivo fotos.json del servidor
-  req.open("GET", "window.location//guardarPartida"+juego.id_usuario+juego.puntaje, false);
+  const server=window.location.origin;
+  req.open("GET", server+"/guardarPartida"+juego.id_usuario+juego.puntaje, false);
   req.send(null);
   }
    getRand(max,min){
@@ -18,7 +19,8 @@ class Juego {
     //var imagenese=JSON.parse(localStorage.getItem("imagenes"));
     var req = new XMLHttpRequest();
   // Petición HTTP GET síncrona hacia el archivo fotos.json del servidor
-  req.open("GET", "window.location/consultImagenes", false);
+  const server=window.location.origin;
+  req.open("GET", server+"/consultImagenes", false);
   req.send(null);
   var imagenese= JSON.parse(req.responseText);
 

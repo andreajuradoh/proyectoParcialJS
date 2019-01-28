@@ -352,7 +352,8 @@ function modificarPuntaje(){
   var req = new XMLHttpRequest();
 // Petición HTTP GET síncrona hacia el archivo fotos.json del servidor
 let obj=JSON.stringify(avatar);
-req.open("POST", "window.location/actualizaPuntaje"+avatar.id+avatar.puntos, false);
+const server=window.location.origin;
+req.open("POST", server+"/actualizaPuntaje"+avatar.id+avatar.puntos, false);
 req.send(null);
 
 /*
