@@ -1,14 +1,20 @@
 var express = require ('express');
 var exphbs = require ('express-handlebars');
 var app = express();
+
+
+
 var path = require('path');
 //add bodyParser for use of GET & POST
 var bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({extended : true}));
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true }));
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
+
 //var routes= require('./routes/usuario');
-var users= require('./routes/usuario.js');
+var users= require('./routes/tablausuario.js');
 
 
 const knex= require('./db/knex');
@@ -21,15 +27,20 @@ app.set('view engine','handlebars');
 
 var front = require('./routes/front');
 var admin = require('./routes/backend');
-var user = require('./routes/usuario');
+
+//var user = require('./routes/usuario');
 
 //var instrucciones= require('./routes/instrucciones.js');
 //var instrucciones = require('./front/instrucciones.js');
 //ENRUTAMIENTO
 
 app.use('/',front);
+
+app.use('/admin/usuarios', users);
+
+
 app.use('/admin',admin);
-app.use('/admin/usuario',user);
+//app.use('/admin',user);
 
 
 
