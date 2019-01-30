@@ -9,13 +9,12 @@
   <link rel="stylesheet" href="css/estilo.css">
 
       <link rel="stylesheet" href="css/bootstrap.min.css">
-
-
-<script type="text/javascript" src="avatares.json"></script>
   </head>
 
   <body cz-shortcut-listes="true">
-
+<div class="">
+  <a href="/verRanking">Ver Ranking Partidas</a>
+</div>
 
        <div class="titulo-avatar">
       <img src="/img/escoge-personaje.png" class="img-responsive">
@@ -39,17 +38,22 @@
 
         </div>
           <div class="container-fluid col-md-12 avataresIndex" id="contenAvatares">
-              {{#each objUsers}}
-<h2>{{id}}</h2>
-<a href="/video"><img src ="{{foto}}"/></a>
-<h4>{{genero}}</h4>
+{{#each objUsers}}
+<div class="misavatares">
+<h4>{{puntos}} Puntos</h4>
+<a href="/video"><img onclick="sesion({{id}})" src ="{{foto}}" class="rounded-circle personalImg"/></a>
+
 <h5>{{nombre}}</h5>
-<h4>{{puntaje}}</h4>
+</div>
+
+
+
 {{/each}}
 
           </div>
         </div>
       </div>
+
 
       <div class="button-container">
       <div class="row">
@@ -61,6 +65,9 @@
         </div>
       </div>
   </div>
+
+
+
 
 <style>
 

@@ -2,6 +2,17 @@ var express = require ('express');
 var exphbs = require ('express-handlebars');
 var app = express();
 
+
+
+var path = require('path');
+//add bodyParser for use of GET & POST
+var bodyParser = require('body-parser');
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true }));
+
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.json());
+
 //var routes= require('./routes/usuario');
 var users= require('./routes/tablausuario.js');
 
@@ -24,17 +35,17 @@ var admin = require('./routes/backend');
 //ENRUTAMIENTO
 
 app.use('/',front);
-app.use('/tablasadmin',admin);
-app.use('/index', users);
-app.use('/new', users);
 
-app.use('/administracionUsuario',admin);
+app.use('/admin/usuarios', users);
+
+
+app.use('/admin',admin);
 //app.use('/admin',user);
 
 
 
         app.listen(app.get('port'), function(){
-            console.log('Express on localhost:' + 
+            console.log('Express on localhost:' +
                         app.get('port'));
         });
 
@@ -44,4 +55,3 @@ app.use('/administracionUsuario',admin);
 
 //ARCHIVOS ESTÁTICOS
 app.use(express.static(__dirname + '/public'));
-
