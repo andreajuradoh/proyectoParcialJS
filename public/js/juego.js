@@ -38,8 +38,9 @@ function actualizarPts(){
     var pt = $('#ptos');
 
     var ptos=avatar.puntos;
-    if(ptos<0){
+    if(ptos<0 || obj.puntaje<0 ){
       ptos=0;
+      obj.puntaje=0;
     }
     let img=document.getElementById("imgAvatar");
     img.className="imagenavatar";
@@ -187,7 +188,7 @@ imagenesViradasConExito++;
     imgTmp=[];
     imgTmp.push(tablero[tmp]);
     avatar.puntos-=1*nivelMain;
-    obj.puntaje+=1*nivelMain;
+    obj.puntaje-=1*nivelMain;
      actualizarPts();
   }else{
       avatar.puntos+=tablero[mostra].puntaje;
