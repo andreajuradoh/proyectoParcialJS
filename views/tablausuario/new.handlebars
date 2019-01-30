@@ -1,0 +1,77 @@
+
+<form class="form" action="/index/{{foto}}" method="post">
+    
+   
+      <div class ="form-group" id="foto">
+    
+<input type="file" class="form-control" required id="url" >
+          
+          <input type="text"  name="url" style="visibility:hidden" id="urlimage">
+
+    </div>
+  <div class="form-group">
+    <img src="" alt="" id="img_foto" width="100" height="100">
+  </div>
+    
+     <div class="form-group">
+    <label for="title">Genero:</label>
+    <input type="text" class="form-control" id="clave" placeholder="Usuario" name="clave">
+  </div>
+    
+  <div class="form-group">
+    <label for="title">Nombre:</label>
+    <input type="text" class="form-control" id="nombre" placeholder="Nombre Completo" name="nombre"><!--req.body.name-->
+  </div>
+  <div class="form-group">
+    <label for="title">Puntos:</label>
+    <input type="text" class="form-control" id="nombre" placeholder="Nombre Completo" name="nombre"><!--req.body.name-->
+  </div>
+ 
+
+
+  <div class="form-group">
+    <input type="input" class="form-control hidden" id="img_foto_" name="input_foto">
+  </div>
+  <div class="form-group">
+    <img src="" alt="" id="img_foto" width="100" height="100">
+  </div>
+    <button type="submit" class="btn btn-primary">Crear</button>
+    
+
+</form>
+
+  <script>
+try{ 
+    document.addEventListener('DOMContentLoaded',function(){
+    document.querySelector('#url').onchange=evento;
+      },false);
+      
+      function evento(event){
+        readURL(this, "urlimage");
+      }
+      
+      function readURL(input, id) {
+
+          if (input.files && input.files[0]) {
+              var reader = new FileReader();
+                console.log("Hola");
+              reader.onload = function (e) {
+                  console.log(e.target.result);
+                  
+                  $('#'+id).attr('value', e.target.result);
+              }
+
+              reader.readAsDataURL(input.files[0]);
+          }
+      }
+    }catch(err){
+
+    }
+</script>
+
+
+
+
+
+
+

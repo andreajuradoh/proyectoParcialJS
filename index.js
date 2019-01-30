@@ -2,9 +2,8 @@ var express = require ('express');
 var exphbs = require ('express-handlebars');
 var app = express();
 
-
 //var routes= require('./routes/usuario');
-var users= require('./routes/usuario.js');
+var users= require('./routes/tablausuario.js');
 
 
 const knex= require('./db/knex');
@@ -17,15 +16,20 @@ app.set('view engine','handlebars');
 
 var front = require('./routes/front');
 var admin = require('./routes/backend');
-var user = require('./routes/usuario');
+
+//var user = require('./routes/usuario');
 
 //var instrucciones= require('./routes/instrucciones.js');
 //var instrucciones = require('./front/instrucciones.js');
 //ENRUTAMIENTO
 
 app.use('/',front);
-app.use('/admin',admin);
-app.use('/admin/usuario',user);
+app.use('/tablasadmin',admin);
+app.use('/index', users);
+app.use('/new', users);
+
+app.use('/administracionUsuario',admin);
+//app.use('/admin',user);
 
 
 
