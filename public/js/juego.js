@@ -38,8 +38,11 @@ function actualizarPts(){
     var pt = $('#ptos');
 
     var ptos=avatar.puntos;
-    if(ptos<0 || obj.puntaje<0 ){
+    if(ptos<0   ){
       ptos=0;
+
+    }
+    if (obj.puntaje<0) {
       obj.puntaje=0;
     }
     let img=document.getElementById("imgAvatar");

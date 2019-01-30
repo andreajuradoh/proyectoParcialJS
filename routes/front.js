@@ -63,7 +63,7 @@ console.log(req.params.nivel);
 
 
  })
-          .orderBy('puntaje', 'desc')
+        .orderBy('puntaje', 'desc')
           .limit(10)
           .then(partidas =>{
               res.render('front/ranking', {objPartida: partidas});
