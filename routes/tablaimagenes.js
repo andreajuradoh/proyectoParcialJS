@@ -10,10 +10,10 @@ const knex= require('./../db/knex');
 router.get('/',function(req, res){
    /* res.type('text/plain');
     res.send('Mi página principal');*/
-    knex('usuarios')
+    knex('imagenes')
     .select()
-    .then(usuario =>{
-        res.render('tablausuario/index', {objUsers: usuario});
+    .then(imagenes =>{
+        res.render('tablaimagenes/index', {objImagenes: imagenes});
     });
     
    // res.render('usuario');
@@ -22,18 +22,18 @@ router.get('/',function(req, res){
 
 
 router.get('/new', (req, res) => {
-  res.render('tablausuario/new' );
+  res.render('tablaimagenes/new' );
 });
 
 //muestra usuario creado
 function respondAndRenderUser(id,res,viewName){  
   if(typeof id != 'undefined'){
-    knex('usuarios')
+    knex('imagenes')
       .select()
       .where('id',id)
       .first()
-      .then(usuarios => {
-        res.render(viewName,{usuarios: usuarios});
+      .then(imagenes => {
+        res.render(viewName,{imagenes: imagenes});
     });
   }else{
     
@@ -46,20 +46,20 @@ function respondAndRenderUser(id,res,viewName){
 }
 router.get('/:id', (req, res) => {
   const id = req.params.id;
-  respondAndRenderUser(id,res,'tablausuario/single');
+  respondAndRenderUser(id,res,'tablaimagenes/single');
   
 });
 
 //routing new + form + post mostrar create avatar
 router.post('/guardar', (req, res) => {  
  
-      console.log("entro mmv"+req.body.fotoadd);
-    knex('usuarios')
+      console.log("entro"+req.body.fotoadd);
+    knex('imagenes')
       .returning('id')
-      .insert({foto : req.body.fotoadd, genero : req.body.genero, nombre: req.body.nombre, puntos: req.body.puntos})
+      .insert({foto : req.body.fotoadd, puntaje: req.body.puntaje})
       .then(ids =>  {
         const id = ids[0];
-        res.redirect(`/admin/usuarios/${id}`);
+        res.redirect(`/admin/imagenes/${id}`);
      
   });
 });
@@ -70,12 +70,12 @@ router.post('/:id',(req,res)=>{
   console.log('deleting...');
              
  if(typeof id != 'undefined'){
-    knex('usuarios')      
+    knex('imagenes')      
       .where('id',id)
       .del()
       .then(usuarios => {
         console.log('delete id: '+id); 
-        res.redirect('/tablausuario/index');      
+        res.redirect('/tablaimagenes/index');      
     });
     
   }else{

@@ -15,7 +15,9 @@ app.use(bodyParser.json());
 
 //var routes= require('./routes/usuario');
 var users= require('./routes/tablausuario.js');
+var imagenes= require('./routes/tablaimagenes.js');
 
+//var partida= require('./routes/tablapartida.js');
 
 const knex= require('./db/knex');
 
@@ -37,8 +39,9 @@ var admin = require('./routes/backend');
 app.use('/',front);
 
 app.use('/admin/usuarios', users);
+app.use('/admin/imagenes', imagenes);
 
-
+//app.use('/admin/partida', partida);
 app.use('/admin',admin);
 //app.use('/admin',user);
 
