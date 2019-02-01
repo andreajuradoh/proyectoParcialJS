@@ -1,0 +1,26 @@
+<form class="form-horizontal" role="form" action="/user/auth" method="POST" style="text-align: -webkit-center; text-align: -moz-center;">
+  
+  
+<input type="hidden" name="_csrf" value="{{csrf}}">
+  
+<div class="form-group">
+  <label for="fieldName" class="col-sm-2 control-label"><strong>Usuario</strong></label>
+  <div class="col-sm-4">
+      <input type="text" class="form-control" id="usuario" name="usuario">
+  </div>
+</div>
+
+<div class="form-group">
+  <label  class="col-sm-2 control-label"><strong>Password</strong></label>
+  <div class="col-sm-4">
+    <input type="password" class="form-control" required id="password" name="password">
+  </div>
+</div>
+  
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-4">
+    <button type="submit" class="btn btn-default btn-warning" style="color: white;" >Ingresar</button>
+      </div>
+    </div>
+
+    </form>

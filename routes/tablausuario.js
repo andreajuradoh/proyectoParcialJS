@@ -27,7 +27,8 @@ router.get('/new', (req, res) => {
 
 //muestra usuario creado
 function respondAndRenderUser(id,res,viewName){  
-  if(typeof id != 'undefined'){
+ if(typeof id != 'undefined'){
+  
     knex('usuarios')
       .select()
       .where('id',id)
@@ -64,8 +65,38 @@ router.post('/guardar', (req, res) => {
   });
 });
 
+
+
+router.get('/:id/edit', (req,res) => {
+  const id = req.params.id;
+  console.log('edit id:'+id);
+  respondAndRenderUser(id,res,'tablausuario/edit');  
+});
+
+
+
+//funcion del edit 
+function validateUserInsertUpdateRedirect(req,res,callback){
+  if(validUser(req.body)){
+     //inser into db
+    const usuarios = {
+      foto : req.body.fotoadd
+    };    
+    callback(usuarios);
+    console.log("created");
+  }else{
+    //responde with an error    
+    console.log('error on created');   
+    res.status(500);
+    res.render('error', {
+      message: 'Invalid user at created' 
+    });
+  }
+}
+
+
 //elimina usuario creado delete + form 
-router.post('/:id',(req,res)=>{
+router.delete('/:id',(req,res)=>{
   const id=req.params.id;
   console.log('deleting...');
              
@@ -90,25 +121,19 @@ router.post('/:id',(req,res)=>{
 
 
 
-router.get('/:id/edit', (req,res) => {
-  const id = req.params.id;
-  console.log('edit id:'+id);
-  respondAndRenderUser(id,res,'tablausuario/edit');  
-});
-
-
 
 router.put('/:id',(req,res) => {
   console.log('updating...');
-  validateUserInsertUpdateRedirect(req,res,(user) => {
+  validateUserInsertUpdateRedirect(req,res,(usuario) => {
     knex('usuarios')
       .where('id',req.params.id)
-      .update({foto : req.body.fotoadd})
+      .update({foto : req.body.fotoadd, genero: req.body.genero, puntos: req.body.puntos})
       .then( () =>  {
         res.redirect(`/admin/usuarios/${req.params.id}`);
       });
   });   
 });
+
 
 
 

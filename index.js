@@ -1,7 +1,7 @@
 var express = require ('express');
 var exphbs = require ('express-handlebars');
 var app = express();
-
+var methodOverride = require('method-override');
 
 
 var path = require('path');
@@ -45,6 +45,7 @@ app.use('/admin/imagenes', imagenes);
 app.use('/admin',admin);
 //app.use('/admin',user);
 
+app.use(methodOverride('_method'));
 
 
         app.listen(app.get('port'), function(){
