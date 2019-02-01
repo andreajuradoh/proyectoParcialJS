@@ -92,8 +92,8 @@ router.post('/:id',(req,res)=>{
 
 router.get('/:id/edit', (req,res) => {
   const id = req.params.id;
-  console.log('edit id:sadsad'+id);
-  respondAndRenderUser(id,res,'/edit');  
+  console.log('edit id:'+id);
+  respondAndRenderUser(id,res,'tablausuario/edit');  
 });
 
 
@@ -101,7 +101,6 @@ router.get('/:id/edit', (req,res) => {
 router.put('/:id',(req,res) => {
   console.log('updating...');
   validateUserInsertUpdateRedirect(req,res,(user) => {
-      console.log(req.body.fotoadd);
     knex('usuarios')
       .where('id',req.params.id)
       .update({foto : req.body.fotoadd})
@@ -110,7 +109,6 @@ router.put('/:id',(req,res) => {
       });
   });   
 });
-
 
 
 
