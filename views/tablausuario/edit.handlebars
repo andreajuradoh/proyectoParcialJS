@@ -1,0 +1,66 @@
+
+<body>
+<h2>Editar - <a href="/avatar"> Cambiar Usuario </a></h2>
+<div class="row pt-md-5"></div>
+ <script src="/Js/jquery-3.3.1.min.js"> </script>
+<!-- NOTA: utilice helper para simplificar el código de esta sección 
+agregar method-override 
+-->
+
+<form class="form" action="/admin/usuarios/{{usuarios.id}}?_method=PUT" method="put">
+
+
+      <div class ="form-group" id="foto">
+          
+ 
+
+
+          <input type="file" name="foto" id="imagen" >
+          <input type="text" class="form-control" id="fotoadd"  name="fotoadd" >
+           <img id="imagenadd" src="#"  alt="your image" width="100" height="100"/>
+
+    </div>
+  <div class="form-group">
+    <img src="" alt="" id="img_foto" width="100" height="100">
+  </div>
+
+     <div class="form-group">
+    <label for="title">Genero:</label>
+    <input type="text" class="form-control" id="clave" placeholder="Usuario" name="genero">
+  </div>
+
+  <div class="form-group">
+    <label for="title">Nombre:</label>
+    <input type="text" class="form-control" id="nombre" placeholder="Nombre Completo" name="nombre"><!--req.body.name-->
+  </div>
+  <div class="form-group">
+    <label for="title">Puntos:</label>
+    <input type="number" class="form-control" id="nombre" placeholder="Puntos" name="puntos"><!--req.body.name-->
+  </div>
+
+
+
+
+  <div class="form-group">
+    <img src="" alt="" id="img_foto" width="100" height="100">
+  </div>
+        <a><button type="submit" class="btn btn-default btn-primary">Actualizar</button></a> 
+
+
+</form>
+
+
+<div class="row pt-md-2"></div>
+<a href="/avatar"> <button class="btn btn-default btn-warning" style="color:white;">Atrás</button></a>
+<br><br><br>
+    <div class="row pt-md-5"></div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/newusuario.js"></script>
+</body>
+
