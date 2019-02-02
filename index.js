@@ -29,6 +29,7 @@ var admin = require('./routes/backend');
 var users= require('./routes/tablausuario.js');
 var imagenes= require('./routes/tablaimagenes.js');
 var partida= require('./routes/tablapartida.js');
+var credenciales= require('./routes/tablacredenciales.js');
 
 //**ENRUTAMIENTO**
 
@@ -36,7 +37,7 @@ app.use('/',front);
 
 app.use('/admin/usuarios', users);
 app.use('/admin/imagenes', imagenes);
-
+app.use('/admin/credenciales', credenciales);
 app.use('/admin/partidas', partida);
 app.use('/admin',admin);
 
