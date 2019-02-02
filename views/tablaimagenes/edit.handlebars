@@ -1,18 +1,33 @@
 
 <body>
-<h2>Editar - <a href="/avatar"> Cambiar Partida </a></h2>
+<h2>Editar - <a href="/avatar"> Cambiar Usuario </a></h2>
 <div class="row pt-md-5"></div>
  <script src="/Js/jquery-3.3.1.min.js"> </script>
 <!-- NOTA: utilice helper para simplificar el código de esta sección
 agregar method-override
 -->
 
-<form class="form" action="/admin/partidas/{{partida.id}}?_method=PUT" method="post">
+<form class="form" action="/admin/imagenes/{{imagenes.id}}?_method=PUT" method="post">
+
+
+      <div class ="form-group" id="foto">
+
+
+
+
+          <input type="file" name="foto" id="imagen" >
+          <input type="text" class="form-control" id="fotoadd"  name="fotoadd"   value="{{imagenes.foto}}"  style="visibility:hidden">
+           <img id="imagenadd" src="#"  alt="your image" width="100" height="100"/>
+
+    </div>
+  <div class="form-group">
+    <img src="" alt="" id="img_foto" width="100" height="100">
+  </div>
 
 
   <div class="form-group">
     <label for="title">Puntos:</label>
-    <input type="number" class="form-control" id="nombre" placeholder="Puntos" name="puntaje" value="{{partida.puntaje}}" ><!--req.body.name-->
+    <input type="number" class="form-control" id="nombre" placeholder="Puntos" name="puntaje" value="{{imagenes.puntaje}}" ><!--req.body.name-->
   </div>
 
 
