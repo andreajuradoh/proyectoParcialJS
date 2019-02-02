@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+
+<div class="row">
+<h1> DATABASE: TABLA PARTIDA </h1>
+</div>
+
+<div class="row">
+<a href="/admin/partidas/new" type="button" class="btn btn-default btn-warning" >Nuevo</a>
+<a href="/admin/" type="button" class="btn btn-default btn-warning" >Menú</a>
+
+
+</div>
+<div class="row pt-md-5"></div>
+<table>
+<tr>
+  <h3><td>Id</td></h3>
+  <td>Puntaje</td>
+  <td>Nombre Jugador</td>
+  <td>Foto Jugador</td>
+  <td> </td>
+  <td></td>
+
+</tr>
+
+{{#each objPartidas}}
+<tr>
+
+
+  <div class="row">
+<div class="col-4 col-sm-1">
+<td><h1>{{id}}</h1></td>
+<td><h5>{{puntaje}} </h5></td>
+<td><h5>{{nombre}}</h5></td>
+<td><img src=" {{foto}}" alt="" class="rounded-circle personalImg">
+</td>
+
+ </div>
+ <td><div class="col-4 col-sm-1"><a type="button" class="btn btn-default btn-danger" href='/admin/partidas/{{id}}/edit'>editar</a></div></td>
+    <div class="col-4 col-sm-1">
+      <form action='/admin/partidas/{{id}}?_method=DELETE' method='post'>
+    <td>    <button type="submit" class="btn btn-default btn-danger">borrar</button></td>
+      </form>
+    </div>
+
+  </div>
+  </tr>
+{{/each}}
+</table>

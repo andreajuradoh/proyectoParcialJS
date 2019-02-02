@@ -38,8 +38,12 @@ function actualizarPts(){
     var pt = $('#ptos');
 
     var ptos=avatar.puntos;
-    if(ptos<0){
+    if(ptos<0   ){
       ptos=0;
+
+    }
+    if (obj.puntaje<0) {
+      obj.puntaje=0;
     }
     let img=document.getElementById("imgAvatar");
     img.className="imagenavatar";
@@ -187,7 +191,7 @@ imagenesViradasConExito++;
     imgTmp=[];
     imgTmp.push(tablero[tmp]);
     avatar.puntos-=1*nivelMain;
-    obj.puntaje+=1*nivelMain;
+    obj.puntaje-=1*nivelMain;
      actualizarPts();
   }else{
       avatar.puntos+=tablero[mostra].puntaje;
@@ -352,7 +356,8 @@ function modificarPuntaje(){
   var req = new XMLHttpRequest();
 // Petición HTTP GET síncrona hacia el archivo fotos.json del servidor
 let obj=JSON.stringify(avatar);
-req.open("POST", "http://localhost:3000/actualizaPuntaje"+avatar.id+avatar.puntos, false);
+const server=window.location.origin;
+req.open("POST", server+"/actualizaPuntaje"+avatar.id+avatar.puntos, false);
 req.send(null);
 
 /*

@@ -15,12 +15,11 @@ colocarAvatar(cadVariables);
 function colocarAvatar(avatar){
   let img = document.getElementById("conten-avat");
   //var nombre="avatar1.png";
-  if(avatar.nombre.substring(0,4)=="data"){
 
-  img.innerHTML="<img class=' img-responsive' src='"+avatar.nombre+"'>";
+
+  img.innerHTML="<img class=' img-responsive' src='"+avatar.foto+"'>";
   img.className="personalImg";
-  }else
-  img.innerHTML="<img class=' img-responsive' src='../img/"+avatar.nombre+"'>";
+
 }
 
 

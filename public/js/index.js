@@ -54,7 +54,9 @@ function sesion(indice){
   var avatar;
   var req = new XMLHttpRequest();
 // Petición HTTP GET síncrona hacia el archivo fotos.json del servidor
-req.open("GET", "http://localhost:3000/consultUserId"+indice, false);
+const server=window.location.origin;
+console.log(server);
+req.open("GET", server+"/consultUserId"+indice, false);
 req.send(null);
 avatar= JSON.parse(req.responseText);
 console.log("sesion");

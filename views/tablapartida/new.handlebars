@@ -1,0 +1,42 @@
+<body>
+
+
+
+<form class="form" action="/admin/partidas/guardar" method="post">
+
+
+     <div class="form-group">
+    <label for="title">Puntaje:</label>
+    <input type="number" class="form-control" id="clave" placeholder="Puntaje" name="puntaje">
+  </div>
+
+  <div class="form-group">
+    <label for="">Usuarios</label>
+<select class="" name="usuario">
+  {{#each objUsers}}
+<option value="{{id}}">{{nombre}}</option>
+
+{{/each}}
+
+</select>
+  </div>
+
+
+
+
+
+  <div class="form-group">
+    <img src="" alt="" id="img_foto" width="100" height="100">
+  </div>
+    <button type="submit"  id="guardarUser" class="btn btn-primary">Crear</button>
+
+
+</form>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/newusuario.js"></script>
+</body>
