@@ -33,7 +33,7 @@ router.get('/new', (req, res) => {
           console.log("no hay usuario");
           res.render('tablapartida/mensajeerror');
       }else
-      res.render('tablapartida/new', {objPartidas: partida});
+      res.render('tablapartida/new', {objUsers: usuario});
   });
 
 
