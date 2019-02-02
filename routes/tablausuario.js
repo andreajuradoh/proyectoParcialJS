@@ -123,7 +123,7 @@ router.delete('/:id',(req,res)=>{
 
 
 router.put('/:id',(req,res) => {
-  console.log('updating...');
+  console.log('updating... huele bicho');
     knex('usuarios')
       .where('id',req.params.id)
       .update({foto : req.body.fotoadd, genero: req.body.genero, puntos: req.body.puntos, nombre: req.body.nombre})

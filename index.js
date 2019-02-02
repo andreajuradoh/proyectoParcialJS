@@ -14,11 +14,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 
 app.use(methodOverride('_method'));
-//var routes= require('./routes/usuario');
-var users= require('./routes/tablausuario.js');
-var imagenes= require('./routes/tablaimagenes.js');
 
-//var partida= require('./routes/tablapartida.js');
 
 const knex= require('./db/knex');
 
@@ -27,24 +23,23 @@ app.set('port', process.env.PORT || 3000);
 app.engine('handlebars', exphbs({defaultLayout:
                                  'main'}));
 app.set('view engine','handlebars');
-
+//** REQUERIMIENTOS DE ARCHIVOS ROUTES **
 var front = require('./routes/front');
 var admin = require('./routes/backend');
+var users= require('./routes/tablausuario.js');
+var imagenes= require('./routes/tablaimagenes.js');
+var partida= require('./routes/tablapartida.js');
 
-//var user = require('./routes/usuario');
-
-//var instrucciones= require('./routes/instrucciones.js');
-//var instrucciones = require('./front/instrucciones.js');
-//ENRUTAMIENTO
+//**ENRUTAMIENTO**
 
 app.use('/',front);
 
 app.use('/admin/usuarios', users);
 app.use('/admin/imagenes', imagenes);
 
-//app.use('/admin/partida', partida);
+app.use('/admin/partidas', partida);
 app.use('/admin',admin);
-//app.use('/admin',user);
+
 
 
 
