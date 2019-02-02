@@ -9,7 +9,7 @@ router.get('/',function(req, res){
    /* res.type('text/plain');
     res.send('Mi página principal');*/
     knex('partida')
-        .select()
+        .select("partida.id", "partida.puntaje", "partida.id_usuarios", "usuarios.id as usuarios.id_usuario", "usuarios.foto", "usuarios.genero", "usuarios.nombre", "usuarios.puntos")
         .innerJoin('usuarios', function () {
         this
        .on('partida.id_usuarios', 'usuarios.id')
@@ -29,7 +29,11 @@ router.get('/new', (req, res) => {
     this.select('*').from('partida').whereRaw('partida.id_usuarios = usuarios.id');
   })
   .then(usuario =>{
-      res.render('tablapartida/new', {objUsers: usuario});
+      if(usuario.length==0){
+          console.log("no hay usuario");
+          res.render('tablapartida/mensajeerror');
+      }else
+      res.render('tablapartida/new', {objPartidas: partida});
   });
 
 
@@ -90,10 +94,10 @@ router.put('/:id',(req,res) => {
       .where('id',req.params.id)
       .update({puntaje: req.body.puntaje})
       .then( () =>  {
-        res.redirect(`/admin/partida/${req.params.id}`);
+        res.redirect(`/admin/partidas/${req.params.id}`);
       });
-
 });
+
 
 
 //form delete por post
