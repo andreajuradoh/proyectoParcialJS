@@ -13,6 +13,7 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 
+app.use(methodOverride('_method'));
 //var routes= require('./routes/usuario');
 var users= require('./routes/tablausuario.js');
 var imagenes= require('./routes/tablaimagenes.js');
@@ -45,7 +46,6 @@ app.use('/admin/imagenes', imagenes);
 app.use('/admin',admin);
 //app.use('/admin',user);
 
-app.use(methodOverride('_method'));
 
 
         app.listen(app.get('port'), function(){
