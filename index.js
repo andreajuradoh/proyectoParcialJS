@@ -39,6 +39,7 @@ app.use('/admin/usuarios', users);
 app.use('/admin/imagenes', imagenes);
 app.use('/admin/credenciales', credenciales);
 app.use('/admin/partidas', partida);
+
 app.use('/admin',admin);
 
 

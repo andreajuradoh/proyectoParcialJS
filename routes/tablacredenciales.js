@@ -107,4 +107,10 @@ router.get('/:id/edit', (req,res) => {
   respondAndRenderUser(id,res,'tablacredenciales/edit');
 });
 
+
+
+
+
+
+
 module.exports= router;

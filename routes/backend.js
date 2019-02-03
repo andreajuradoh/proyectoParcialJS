@@ -9,11 +9,24 @@ router.get('/',function(req, res){
    /* res.type('text/plain');
     res.send('Mi página principal');*/
     
-        res.render('administrador/index');
+        res.render('login/login');
 
     
    // res.render('usuario');
 });
+
+
+router.get('/vertablas',function(req, res){
+   /* res.type('text/plain');logi
+    res.send('Mi página principal');*/
+    
+        res.render('admin/index');
+
+    
+   // res.render('usuario');
+});
+
+
 
 
 

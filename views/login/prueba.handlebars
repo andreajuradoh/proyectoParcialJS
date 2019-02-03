@@ -1,0 +1,24 @@
+
+<script>
+
+var xhr = new XMLHttpRequest();
+    let host = window.origin;
+xhr.open('GET', host+"/login/login/{{login}}", true);
+xhr.send();
+ 
+xhr.onreadystatechange = processRequest;
+ 
+function processRequest(e) {
+ if (xhr.readyState == 4 && xhr.status == 200) {
+        var response = JSON.parse(xhr.responseText);
+        console.log(response)
+
+        localStorage.setItem('usuario', JSON.stringify(response))
+     console.log(response)
+      window.location="/inicio"
+    }
+}
+
+</script>
+
+    

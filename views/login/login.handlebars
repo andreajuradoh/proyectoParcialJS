@@ -1,3 +1,14 @@
+<div id="content3R">
+    <h3 id="title-design">Iniciar Sesión</h3> <br>
+<script >
+        var usuario = localStorage.getItem("usuario");
+        
+        if(usuario!=null || usuario!=undefined){
+             console.log(usuario);
+              window.location="/inicio"
+             //window.location="/user/login"
+        }
+</script>
 <form class="form-horizontal" role="form" action="/user/auth" method="POST" style="text-align: -webkit-center; text-align: -moz-center;">
   
   
@@ -24,3 +35,4 @@
     </div>
 
     </form>
+</div>

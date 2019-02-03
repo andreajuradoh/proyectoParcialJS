@@ -65,7 +65,7 @@ router.post('/guardar', (req, res) => {
 });
 
 //elimina usuario creado delete + form 
-router.post('/:id',(req,res)=>{
+router.delete('/:id',(req,res)=>{
   const id=req.params.id;
   console.log('deleting...');
              
@@ -75,7 +75,7 @@ router.post('/:id',(req,res)=>{
       .del()
       .then(usuarios => {
         console.log('delete id: '+id); 
-        res.redirect('/tablaimagenes/index');      
+        res.redirect('/admin/imagenes');      
     });
     
   }else{
