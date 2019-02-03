@@ -15,7 +15,7 @@ router.get('/',function(req, res){
     .then(imagenes =>{
         res.render('tablaimagenes/index', {objImagenes: imagenes});
     });
-    
+
    // res.render('usuario');
 });
 
@@ -26,7 +26,7 @@ router.get('/new', (req, res) => {
 });
 
 //muestra usuario creado
-function respondAndRenderUser(id,res,viewName){  
+function respondAndRenderUser(id,res,viewName){
   if(typeof id != 'undefined'){
     knex('imagenes')
       .select()
@@ -36,23 +36,23 @@ function respondAndRenderUser(id,res,viewName){
         res.render(viewName,{imagenes: imagenes});
     });
   }else{
-    
-    console.log('error invalid id ');   
+
+    console.log('error invalid id ');
     res.status(500);
     res.render('error', {
-      message: 'Invalid ID user' 
-    });    
-  }  
+      message: 'Invalid ID user'
+    });
+  }
 }
 router.get('/:id', (req, res) => {
   const id = req.params.id;
   respondAndRenderUser(id,res,'tablaimagenes/single');
-  
+
 });
 
 //routing new + form + post mostrar create avatar
-router.post('/guardar', (req, res) => {  
- 
+router.post('/guardar', (req, res) => {
+
       console.log("entro"+req.body.fotoadd);
     knex('imagenes')
       .returning('id')
@@ -60,32 +60,41 @@ router.post('/guardar', (req, res) => {
       .then(ids =>  {
         const id = ids[0];
         res.redirect(`/admin/imagenes/${id}`);
-     
+
   });
 });
 
+<<<<<<< HEAD
 //elimina usuario creado delete + form 
+=======
+//elimina usuario creado delete + form
+>>>>>>> e212677a3f11fbf1e9833d0f7eaa184bddb78134
 router.delete('/:id',(req,res)=>{
   const id=req.params.id;
   console.log('deleting...');
-             
+
  if(typeof id != 'undefined'){
-    knex('imagenes')      
+    knex('imagenes')
       .where('id',id)
       .del()
       .then(usuarios => {
+<<<<<<< HEAD
         console.log('delete id: '+id); 
         res.redirect('/admin/imagenes');      
+=======
+        console.log('delete id: '+id);
+        res.redirect('/admin/imagenes/');
+>>>>>>> e212677a3f11fbf1e9833d0f7eaa184bddb78134
     });
-    
+
   }else{
-    
-    console.log('error invalid delete ');   
+
+    console.log('error invalid delete ');
     res.status(500);
     res.render('error', {
-      message: 'Invalid ID delete ' 
-    });    
-  }      
+      message: 'Invalid ID delete '
+    });
+  }
 });
 
 

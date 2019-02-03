@@ -15,7 +15,7 @@ agregar method-override
 
      <div class="form-group">
     <label for="title">User:</label>
-    <input type="text" class="form-control" id="clave" placeholder="Username" name="user" value="{{credencial.user}}">
+    <input type="text" class="form-control" id="clave" placeholder="Username" name="user" value="{{credencial.user}}" >
   </div>
 
   <div class="form-group">
@@ -24,10 +24,15 @@ agregar method-override
   </div>
   <div class="form-group">
     <label for="title">Rol:</label>
- <select class="" name="rol">
-   <option value="{{credencial.rol}}">{{credencial.rol}}</option>
-   <option value="admin">Admin</option>
-   <option value="jugador">jugador</option>
+    <input type="text" id="inrol" name="" value="{{credencial.rol}}" style="visibility:hidden">
+
+ <select class="" id="rol" name="rol">
+
+   <option id="adm" value="admin">admin</option>
+   <option  id="jug" value="jugador">jugador</option>
+
+
+
  </select>
     </div>
 
@@ -50,10 +55,20 @@ agregar method-override
 
 
 <div class="row pt-md-2"></div>
-<a href="/avatar"> <button class="btn btn-default btn-warning" style="color:white;">Atrás</button></a>
+<a href="/admin/credenciales/"> <button class="btn btn-default btn-warning" style="color:white;">Atrás</button></a>
 <br><br><br>
     <div class="row pt-md-5"></div>
 
+<script type="text/javascript">
+  var select= document.getElementById("inrol");
+  if (select.value=="admin") {
+ let ad=document.getElementById('adm');
+ ad.selected="true";
+}else {
+  let ad=document.getElementById('jug');
+  ad.selected="true";
+}
+</script>
 
 
 
