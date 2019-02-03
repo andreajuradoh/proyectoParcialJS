@@ -1,16 +1,8 @@
-<script >
-       
-        var usuario = localStorage.getItem("usuario");
-        
-        if(usuario==null || usuario==undefined){
-             console.log(usuario);
-              window.location="/admin"
-             //window.location="/user/login"
-        }
+<body>
+
+<script type="text/javascript" src="/js/sesiones.js">
+
 </script>
-
-
-<h2>Usuario creado -  <a href="/escoger">Ir al juego</a></h2>
 <div class="">
   <a href="/admin/cerrar">Cerrar sesion</a>
 </div>
@@ -25,4 +17,6 @@
 <a href="/admin/usuarios" type="button" class="btn btn-default btn-warning" >
   Ver Usuarios
 </a>
-<a href ="/admin/vertablas"><button type="submit" class="btn btn-default success" >Menú</button></a>
+<a href ="/admin/"><button type="submit" class="btn btn-default success" >Menú</button></a>
+
+</body>
