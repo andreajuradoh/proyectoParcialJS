@@ -4,7 +4,7 @@
         
         if(usuario==null || usuario==undefined){
              console.log(usuario);
-              window.location="/admin"
+              window.location="/admin";
              //window.location="/user/login"
         }
 </script>
@@ -17,7 +17,9 @@ agregar method-override
 
 <form class="form" action="/admin/credenciales/{{credencial.id}}?_method=PUT" method="post">
 
-
+<div class="">
+   <a href="/admin/cerrar">Cerrar sesion</a>
+</div>
   <div class="form-group">
     <img src="" alt="" id="img_foto" width="100" height="100">
   </div>

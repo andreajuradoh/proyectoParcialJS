@@ -30,6 +30,7 @@ var users= require('./routes/tablausuario.js');
 var imagenes= require('./routes/tablaimagenes.js');
 var partida= require('./routes/tablapartida.js');
 var credenciales= require('./routes/tablacredenciales.js');
+var login= require('./routes/login.js');
 
 //**ENRUTAMIENTO**
 
@@ -39,7 +40,7 @@ app.use('/admin/usuarios', users);
 app.use('/admin/imagenes', imagenes);
 app.use('/admin/credenciales', credenciales);
 app.use('/admin/partidas', partida);
-
+app.use('/login',login);
 app.use('/admin',admin);
 
 

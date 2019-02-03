@@ -5,11 +5,11 @@
         
         if(usuario!=null || usuario!=undefined){
              console.log(usuario);
-              window.location="/inicio"
+              window.location="/admin/"
              //window.location="/user/login"
         }
 </script>
-<form class="form-horizontal" role="form" action="/admin/auth" method="POST" style="text-align: -webkit-center; text-align: -moz-center;">
+<form class="form-horizontal" role="form" action="/login/auth" method="POST" style="text-align: -webkit-center; text-align: -moz-center;">
   
   
 <input type="hidden" name="_csrf" value="{{csrf}}">

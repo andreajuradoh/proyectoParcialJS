@@ -4,19 +4,39 @@ var router= express.Router();
 
 const knex= require('./../db/knex');
 
+/*router.get('/:id', (req, res)=>{
+
+  const id = req.params.id;
+    console.log(id)
+  knex('credenciales')
+      .where('id', id)
+      .first()
+      .then((user) => {
+        if(user!=undefined) {
+          console.log(user)
+          //res.redirect(/usuarios);
+          res.json({user:user});
+          //res.render(login/sesion, {user:user})
+        }else {
+          //res.redirect("/login");
+        }
+      });
+
+});
+
 
 router.get('/',function(req, res){
    /* res.type('text/plain');
     res.send('Mi página principal');*/
 
-        res.render('login/login');
+       // res.render('login/login');
 
 
    // res.render('usuario');
-});
+//});
 
 
-router.get('/vertablas',function(req, res){
+router.get('/',function(req, res){
    /* res.type('text/plain');logi
     res.send('Mi página principal');*/
 
@@ -26,7 +46,7 @@ router.get('/vertablas',function(req, res){
    // res.render('usuario');
 });
 
-
+/*
 router.post('/auth', (req, res) => {
  const usuario=req.body.user;
  const password=req.body.password;
@@ -46,7 +66,7 @@ router.post('/auth', (req, res) => {
         var user= result[0].id;
         console.log("usuario", user);
 
-      res.redirect('/admin/vertablas');
+      res.render('administrador/sesion',{user: user});
     } else {
 
         res.redirect('/admin');
@@ -58,12 +78,12 @@ router.post('/auth', (req, res) => {
 });
 });
 
+*/
 
 router.get('/cerrar', (req, res) => {  
     console.log("dsfn");
   res.render('login/logout');
 });
-
 
 
 

@@ -19,7 +19,9 @@ agregar method-override
 
 <form class="form" action="/admin/partidas/{{partida.id}}?_method=PUT" method="post">
 
-
+<div class="">
+  <a href="/login/cerrar">Cerrar sesion</a>
+</div>
   <div class="form-group">
     <label for="title">Puntos:</label>
     <input type="number" class="form-control" id="nombre" placeholder="Puntos" name="puntaje" value="{{partida.puntaje}}" ><!--req.body.name-->
