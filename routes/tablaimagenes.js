@@ -65,8 +65,6 @@ router.post('/guardar', (req, res) => {
 });
 
 
-//elimina usuario creado delete + form 
-
 //elimina usuario creado delete + form
 
 router.delete('/:id',(req,res)=>{
@@ -78,9 +76,6 @@ router.delete('/:id',(req,res)=>{
       .where('id',id)
       .del()
       .then(usuarios => {
-
-        console.log('delete id: '+id); 
-        res.redirect('/admin/imagenes');      
 
         console.log('delete id: '+id);
         res.redirect('/admin/imagenes/');
