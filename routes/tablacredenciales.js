@@ -107,4 +107,15 @@ router.get('/:id/edit', (req,res) => {
   respondAndRenderUser(id,res,'tablacredenciales/edit');
 });
 
+router.put('/:id',(req,res) => {
+//  console.log('updating... huele bicho mmv'+req.params.id);
+    knex('credenciales')
+      .where('id',req.params.id)
+      .update({user : req.body.user, password: req.body.password, rol: req.body.rol})
+      .then( () =>  {
+        res.redirect(`/admin/credenciales/${req.params.id}`);
+      });
+
+});
+
 module.exports= router;
