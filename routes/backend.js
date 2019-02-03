@@ -59,6 +59,10 @@ router.post('/auth', (req, res) => {
 });
 
 
+router.get('/cerrar', (req, res) => {  
+    console.log("dsfn");
+  res.render('login/logout');
+});
 
 
 

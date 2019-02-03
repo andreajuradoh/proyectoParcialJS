@@ -1,4 +1,13 @@
-
+<script >
+       
+        var usuario = localStorage.getItem("usuario");
+        
+        if(usuario==null || usuario==undefined){
+             console.log(usuario);
+              window.location="/admin"
+             //window.location="/user/login"
+        }
+</script>
 <body>
 <div class="row pt-md-5"></div>
  <script src="/Js/jquery-3.3.1.min.js"> </script>
