@@ -27,10 +27,36 @@ router.get('/vertablas',function(req, res){
 });
 
 
-
-
-
-
+router.post('/auth', (req, res) => {  
+ const usuario=req.body.user;
+ const password=req.body.password;
+   console.log("prueba",usuario); 
+  knex('credenciales')
+  .where({ user: usuario })
+  .select('password')
+  .select('id')  
+  .then(function(result) {
+    if (!result || !result[0])  {  // not found!
+      console.log("Invalido user"); 
+          res.redirect('/admin');
+      return;
+    }
+    var pass = result[0].password;
+    if (password === pass) {
+        var user= result[0].id;
+        console.log("usuario", user);
+        
+      res.render('administrador/index');
+    } else {
+        
+        res.redirect('/admin');
+      console.log("authenticado"); 
+    }
+  })
+  .catch(function(error) {
+    console.log(error);
+});
+});
 
 
 

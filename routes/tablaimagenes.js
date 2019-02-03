@@ -64,11 +64,11 @@ router.post('/guardar', (req, res) => {
   });
 });
 
-<<<<<<< HEAD
+
 //elimina usuario creado delete + form 
-=======
+
 //elimina usuario creado delete + form
->>>>>>> e212677a3f11fbf1e9833d0f7eaa184bddb78134
+
 router.delete('/:id',(req,res)=>{
   const id=req.params.id;
   console.log('deleting...');
@@ -78,13 +78,13 @@ router.delete('/:id',(req,res)=>{
       .where('id',id)
       .del()
       .then(usuarios => {
-<<<<<<< HEAD
+
         console.log('delete id: '+id); 
         res.redirect('/admin/imagenes');      
-=======
+
         console.log('delete id: '+id);
         res.redirect('/admin/imagenes/');
->>>>>>> e212677a3f11fbf1e9833d0f7eaa184bddb78134
+
     });
 
   }else{
