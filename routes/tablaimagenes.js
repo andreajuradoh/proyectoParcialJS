@@ -56,7 +56,7 @@ router.post('/guardar', (req, res) => {
       console.log("entro"+req.body.fotoadd);
     knex('imagenes')
       .returning('id')
-      .insert({foto : req.body.fotoadd, puntaje: req.body.puntaje})
+      .insert({foto : req.body.fotoadd, puntaje: req.body.puntos})
       .then(ids =>  {
         const id = ids[0];
         res.redirect(`/admin/imagenes/${id}`);
@@ -86,6 +86,28 @@ router.post('/:id',(req,res)=>{
       message: 'Invalid ID delete ' 
     });    
   }      
+});
+
+
+router.get('/:id/edit', (req,res) => {
+  const id = req.params.id;
+  console.log('edit id:'+id);
+  respondAndRenderUser(id,res,'tablaimagenes/edit');
+});
+
+
+
+
+
+router.put('/:id',(req,res) => {
+  console.log('updating... huele bicho');
+    knex('imagenes')
+      .where('id',req.params.id)
+      .update({foto : req.body.fotoadd,  puntaje: req.body.puntaje})
+      .then( () =>  {
+        res.redirect(`/admin/imagenes/${req.params.id}`);
+      });
+
 });
 
 

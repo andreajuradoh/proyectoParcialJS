@@ -9,7 +9,7 @@ router.get('/',function(req, res){
    /* res.type('text/plain');
     res.send('Mi página principal');*/
     knex('partida')
-        .select()
+        .select("partida.id", "partida.puntaje", "partida.id_usuarios", "usuarios.id as usuarios.id_usuario", "usuarios.foto", "usuarios.genero", "usuarios.nombre", "usuarios.puntos")
         .innerJoin('usuarios', function () {
         this
        .on('partida.id_usuarios', 'usuarios.id')
@@ -29,6 +29,10 @@ router.get('/new', (req, res) => {
     this.select('*').from('partida').whereRaw('partida.id_usuarios = usuarios.id');
   })
   .then(usuario =>{
+      if(usuario.length==0){
+          console.log("no hay usuario");
+          res.render('tablapartida/mensajeerror');
+      }else
       res.render('tablapartida/new', {objUsers: usuario});
   });
 
@@ -72,4 +76,56 @@ console.log("guarda partida"+req.body.usuario);
 
   });
 });
+
+
+
+
+router.get('/:id/edit', (req,res) => {
+  const id = req.params.id;
+  console.log('edit id:'+id);
+  respondAndRenderUser(id,res,'tablapartida/edit');
+});
+
+
+
+router.put('/:id',(req,res) => {
+  console.log('updating... huele bicho');
+    knex('partida')
+      .where('id',req.params.id)
+      .update({puntaje: req.body.puntaje})
+      .then( () =>  {
+        res.redirect(`/admin/partidas/${req.params.id}`);
+      });
+});
+
+
+
+//form delete por post
+router.delete('/:id',(req,res)=>{
+  const id=req.params.id;
+  console.log('deleting...');
+
+ if(typeof id != 'undefined'){
+    knex('partida')
+      .where('id',id)
+      .del()
+      .then(partida => {
+        console.log('delete id: '+id);
+        res.redirect('/admin/partidas');
+    });
+
+  }else{
+
+    console.log('error invalid delete ');
+    res.status(500);
+    res.render('error', {
+      message: 'Invalid ID delete '
+    });
+  }
+});
+
+
+
+
+
 module.exports= router;
