@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Mystery+Quest");
+@import url('https://fonts.googleapis.com/css?family=Concert+One');
 
 body {
 background-image: url(../../img/background-avatar.png);
@@ -23,6 +24,14 @@ overflow-x: hidden;
     top: 10%;
 
     }
+
+
+.puntaje {
+   font-family: 'Concert One', monospace;
+    font-weight: 900;
+     color: white;
+   }
+
 
 .img-responsive {
   text-align: center;
@@ -59,7 +68,8 @@ overflow-x: hidden;
 
 
 .avatar-container img {
-    width: 170px;
+    width: 200px;
+    height: 200px;
     
 }
 
@@ -67,14 +77,26 @@ overflow-x: hidden;
 .button-container {
     position: absolute;
     text-align: center;
+    margin-top: 40%;
     width: 100%;
-    top: 90%;
 }
 
 #conten-avat img{
     display: flex;
     float: right;
     width: 80px;
+    
+}
+
+.ranking-container{
+    background-color: black;
+    height: auto;
+    opacity: 0.8;
+    position: absolute;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding: 5%;
+    border-radius: 20px;
     
 }
 
@@ -96,9 +118,11 @@ overflow-x: hidden;
 
 
 .video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 30px; height: 0; overflow: hidden;
+    position:absolute;
+    margin-left: 25%;
+    margin-right:25%;
+    margin-top: 15%;
+    
 }
 
 
@@ -133,12 +157,14 @@ border-radius: 20px;
   margin-top: 40%;
     padding: 3%;
 }
+
 .personalImg {
   height: 100px;
   width: 100px;
 
 
 }
+
 .padre {
   display: flex;
   justify-content: center;
