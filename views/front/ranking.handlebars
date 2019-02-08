@@ -3,39 +3,52 @@
 <body>
      <button type="button" class="btn btn-warning" > <a id="" href="/escoger" style= "color:white; font-weight: 600;">Regresar al menú</a></button>
 
-<div class="ranking-container">
-    <div class="">
-        
+<div class="ranking-container ">
+  <div class="padre row">
+      <div class="hijo col-md-2">
+      <h2  class="puntaje" style="font-family:monospace; color:white; font-weight:900; font-size:20px;">Ranking</h2>
+
+    </div>
+    <div class="hijo col-md-2">
+    <h2  class="puntaje" style="font-family:monospace; color:white; font-weight:900; font-size:20px;">Puntos</h2>
+
+  </div>
+  <div class="hijo col-md-2">
+  <h2  class="puntaje" style="font-family:monospace; color:white; font-weight:900; font-size:20px;">Jugador</h2>
+
+</div>
+<div class="hijo col-md-2">
+<h2  class="puntaje" style="font-family:monospace; color:white; font-weight:900; font-size:20px;">Foto</h2>
+
+</div>
+  </div>
+
 {{#each objPartida}}
-<div class="padre">
-    <div class="hijo">
+
+<div class="padre row">
+    <div class="hijo col-md-2">
     <h2  class="puntaje" style="font-family:monospace; color:white; font-weight:900; font-size:20px;">{{ranking}}</h2>
 
   </div>
-    
-    
-  <div class="hijo">
-    <h2  class="puntaje" style="font-family:monospace; color:white; font-weight:900; font-size:20px;">{{ranking}}</h2>
 
-  </div>
-  <div class="hijo">
+  <div class="hijo col-md-2">
     <h2  class="puntaje" style="font-family:monospace; color:white; font-weight:900; font-size:30px;">{{puntaje}}</h2>
 
   </div>
-  <div class="hijo">
+  <div class="hijo col-md-2">
     <h2  class="puntaje" style="font-family:monospace; color:white; font-weight:900; font-size:30px;">{{nombre}}</h2>
   </div>
-  <div class="hijo ">
+  <div class="hijo col-md-2">
     <img class="rounded-circle personalImg"src="{{foto}}" alt="foto">
   </div>
 </div>
 
 {{/each}}
-</div>
+
     </div>
-    
-    
-    
+
+
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

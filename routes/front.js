@@ -68,8 +68,8 @@ console.log(req.params.nivel);
           .then(partidas =>{
             let partidatmp=[];
             for (var i = 0; i < partidas.length; i++) {
-            partidas[i].number=i+1;
-            console.log( "partidas"+ partidas[i].number);
+            partidas[i].ranking=i+1;
+            console.log( "partidas"+ partidas[i].ranking);
             }
               res.render('front/ranking', {objPartida: partidas});
           });
