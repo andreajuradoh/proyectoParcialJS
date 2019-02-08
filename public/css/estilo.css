@@ -119,9 +119,8 @@ overflow-x: hidden;
 
 .video-container {
     position:absolute;
-    margin-left: 25%;
-    margin-right:25%;
-    margin-top: 15%;
+    left: 25%;
+    top:150px;
     
 }
 
