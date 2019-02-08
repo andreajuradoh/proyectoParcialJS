@@ -21,16 +21,16 @@ agregar method-override
 
      <div class="form-group">
     <label for="title">User:</label>
-    <input type="text" class="form-control" id="clave" placeholder="Username" name="user" value="{{credencial.user}}" >
+    <input type="text" class="form-control" id="clave" placeholder="Username" name="user" value="{{credencial.user}}" required >
   </div>
 
   <div class="form-group">
     <label for="title">Password:</label>
-    <input type="password" class="form-control" id="nombre" placeholder="Password" name="password" value="{{credencial.password}}" ><!--req.body.name-->
+    <input type="password" class="form-control" id="nombre" placeholder="Password" name="password" value="{{credencial.password}}"required ><!--req.body.name-->
   </div>
   <div class="form-group">
     <label for="title">Rol:</label>
-    <input type="text" id="inrol" name="" value="{{credencial.rol}}" style="visibility:hidden">
+    <input type="text" id="inrol" name="" value="{{credencial.rol}}" style="visibility:hidden"required>
 
  <select class="" id="rol" name="rol">
 
