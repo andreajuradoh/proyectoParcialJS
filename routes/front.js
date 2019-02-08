@@ -80,7 +80,27 @@ console.log(req.params.nivel);
         res.send('Mi página principal');*/
         console.log("guardando..."+req.params.id_usuario);
         knex('partida')
+        .returning('id')
         .insert({puntaje : req.params.puntos, id_usuarios : req.params.id_usuario })
+        .then(ids =>  {
+
+             res.json(ids);
+        });
+
+
+       // res.render('usuario');
+    });
+    router.post('/actualizarPartida',function(req, res){
+       /* res.type('text/plain');
+        res.send('Mi página principal');*/
+
+
+//let id= JSON.parse(req.params.id);
+
+        console.log("actualizando...puntos nuevos"+req.body.puntos+ "id"+req.body.id);
+        knex('partida')
+        .where('id',req.body.id)
+        .update({puntaje : req.body.puntos})
         .then(ids =>  {
 
              res.json("ok");

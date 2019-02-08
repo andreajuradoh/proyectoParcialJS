@@ -3,6 +3,19 @@ class Juego {
    this.id_usuario=id_usuario;
    this.puntaje=0;
 
+   this.id=0;
+   this.guardarPartida(this);
+
+  }
+  actualizarPartida(juego){
+    var req = new XMLHttpRequest();
+  // Petición HTTP GET síncrona hacia el archivo fotos.json del servidor
+  const server=window.location.origin;
+  let id =this.id;
+  let puntaje=juego.puntaje;
+  req.open("POST", server+"/actualizarPartida", false);
+  req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  req.send("puntos="+puntaje+"&id="+id);
   }
   guardarPartida(juego){
     var req = new XMLHttpRequest();
@@ -10,6 +23,10 @@ class Juego {
   const server=window.location.origin;
   req.open("GET", server+"/guardarPartida"+juego.id_usuario+juego.puntaje, false);
   req.send(null);
+  let id=JSON.parse(req.responseText);
+  this.id=parseInt(id,10);
+
+  //return req.responseText;
   }
    getRand(max,min){
     return Math.floor(Math.random() * (max - min));

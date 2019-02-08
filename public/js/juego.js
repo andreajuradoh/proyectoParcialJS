@@ -40,6 +40,7 @@ function actualizarPts(){
     var ptos=avatar.puntos;
     if(ptos<0   ){
       ptos=0;
+      avatar.puntos=0;
 
     }
     if (obj.puntaje<0) {
@@ -231,6 +232,7 @@ audiofondo.currentTime = 0;
 }
 function juegonuevo(){
     //setInterval(myTimer);
+    obj.actualizarPartida(obj);
    tablero=[];
    imagenVolteada=[];// array que guarda todos los tags de imagenes que hay en la tabla
   // se la utiliza para guardar y setearles el atributo src que contendra la imagen real
@@ -260,7 +262,7 @@ function overJuego(nivel) {
 }
 function crearModalVictoria(avatar){
 
-  obj.guardarPartida(obj);
+
         //select all the a tag with name equal to modal
 
                 //Cancel the link behavior
