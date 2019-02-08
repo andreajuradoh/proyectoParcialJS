@@ -9,9 +9,10 @@
 
     <link rel="stylesheet" href="css/estilojuego.css">
    <link rel="stylesheet" href="css/bootstrap.min.css">
+      
 
 
-
+ 
     <title>Jugando</title>
   </head>
   <body>
@@ -19,23 +20,20 @@
 
 <div class="padre row">
   <div id="col-md-3 nivel pull-left" >
-      <h5 id="hnivel" align = left>Nivel {{nivel}}</h5>
+    <h5 id="hnivel" align = left accesskey="" style="font-family:monospace; color:white; font-weight:900; font-size:20px;">Nivel {{nivel}}</h5>
   </div>
     <div class="col-md-3 tiempo">
-
-      <span class="oi" data-glyph="clock" title="icon name" aria-hidden="true"></span>
-       <a href="/escoger"><img id="casa" src="/img/home.png"></a>
-        <h5 id="tiempo" ></h5>
+<span class="glyphicon glyphicon-time"></span> <h5 id="tiempo" style="font-family:monospace; color:white; font-weight:900; font-size:20px;" > Tiempo: </h5>    
     </div>
     <div class="col-md-3" id="regresar">
-
+  <a href="/escoger"><img id="casa" src="/img/home"></a>
 
 
   </div>
     <div class="col-md-3 contenedorPts">
     <div id="ptos">
-         <p id="puntosdurantePartida" >Puntos en la partida</p>
-         <p id="puntosdurante" >Puntos del jugador</p>
+         <p id="puntosdurantePartida" style="font-family:monospace; color:white; font-weight:900; font-size:20px;">Puntos en la partida</p>
+         <p id="puntosdurante" style="font-family:monospace; color:white; font-weight:900; font-size:20px;" >Puntos del jugador</p>
     </div>
     <div id="avatarJuego"> <img id="imgAvatar"></div>
     </div>
@@ -43,7 +41,7 @@
 
 </div>
 
-<div class="row tabla" id="tabla-main" >
+<div class="row tabla" id="tabla-main" style="padding:5%;" >
 
 
 </div>
@@ -95,6 +93,8 @@
   <script type="text/javascript" src="../js/classAvatar.js"></script>
 <script type="text/javascript" src="../js/ClassJuego.js"></script>
 <script type="text/javascript" src="../js/juego.js"></script>
+      
+        
 
    </body>
 </html>

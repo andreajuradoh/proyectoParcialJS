@@ -9,12 +9,10 @@
   <link rel="stylesheet" href="css/estilo.css">
 
       <link rel="stylesheet" href="css/bootstrap.min.css">
+      
   </head>
 
   <body cz-shortcut-listes="true">
-<div class="">
-  <a href="/verRanking">Ver Ranking Partidas</a>
-</div>
 
        <div class="titulo-avatar">
       <img src="/img/escoge-personaje.png" class="img-responsive">
@@ -40,10 +38,10 @@
           <div class="container-fluid col-md-12 avataresIndex" id="contenAvatares">
 {{#each objUsers}}
 <div class="misavatares">
-<h4>{{puntos}} Puntos</h4>
+<h4 class="puntaje" style="font-family:monospace; color:white; font-weight:900; font-size:20px;">{{puntos}} Puntos</h4>
 <a href="/video"><img onclick="sesion({{id}})" src ="{{foto}}" class="rounded-circle personalImg"/></a>
 
-<h5>{{nombre}}</h5>
+<h5 class="puntaje" style="font-family:monospace; color:white; font-weight:900; font-size:20px;">{{nombre}}</h5>
 </div>
 
 
@@ -57,13 +55,17 @@
 
       <div class="button-container">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
         <button id="export-button" type="button" class="btn btn-warning" style="background-color:darkolivegreen">
                 <a id="" href="/login" style="color:white; font-weight: 600;">Administrar</a></button>
      </div>
-           <div class="col-md-6">
-           <button id="export-button" type="button" class="btn btn-warning" style="background-color:darkolivegreen">
+           <div class="col-md-4">
+           <button id="export-button" type="button" class="btn btn-warning" style="background-color:darkolivegreen; visibility:hidden;">
                    <a id="descargarjson" href="#" style="color:white; font-weight: 600;">Exportar JSON</a></button>
+        </div>
+          
+           <div class="col-md-4">
+           <button id="export-button" type="button" class="btn btn-warning" style="background-color:darkolivegreen;" > <a id="" href="/verRanking" style= "color:white; font-weight: 600;">Ver Ranking Partidas</a></button>
         </div>
       </div>
   </div>
