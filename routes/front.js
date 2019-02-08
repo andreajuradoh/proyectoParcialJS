@@ -66,6 +66,11 @@ console.log(req.params.nivel);
         .orderBy('puntaje', 'desc')
           .limit(10)
           .then(partidas =>{
+            let partidatmp=[];
+            for (var i = 0; i < partidas.length; i++) {
+            partidas[i].number=i+1;
+            console.log( "partidas"+ partidas[i].number);
+            }
               res.render('front/ranking', {objPartida: partidas});
           });
 
