@@ -6,6 +6,7 @@ $(document).ready(function(){
     sonido_bg.play();
     escogePersonaje.volume =1;
     escogePersonaje.play();
+
   });
 });
 
