@@ -233,6 +233,7 @@ audiofondo.currentTime = 0;
 function juegonuevo(){
     //setInterval(myTimer);
     obj.actualizarPartida(obj);
+    modificarPuntaje();
    tablero=[];
    imagenVolteada=[];// array que guarda todos los tags de imagenes que hay en la tabla
   // se la utiliza para guardar y setearles el atributo src que contendra la imagen real
@@ -281,6 +282,7 @@ function crearModalVictoria(avatar){
 
                 localStorage.setItem("sesion",JSON.stringify(avatar));
                 modificarPuntaje();
+                obj.actualizarPartida(obj);
               var buton= document.createElement("img");
               buton.src="../img/botoonnuevojuego.png";
               nivelMain=1;
