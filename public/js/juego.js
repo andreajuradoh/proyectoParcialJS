@@ -361,8 +361,9 @@ function modificarPuntaje(){
 // Petición HTTP GET síncrona hacia el archivo fotos.json del servidor
 let obj=JSON.stringify(avatar);
 const server=window.location.origin;
-req.open("POST", server+"/actualizaPuntaje"+avatar.id+avatar.puntos, false);
-req.send(null);
+req.open("POST", server+"/actualizaPuntaje", false);
+req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+req.send("puntos="+avatar.puntos+"&id="+avatar.id);
 
 /*
   let obj= new Avatar();

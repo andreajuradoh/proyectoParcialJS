@@ -75,13 +75,13 @@ console.log(req.params.nivel);
           });
 
         });
-    router.get('/guardarPartida:id_usuario:puntos',function(req, res){
+    router.post('/guardarPartida',function(req, res){
        /* res.type('text/plain');
         res.send('Mi página principal');*/
-        console.log("guardando..."+req.params.id_usuario);
+        console.log("guardando..."+req.body.id);
         knex('partida')
         .returning('id')
-        .insert({puntaje : req.params.puntos, id_usuarios : req.params.id_usuario })
+        .insert({puntaje : req.body.puntos, id_usuarios : req.body.id })
         .then(ids =>  {
 
              res.json(ids);
@@ -109,9 +109,9 @@ console.log(req.params.nivel);
 
        // res.render('usuario');
     });
-router.post('/actualizaPuntaje:id:puntos', (req, res) => {
-         const id= req.params.id;
-         const puntos= req.params.puntos;
+router.post('/actualizaPuntaje', (req, res) => {
+         const id= req.body.id;
+         const puntos= req.body.puntos;
 
         console.log("editando..."+puntos, id);
           knex('usuarios')

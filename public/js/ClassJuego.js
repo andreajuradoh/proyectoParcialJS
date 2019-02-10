@@ -21,8 +21,9 @@ class Juego {
     var req = new XMLHttpRequest();
   // Petición HTTP GET síncrona hacia el archivo fotos.json del servidor
   const server=window.location.origin;
-  req.open("GET", server+"/guardarPartida"+juego.id_usuario+juego.puntaje, false);
-  req.send(null);
+  req.open("POST", server+"/guardarPartida", false);
+  req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  req.send("puntos="+juego.puntaje+"&id="+juego.id_usuario);
   let id=JSON.parse(req.responseText);
   this.id=parseInt(id,10);
 
