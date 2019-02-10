@@ -2,7 +2,8 @@ jQuery("body").trigger("click");
 $(document).ready(function(){
   $("body").click(function (){
     sonido_bg.volume = 0.3;
-
+ var imgavatar=$("#contenAvatares");
+      imgavatar.css("visibility","visible");
     sonido_bg.play();
     escogePersonaje.volume =1;
     escogePersonaje.play();
@@ -16,6 +17,10 @@ sonido_bg.preload = "auto";
 
 var escogePersonaje =document.getElementById('elige-personaje');
 escogePersonaje.preload = "auto";
+
+
+var avatarimg= document.getElementById("avatares");
+
 
 //accion.addEventListener("click", colocarAvatar);
 

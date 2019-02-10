@@ -52,11 +52,14 @@ router.get('/:id', (req, res) => {
 
 //routing new + form + post mostrar create avatar
 router.post('/guardar', (req, res) => {
-
+var punto= req.body.puntos;
+     if(punto<0){
+     punto=0;
+    }
       console.log("entro"+req.body.fotoadd);
     knex('imagenes')
       .returning('id')
-      .insert({foto : req.body.fotoadd, puntaje: req.body.puntos})
+      .insert({foto : req.body.fotoadd, puntaje: punto})
       .then(ids =>  {
         const id = ids[0];
         res.redirect(`/admin/imagenes/${id}`);
