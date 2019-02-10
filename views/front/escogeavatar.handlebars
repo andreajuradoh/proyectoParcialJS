@@ -27,12 +27,9 @@
           <source  type="audio/wav" src="../audio/elige-personaje.mp3">
       </audio>
 
-    <div class="avatar-container" id="avatar">
+    <div class="avatar-container " id="avatar">
       <div class="row">
-        <div class="col-md-2">
 
-
-        </div>
           <div class="container-fluid col-md-12 avataresIndex" id="contenAvatares" style="visibility:hidden;">
 {{#each objUsers}}
 <div class="misavatares" id="avatares" >
@@ -51,8 +48,10 @@
 
 
 
-      <div class="button-container" id="button-container-escoger">
-      <div class="row">
+      <div class="button-container " id="button-container-escoger">
+<div class="row">
+
+
         <div class="col-md-4">
         <button id="export-button" type="button" class="btn btn-warning" style="background-color:darkolivegreen">
                 <a id="" href="/login" style="color:white; font-weight: 600;">Administrar</a></button>
@@ -65,7 +64,7 @@
            <div class="col-md-4">
            <button id="export-button" type="button" class="btn btn-warning" style="background-color:darkolivegreen;" > <a id="" href="/verRanking" style= "color:white; font-weight: 600;">Ver Ranking Partidas</a></button>
         </div>
-      </div>
+</div>
   </div>
   </div>
 
@@ -77,7 +76,7 @@
     /* For mobile phones: */
 
     [id="contenAvatares"] {
-      
+
         display:inline-block;
         width:100%;
         position:relative;
