@@ -53,11 +53,16 @@ router.get('/:id', (req, res) => {
 
 //routing new + form + post mostrar create avatar
 router.post('/guardar', (req, res) => {
-
+var punto= req.body.puntos;
       console.log("entro mmv"+req.body.fotoadd);
+       if(punto<0){
+     punto=0;
+    }
     knex('usuarios')
       .returning('id')
-      .insert({foto : req.body.fotoadd, genero : req.body.genero, nombre: req.body.nombre, puntos: req.body.puntos})
+      .insert({foto : req.body.fotoadd, genero : req.body.genero, nombre: req.body.nombre, puntos: punto})
+    
+ 
       .then(ids =>  {
         const id = ids[0];
         res.redirect(`/admin/usuarios/${id}`);

@@ -66,10 +66,14 @@ router.get('/:id', (req, res) => {
 });
 //** Guardar La partida**
 router.post('/guardar', (req, res) => {
+    var punto= req.body.puntaje;
+     if(punto<0){
+     punto=0;
+    }
 console.log("guarda partida"+req.body.usuario);
     knex('partida')
       .returning('id')
-      .insert({puntaje : req.body.puntaje, id_usuarios : req.body.usuario})
+      .insert({puntaje : punto, id_usuarios : req.body.usuario})
       .then(ids =>  {
         const id = ids[0];
         res.redirect(`/admin/partidas/${id}`);
