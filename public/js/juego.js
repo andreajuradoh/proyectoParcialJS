@@ -277,8 +277,8 @@ function crearModalVictoria(avatar){
                 }else
                 img="<img class='eleModel' src='../img/"+avatar.foto+"'>";
                 var ptos=avatar.puntos;
-              let  puntos="<span >puntos obtenidos "+obj.puntaje+"</span>";
-                let puntosAvatar="<span >puntos acumulados del jugador "+ptos+"</span>";
+              let  puntos="<div style='float:left'><span >puntos de la partida "+obj.puntaje+"</span></div>";
+                let puntosAvatar="<div><span >puntos acumulados del jugador "+ptos+"</span></div>";
 
                 localStorage.setItem("sesion",JSON.stringify(avatar));
                 modificarPuntaje();

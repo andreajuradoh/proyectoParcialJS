@@ -25,6 +25,15 @@ overflow-x: hidden;
 
     }
 
+.modal-touch
+{
+    position: absolute;
+    width: 100%;
+    top: 27%;
+    z-index: 1;
+
+    }
+
 
 .puntaje {
    font-family: 'Concert One', monospace;
@@ -48,7 +57,7 @@ overflow-x: hidden;
     position: absolute;
     text-align: center;
     width: 100%;
-    top: 30%;
+    top: 25%;
    }
 
 
@@ -63,7 +72,7 @@ overflow-x: hidden;
     position: absolute;
     text-align: center;
     width: 100%;
-    top: 45%;
+    top: 40%;
 }
 
 
@@ -119,8 +128,8 @@ overflow-x: hidden;
 
 .video-container {
     position:absolute;
-    left: 25%;
-    top:150px;
+    left: 27%;
+    top:200px;
 
 }
 
@@ -270,3 +279,4 @@ background-color: white;
 #tiempo{
   float: right;
 }
+
