@@ -13,6 +13,19 @@ img {
   width: 80px;
 }
 
+.home-button{
+    position: absolute;
+  border-radius: 15px;
+    float: left;
+    bottom: 6%;
+    border: solid 0;
+}
+
+.home-button img{
+    width: 40px;
+}
+
+
 .avatar-container {
     text-align: center;
     display: block;
