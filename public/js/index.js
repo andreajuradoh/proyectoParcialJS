@@ -2,11 +2,15 @@ jQuery("body").trigger("click");
 $(document).ready(function(){
   $("body").click(function (){
     sonido_bg.volume = 0.3;
- var imgavatar=$("#contenAvatares");
+      var imgavatar=$("#contenAvatares");
+      var touchGif=$(".modal-touch");
       imgavatar.css("visibility","visible");
+       touchGif.css("visibility","hidden");
     sonido_bg.play();
     escogePersonaje.volume =1;
     escogePersonaje.play();
+      
+      
 
   });
 });
@@ -25,6 +29,7 @@ var avatarimg= document.getElementById("avatares");
 //accion.addEventListener("click", colocarAvatar);
 
 var conten=document.getElementById("contenAvatares");
+var touchgif=document.getElementById("modal-touch");
 
 //var datos=JSON.parse(localStorage.getItem("avatares"));
 //var imagenesJson=JSON.parse(localStorage.getItem("imagenes"));
@@ -93,3 +98,4 @@ function exportJSON() {
     linkElement.setAttribute('download', exportFileDefaultName);
     linkElement.click();
 }
+
